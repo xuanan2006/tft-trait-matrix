@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-19T07:37:39.356Z",
+  "defaultSnapshotId": "pbe-preview-set18",
+  "snapshots": [
+    {
+      "id": "pbe-preview-set18",
+      "version": "pbe",
+      "setId": "preview:set18",
+      "setName": "Set 18 Preview: Enchanted Wilds",
+      "preview": true,
+      "path": "/data/snapshots/pbe-preview-set18-b3706063113b.json",
+      "updatedAt": "2026-07-19T07:37:35.756Z"
+    },
+    {
+      "id": "latest-set17",
+      "version": "latest",
+      "setId": "17",
+      "setName": "Set17",
+      "preview": false,
+      "path": "/data/snapshots/latest-set17-acbf47eb47bd.json",
+      "updatedAt": "2026-07-19T07:37:36.983Z"
+    }
+  ]
+}

@@ -1,0 +1,2783 @@
+{
+  "meta": {
+    "sourceUrl": "https://raw.communitydragon.org/latest/cdragon/tft/en_us.json",
+    "fetchedAt": "2026-07-19T07:37:36.983Z",
+    "sourceVersion": "latest",
+    "version": "latest",
+    "setId": "17",
+    "setName": "Set17",
+    "preview": false,
+    "sourceMode": "communityDragon",
+    "canonicalSource": "communityDragon",
+    "sources": [
+      {
+        "id": "communityDragon",
+        "label": "CommunityDragon",
+        "role": "canonical json",
+        "url": "https://raw.communitydragon.org/latest/cdragon/tft/en_us.json",
+        "status": "ok"
+      }
+    ],
+    "warnings": [],
+    "verifiedAt": "2026-07-19T07:37:36.983Z"
+  },
+  "traits": [
+    {
+      "id": "animasquad",
+      "apiName": "TFT17_AnimaSquad",
+      "name": "Anima",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/9a58b1d8277256e7.png",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "admin",
+      "apiName": "TFT17_ADMIN",
+      "name": "Arbiter",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/7ed2bc0df435d304.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "resisttank",
+      "apiName": "TFT17_ResistTank",
+      "name": "Bastion",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/949742dfac15b2f6.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "hptank",
+      "apiName": "TFT17_HPTank",
+      "name": "Brawler",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/da5bdd4a365e4f98.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "shenuniquetrait",
+      "apiName": "TFT17_ShenUniqueTrait",
+      "name": "Bulwark",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/56baae9f8d62a869.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "astrait",
+      "apiName": "TFT17_ASTrait",
+      "name": "Challenger",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/1831aca18cd760e3.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "missfortuneundeterminedtrait",
+      "apiName": "TFT17_MissFortuneUndeterminedTrait",
+      "name": "Choose Trait",
+      "category": "unknown",
+      "iconUrl": "/data/assets/latest-set17/6cba6de0dccccf4d.png",
+      "effects": [],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "sonauniquetrait",
+      "apiName": "TFT17_SonaUniqueTrait",
+      "name": "Commander",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/0dc946adc999a089.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "manatrait",
+      "apiName": "TFT17_ManaTrait",
+      "name": "Conduit",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/f0549e7bc5dbd446.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "morganauniquetrait",
+      "apiName": "TFT17_MorganaUniqueTrait",
+      "name": "Dark Lady",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/0ca0fe3ec56fdd34.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 1,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "darkstar",
+      "apiName": "TFT17_DarkStar",
+      "name": "Dark Star",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/3b413886e4935dc6.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 8,
+          "style": 5
+        },
+        {
+          "minUnits": 9,
+          "maxUnits": 25000,
+          "style": 6
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "fiorauniquetrait",
+      "apiName": "TFT17_FioraUniqueTrait",
+      "name": "Divine Duelist",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/a896bac96903db54.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "vexuniquetrait",
+      "apiName": "TFT17_VexUniqueTrait",
+      "name": "Doomer",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/ecd2a0660d82fc9c.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "jhinuniquetrait",
+      "apiName": "TFT17_JhinUniqueTrait",
+      "name": "Eradicator",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/0e5308df787b5f03.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 1,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "gravestrait",
+      "apiName": "TFT17_GravesTrait",
+      "name": "Factory New",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/d47948fa8dc6a8aa.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "fateweaver",
+      "apiName": "TFT17_Fateweaver",
+      "name": "Fateweaver",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/6d383f4278d788fb.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "zeduniquetrait",
+      "apiName": "TFT17_ZedUniqueTrait",
+      "name": "Galaxy Hunter",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/a2a4f6b329e6a046.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "missfortuneuniquetrait",
+      "apiName": "TFT17_MissFortuneUniqueTrait",
+      "name": "Gun Goddess",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/106682442dfb8192.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "meleetrait",
+      "apiName": "TFT17_MeleeTrait",
+      "name": "Marauder",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/ffb698a0ef9954fb.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "mecha",
+      "apiName": "TFT17_Mecha",
+      "name": "Mecha",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/912d4c59a5b2b52d.png",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "astronaut",
+      "apiName": "TFT17_Astronaut",
+      "name": "Meeple",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/121ea5013b0c5798.png",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 9,
+          "style": 5
+        },
+        {
+          "minUnits": 10,
+          "maxUnits": 25000,
+          "style": 6
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "drx",
+      "apiName": "TFT17_DRX",
+      "name": "N.O.V.A.",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/f4698996b18ea9df.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 4,
+          "style": 1
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "tahmkenchuniquetrait",
+      "apiName": "TFT17_TahmKenchUniqueTrait",
+      "name": "Oracle",
+      "category": "unknown",
+      "iconUrl": "/data/assets/latest-set17/643e8351a0f03172.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "blitzcrankuniquetrait",
+      "apiName": "TFT17_BlitzcrankUniqueTrait",
+      "name": "Party Animal",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/2c18bfbedd308a95.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "primordian",
+      "apiName": "TFT17_Primordian",
+      "name": "Primordian",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/8b847143332053c9.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "psyops",
+      "apiName": "TFT17_PsyOps",
+      "name": "Psionic",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/7731e35a82746f0d.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "rhaastuniquetrait",
+      "apiName": "TFT17_RhaastUniqueTrait",
+      "name": "Redeemer",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/5e105cfad6409750.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "aptrait",
+      "apiName": "TFT17_APTrait",
+      "name": "Replicator",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/12733867c9ffdcd3.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "assassintrait",
+      "apiName": "TFT17_AssassinTrait",
+      "name": "Rogue",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/a26d8604c764b4e8.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "summontrait",
+      "apiName": "TFT17_SummonTrait",
+      "name": "Shepherd",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/37e58d197eb30732.png",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "rangedtrait",
+      "apiName": "TFT17_RangedTrait",
+      "name": "Sniper",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/082fc6108fd33e8e.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "spacegroove",
+      "apiName": "TFT17_SpaceGroove",
+      "name": "Space Groove",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/6293e8225a786c1b.png",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 3
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 9,
+          "style": 5
+        },
+        {
+          "minUnits": 10,
+          "maxUnits": 25000,
+          "style": 6
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "stargazer",
+      "apiName": "TFT17_Stargazer",
+      "name": "Stargazer",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/19d185d009a95118.png",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 5
+        },
+        {
+          "minUnits": 8,
+          "maxUnits": 25000,
+          "style": 5
+        },
+        {
+          "minUnits": 9,
+          "maxUnits": 25000,
+          "style": 5
+        },
+        {
+          "minUnits": 10,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "timebreaker",
+      "apiName": "TFT17_Timebreaker",
+      "name": "Timebreaker",
+      "category": "origin",
+      "iconUrl": "/data/assets/latest-set17/645f7febee7e7dd6.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "shieldtank",
+      "apiName": "TFT17_ShieldTank",
+      "name": "Vanguard",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/49068f8d5c84e442.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "flextrait",
+      "apiName": "TFT17_FlexTrait",
+      "name": "Voyager",
+      "category": "class",
+      "iconUrl": "/data/assets/latest-set17/dd17c3cf0e6af6e3.png",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 5,
+          "style": 3
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 5
+        }
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "category": "communityDragon",
+        "effects": "communityDragon",
+        "icon": "communityDragon"
+      },
+      "isUnique": false
+    }
+  ],
+  "units": [
+    {
+      "id": "aatrox",
+      "apiName": "TFT17_Aatrox",
+      "name": "Aatrox",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/81346f0c95bf358b.png",
+      "originTraitIds": [
+        "drx"
+      ],
+      "classTraitIds": [
+        "resisttank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "drx",
+        "resisttank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "briar",
+      "apiName": "TFT17_Briar",
+      "name": "Briar",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/b8417b027bc6c7d6.png",
+      "originTraitIds": [
+        "animasquad",
+        "primordian"
+      ],
+      "classTraitIds": [
+        "assassintrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "animasquad",
+        "primordian",
+        "assassintrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "caitlyn",
+      "apiName": "TFT17_Caitlyn",
+      "name": "Caitlyn",
+      "cost": 1,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/35990b2e18785942.png",
+      "originTraitIds": [
+        "drx"
+      ],
+      "classTraitIds": [
+        "fateweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "drx",
+        "fateweaver"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "chogath",
+      "apiName": "TFT17_Chogath",
+      "name": "Cho'Gath",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/a9b3a73af131afcf.png",
+      "originTraitIds": [
+        "darkstar"
+      ],
+      "classTraitIds": [
+        "hptank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "darkstar",
+        "hptank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "ezreal",
+      "apiName": "TFT17_Ezreal",
+      "name": "Ezreal",
+      "cost": 1,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/bbb2dd0f7646e907.png",
+      "originTraitIds": [
+        "timebreaker"
+      ],
+      "classTraitIds": [
+        "rangedtrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "timebreaker",
+        "rangedtrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "leona",
+      "apiName": "TFT17_Leona",
+      "name": "Leona",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/af5940a8380eb584.png",
+      "originTraitIds": [
+        "admin"
+      ],
+      "classTraitIds": [
+        "shieldtank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "admin",
+        "shieldtank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "lissandra",
+      "apiName": "TFT17_Lissandra",
+      "name": "Lissandra",
+      "cost": 1,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/f004d18f4f895425.png",
+      "originTraitIds": [
+        "darkstar"
+      ],
+      "classTraitIds": [
+        "summontrait",
+        "aptrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "darkstar",
+        "summontrait",
+        "aptrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "nasus",
+      "apiName": "TFT17_Nasus",
+      "name": "Nasus",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/2b9a955569f23c3d.png",
+      "originTraitIds": [
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "shieldtank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "spacegroove",
+        "shieldtank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "poppy",
+      "apiName": "TFT17_Poppy",
+      "name": "Poppy",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/3d4fc4a3e8ab0671.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "resisttank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "resisttank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "reksai",
+      "apiName": "TFT17_RekSai",
+      "name": "Rek'Sai",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/ea036a81d5d6b6a7.png",
+      "originTraitIds": [
+        "primordian"
+      ],
+      "classTraitIds": [
+        "hptank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "primordian",
+        "hptank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "talon",
+      "apiName": "TFT17_Talon",
+      "name": "Talon",
+      "cost": 1,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/36073d9c785bf75a.png",
+      "originTraitIds": [
+        "stargazer"
+      ],
+      "classTraitIds": [
+        "assassintrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "stargazer",
+        "assassintrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "teemo",
+      "apiName": "TFT17_Teemo",
+      "name": "Teemo",
+      "cost": 1,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/5dc8fe4b3c394851.png",
+      "originTraitIds": [
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "summontrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "spacegroove",
+        "summontrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "twistedfate",
+      "apiName": "TFT17_TwistedFate",
+      "name": "Twisted Fate",
+      "cost": 1,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/defde3c255204ef8.png",
+      "originTraitIds": [
+        "stargazer"
+      ],
+      "classTraitIds": [
+        "fateweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "stargazer",
+        "fateweaver"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "veigar",
+      "apiName": "TFT17_Veigar",
+      "name": "Veigar",
+      "cost": 1,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/9e8a76ebbd19090b.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "aptrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "aptrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "akali",
+      "apiName": "TFT17_Akali",
+      "name": "Akali",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/24bab595a122b6a5.png",
+      "originTraitIds": [
+        "drx"
+      ],
+      "classTraitIds": [
+        "meleetrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "drx",
+        "meleetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "belveth",
+      "apiName": "TFT17_Belveth",
+      "name": "Bel'Veth",
+      "cost": 2,
+      "range": 2,
+      "iconUrl": "/data/assets/latest-set17/89e808d5d262f447.png",
+      "originTraitIds": [
+        "primordian"
+      ],
+      "classTraitIds": [
+        "astrait",
+        "meleetrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "primordian",
+        "astrait",
+        "meleetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "gnar",
+      "apiName": "TFT17_Gnar",
+      "name": "Gnar",
+      "cost": 2,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/324c8dfb12f0d7b7.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "rangedtrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "rangedtrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "gragas",
+      "apiName": "TFT17_Gragas",
+      "name": "Gragas",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/3190702c23258460.png",
+      "originTraitIds": [
+        "psyops"
+      ],
+      "classTraitIds": [
+        "hptank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "psyops",
+        "hptank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "gwen",
+      "apiName": "TFT17_Gwen",
+      "name": "Gwen",
+      "cost": 2,
+      "range": 2,
+      "iconUrl": "/data/assets/latest-set17/8f3a426b664857ef.png",
+      "originTraitIds": [
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "assassintrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "spacegroove",
+        "assassintrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "jax",
+      "apiName": "TFT17_Jax",
+      "name": "Jax",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/984ba6e36883c2aa.png",
+      "originTraitIds": [
+        "stargazer"
+      ],
+      "classTraitIds": [
+        "resisttank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "stargazer",
+        "resisttank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "jinx",
+      "apiName": "TFT17_Jinx",
+      "name": "Jinx",
+      "cost": 2,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/22a0457427e36436.png",
+      "originTraitIds": [
+        "animasquad"
+      ],
+      "classTraitIds": [
+        "astrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "animasquad",
+        "astrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "ivernminion",
+      "apiName": "TFT17_IvernMinion",
+      "name": "Meepsie",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/51c46df8c250d2b5.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "summontrait",
+        "flextrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "summontrait",
+        "flextrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "milio",
+      "apiName": "TFT17_Milio",
+      "name": "Milio",
+      "cost": 2,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/5d42c347b0ea71e1.png",
+      "originTraitIds": [
+        "timebreaker"
+      ],
+      "classTraitIds": [
+        "fateweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "timebreaker",
+        "fateweaver"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "mordekaiser",
+      "apiName": "TFT17_Mordekaiser",
+      "name": "Mordekaiser",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/b76b2188cb4558b3.png",
+      "originTraitIds": [
+        "darkstar"
+      ],
+      "classTraitIds": [
+        "manatrait",
+        "shieldtank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "darkstar",
+        "manatrait",
+        "shieldtank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "pantheon",
+      "apiName": "TFT17_Pantheon",
+      "name": "Pantheon",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/b06e74cb22044683.png",
+      "originTraitIds": [
+        "timebreaker"
+      ],
+      "classTraitIds": [
+        "hptank",
+        "aptrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "timebreaker",
+        "hptank",
+        "aptrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "pyke",
+      "apiName": "TFT17_Pyke",
+      "name": "Pyke",
+      "cost": 2,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/9cc1b54d7b660c7f.png",
+      "originTraitIds": [
+        "psyops"
+      ],
+      "classTraitIds": [
+        "flextrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "psyops",
+        "flextrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "zoe",
+      "apiName": "TFT17_Zoe",
+      "name": "Zoe",
+      "cost": 2,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/5c021588562d9d5e.png",
+      "originTraitIds": [
+        "admin"
+      ],
+      "classTraitIds": [
+        "manatrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "admin",
+        "manatrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "aurora",
+      "apiName": "TFT17_Aurora",
+      "name": "Aurora",
+      "cost": 3,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/ba98d414d767ef6a.png",
+      "originTraitIds": [
+        "animasquad"
+      ],
+      "classTraitIds": [
+        "flextrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "animasquad",
+        "flextrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "diana",
+      "apiName": "TFT17_Diana",
+      "name": "Diana",
+      "cost": 3,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/0932a1d8b3243a9f.png",
+      "originTraitIds": [
+        "admin"
+      ],
+      "classTraitIds": [
+        "astrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "admin",
+        "astrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "fizz",
+      "apiName": "TFT17_Fizz",
+      "name": "Fizz",
+      "cost": 3,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/61249b42bd581dfd.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "assassintrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "assassintrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "illaoi",
+      "apiName": "TFT17_Illaoi",
+      "name": "Illaoi",
+      "cost": 3,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/c7035abe4810a3ae.png",
+      "originTraitIds": [
+        "animasquad"
+      ],
+      "classTraitIds": [
+        "shieldtank",
+        "summontrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "animasquad",
+        "shieldtank",
+        "summontrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "kaisa",
+      "apiName": "TFT17_Kaisa",
+      "name": "Kai'Sa",
+      "cost": 3,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/37e4efd6c1ee4914.png",
+      "originTraitIds": [
+        "darkstar"
+      ],
+      "classTraitIds": [
+        "assassintrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "darkstar",
+        "assassintrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "lulu",
+      "apiName": "TFT17_Lulu",
+      "name": "Lulu",
+      "cost": 3,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/8cb729a1ae7d4be6.png",
+      "originTraitIds": [
+        "stargazer"
+      ],
+      "classTraitIds": [
+        "aptrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "stargazer",
+        "aptrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "maokai",
+      "apiName": "TFT17_Maokai",
+      "name": "Maokai",
+      "cost": 3,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/d75c4adfa325e85e.png",
+      "originTraitIds": [
+        "drx"
+      ],
+      "classTraitIds": [
+        "hptank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "drx",
+        "hptank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "missfortune",
+      "apiName": "TFT17_MissFortune",
+      "name": "Miss Fortune",
+      "cost": 3,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/b3d776d68f48c573.png",
+      "originTraitIds": [
+        "missfortuneuniquetrait"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "missfortuneundeterminedtrait"
+      ],
+      "allTraitIds": [
+        "missfortuneuniquetrait",
+        "missfortuneundeterminedtrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "ornn",
+      "apiName": "TFT17_Ornn",
+      "name": "Ornn",
+      "cost": 3,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/85bbbb03909e9c44.png",
+      "originTraitIds": [
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "resisttank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "spacegroove",
+        "resisttank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "rhaast",
+      "apiName": "TFT17_Rhaast",
+      "name": "Rhaast",
+      "cost": 3,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/55a22829c5867b80.png",
+      "originTraitIds": [
+        "rhaastuniquetrait"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rhaastuniquetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "samira",
+      "apiName": "TFT17_Samira",
+      "name": "Samira",
+      "cost": 3,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/2396ff2db8fce911.png",
+      "originTraitIds": [
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "rangedtrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "spacegroove",
+        "rangedtrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "urgot",
+      "apiName": "TFT17_Urgot",
+      "name": "Urgot",
+      "cost": 3,
+      "range": 2,
+      "iconUrl": "/data/assets/latest-set17/3b058c79a859ac0b.png",
+      "originTraitIds": [
+        "mecha"
+      ],
+      "classTraitIds": [
+        "hptank",
+        "meleetrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "mecha",
+        "hptank",
+        "meleetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "viktor",
+      "apiName": "TFT17_Viktor",
+      "name": "Viktor",
+      "cost": 3,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/8cab558df8b45cea.png",
+      "originTraitIds": [
+        "psyops"
+      ],
+      "classTraitIds": [
+        "manatrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "psyops",
+        "manatrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "aurelionsol",
+      "apiName": "TFT17_AurelionSol",
+      "name": "Aurelion Sol",
+      "cost": 4,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/087a1048d8b12276.png",
+      "originTraitIds": [
+        "mecha"
+      ],
+      "classTraitIds": [
+        "manatrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "mecha",
+        "manatrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "corki",
+      "apiName": "TFT17_Corki",
+      "name": "Corki",
+      "cost": 4,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/51fb92b098d11a4f.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "fateweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "fateweaver"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "karma",
+      "apiName": "TFT17_Karma",
+      "name": "Karma",
+      "cost": 4,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/e9a2ecd5b0ec592d.png",
+      "originTraitIds": [
+        "darkstar"
+      ],
+      "classTraitIds": [
+        "flextrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "darkstar",
+        "flextrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "kindred",
+      "apiName": "TFT17_Kindred",
+      "name": "Kindred",
+      "cost": 4,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/cb43d5526632d8d1.png",
+      "originTraitIds": [
+        "drx"
+      ],
+      "classTraitIds": [
+        "astrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "drx",
+        "astrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "leblanc",
+      "apiName": "TFT17_Leblanc",
+      "name": "LeBlanc",
+      "cost": 4,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/da469fdd9f529f3f.png",
+      "originTraitIds": [
+        "admin"
+      ],
+      "classTraitIds": [
+        "summontrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "admin",
+        "summontrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "masteryi",
+      "apiName": "TFT17_MasterYi",
+      "name": "Master Yi",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/c95b5a56d331075d.png",
+      "originTraitIds": [
+        "psyops"
+      ],
+      "classTraitIds": [
+        "meleetrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "psyops",
+        "meleetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "morgana",
+      "apiName": "TFT17_Morgana",
+      "name": "Morgana",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/d3bf13467f44cf47.png",
+      "originTraitIds": [
+        "morganauniquetrait"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "morganauniquetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "nami",
+      "apiName": "TFT17_Nami",
+      "name": "Nami",
+      "cost": 4,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/7963859a6304e610.png",
+      "originTraitIds": [
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "aptrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "spacegroove",
+        "aptrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "nunu",
+      "apiName": "TFT17_Nunu",
+      "name": "Nunu & Willump",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/59306431d3e2df6a.png",
+      "originTraitIds": [
+        "stargazer"
+      ],
+      "classTraitIds": [
+        "shieldtank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "stargazer",
+        "shieldtank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "rammus",
+      "apiName": "TFT17_Rammus",
+      "name": "Rammus",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/f5f645bcdc53aecf.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "resisttank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "resisttank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "riven",
+      "apiName": "TFT17_Riven",
+      "name": "Riven",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/365cecc32d8883cb.png",
+      "originTraitIds": [
+        "timebreaker"
+      ],
+      "classTraitIds": [
+        "assassintrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "timebreaker",
+        "assassintrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "tahmkench",
+      "apiName": "TFT17_TahmKench",
+      "name": "Tahm Kench",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/823c9f8101b2b5a3.png",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "hptank"
+      ],
+      "unknownTraitIds": [
+        "tahmkenchuniquetrait"
+      ],
+      "allTraitIds": [
+        "tahmkenchuniquetrait",
+        "hptank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "galio",
+      "apiName": "TFT17_Galio",
+      "name": "The Mighty Mech",
+      "cost": 4,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/7f3c95dfa1e26daa.png",
+      "originTraitIds": [
+        "mecha"
+      ],
+      "classTraitIds": [
+        "flextrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "mecha",
+        "flextrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "xayah",
+      "apiName": "TFT17_Xayah",
+      "name": "Xayah",
+      "cost": 4,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/94a07560984e98a1.png",
+      "originTraitIds": [
+        "stargazer"
+      ],
+      "classTraitIds": [
+        "rangedtrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "stargazer",
+        "rangedtrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "bard",
+      "apiName": "TFT17_Bard",
+      "name": "Bard",
+      "cost": 5,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/0c2f6b22cbc24ebd.png",
+      "originTraitIds": [
+        "astronaut"
+      ],
+      "classTraitIds": [
+        "manatrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "astronaut",
+        "manatrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "blitzcrank",
+      "apiName": "TFT17_Blitzcrank",
+      "name": "Blitzcrank",
+      "cost": 5,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/e254c3b5b92e19c9.png",
+      "originTraitIds": [
+        "blitzcrankuniquetrait",
+        "spacegroove"
+      ],
+      "classTraitIds": [
+        "shieldtank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blitzcrankuniquetrait",
+        "spacegroove",
+        "shieldtank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "fiora",
+      "apiName": "TFT17_Fiora",
+      "name": "Fiora",
+      "cost": 5,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/65a5418b95494143.png",
+      "originTraitIds": [
+        "fiorauniquetrait",
+        "animasquad"
+      ],
+      "classTraitIds": [
+        "meleetrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "fiorauniquetrait",
+        "animasquad",
+        "meleetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "graves",
+      "apiName": "TFT17_Graves",
+      "name": "Graves",
+      "cost": 5,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/ac7d402fc82fec67.png",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "gravestrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "gravestrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "jhin",
+      "apiName": "TFT17_Jhin",
+      "name": "Jhin",
+      "cost": 5,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/1f48063d55e57b75.png",
+      "originTraitIds": [
+        "darkstar"
+      ],
+      "classTraitIds": [
+        "jhinuniquetrait",
+        "rangedtrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "darkstar",
+        "jhinuniquetrait",
+        "rangedtrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "shen",
+      "apiName": "TFT17_Shen",
+      "name": "Shen",
+      "cost": 5,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/c5d0f99af3e0af01.png",
+      "originTraitIds": [
+        "shenuniquetrait",
+        "timebreaker"
+      ],
+      "classTraitIds": [
+        "resisttank"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "shenuniquetrait",
+        "timebreaker",
+        "resisttank"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "sona",
+      "apiName": "TFT17_Sona",
+      "name": "Sona",
+      "cost": 5,
+      "range": 4,
+      "iconUrl": "/data/assets/latest-set17/86821e4a3a0df61f.png",
+      "originTraitIds": [
+        "sonauniquetrait",
+        "psyops"
+      ],
+      "classTraitIds": [
+        "summontrait"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "sonauniquetrait",
+        "psyops",
+        "summontrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "vex",
+      "apiName": "TFT17_Vex",
+      "name": "Vex",
+      "cost": 5,
+      "range": 6,
+      "iconUrl": "/data/assets/latest-set17/031a1487d80e0fbd.png",
+      "originTraitIds": [
+        "vexuniquetrait",
+        "stargazer"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "vexuniquetrait",
+        "stargazer"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    },
+    {
+      "id": "zed",
+      "apiName": "TFT17_Zed",
+      "name": "Zed",
+      "cost": 5,
+      "range": 1,
+      "iconUrl": "/data/assets/latest-set17/19e815fc039e17ab.png",
+      "originTraitIds": [
+        "zeduniquetrait"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "zeduniquetrait"
+      ],
+      "preview": false,
+      "fieldSources": {
+        "roster": "communityDragon",
+        "cost": "communityDragon",
+        "traits": "communityDragon",
+        "range": "communityDragon",
+        "icon": "communityDragon"
+      }
+    }
+  ]
+}

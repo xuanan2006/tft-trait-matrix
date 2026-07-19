@@ -1,0 +1,3835 @@
+{
+  "meta": {
+    "sourceUrl": "https://tactics.tools/tc/info/set-update",
+    "fetchedAt": "2026-07-19T07:37:35.756Z",
+    "sourceVersion": "pbe",
+    "version": "pbe",
+    "setId": "preview:set18",
+    "setName": "Set 18 Preview: Enchanted Wilds",
+    "preview": true,
+    "sourceMode": "hybrid-preview",
+    "canonicalSource": "tactics.tools",
+    "sources": [
+      {
+        "id": "communityDragon",
+        "label": "CommunityDragon PBE/latest",
+        "role": "future canonical json",
+        "url": "https://raw.communitydragon.org/pbe/cdragon/tft/en_us.json",
+        "status": "checked"
+      },
+      {
+        "id": "tactics.tools",
+        "label": "tactics.tools Set 18 Info",
+        "role": "canonical preview roster",
+        "url": "https://tactics.tools/tc/info/set-update",
+        "status": "ok"
+      },
+      {
+        "id": "mobalytics",
+        "label": "Mobalytics Set 18 Champions",
+        "role": "optional readable text enrichment",
+        "url": "https://mobalytics.gg/tft/set18/champions",
+        "status": "ok"
+      },
+      {
+        "id": "lolchess",
+        "label": "LoLChess Set 18",
+        "role": "validation",
+        "url": "https://lolchess.gg/tft/18?hl=en",
+        "status": "ok"
+      },
+      {
+        "id": "outof.games champions",
+        "label": "Out of Games champion guide",
+        "role": "readable ability fallback",
+        "url": "https://outof.games/realms/tft/guides/575-all-champions-in-teamfight-tactics-enchanted-wilds-set-18/",
+        "status": "ok"
+      },
+      {
+        "id": "outof.games traits",
+        "label": "Out of Games trait guide",
+        "role": "trait breakpoint fallback",
+        "url": "https://outof.games/realms/tft/guides/574-all-traits-in-teamfight-tactics-enchanted-wilds-set-18/",
+        "status": "ok"
+      }
+    ],
+    "warnings": [
+      "CommunityDragon pbe does not expose a complete Set 18 object yet; using preview sources.",
+      "Mobalytics champion page was fetched, but no stable preview parser matched its current markup.",
+      "LoLChess Set 18 page did not contain most sampled tactics.tools champions.",
+      "TFT18_LuxFae trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxCoven trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxSolar trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxPrimal trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxEldritch trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxBlossom trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxInferno trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxElderwood trait mismatch: Out of Games also lists Avatar (+ chosen Origin).",
+      "TFT18_LuxLunar trait mismatch: Out of Games also lists Avatar (+ chosen Origin)."
+    ],
+    "verifiedAt": "2026-07-19T07:37:35.756Z"
+  },
+  "traits": [
+    {
+      "id": "adaptor",
+      "apiName": "TFT18_Adaptor",
+      "name": "Adaptor",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/dfe13d19eb595e32.svg",
+      "description": "Innate: Adaptor abilities change depending on whether their Attack Damage or Ability Power is higher. Adaptors gain Ability Power or Attack Damage, whichever is higher.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "AD or AP"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Increased AD or AP"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased AD or AP"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "apexpredator",
+      "apiName": "TFT18_ApexPredator",
+      "name": "Apex Predator",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/17334038e7ecd0a1.svg",
+      "description": "There is 1 champion that uses the Apex Predator trait in TFT Set 18: The Elder Dragon (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "attuned",
+      "apiName": "TFT18_Attuned",
+      "name": "Attuned",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/4a9276284c80fcee.svg",
+      "description": "There is 1 champion that uses the Attuned trait in TFT Set 18: Alune (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "avatar",
+      "apiName": "TFT18_Avatar",
+      "name": "Avatar",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/c83abeec089d1ebc.svg",
+      "description": "There is 1 champion that uses the Avatar trait in TFT Set 18: Lux (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "blossom",
+      "apiName": "TFT18_Blossom",
+      "name": "Blossom",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/1564350d0f29e99b.svg",
+      "description": "After combat, your Wisps are empowered. Blossom champions gain Attack Damage, Ability Power, and max Health.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "Wisps are upgraded"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "Wisps appear in every shop"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 8,
+          "style": 3,
+          "label": "Gain gold after buying a Wisp"
+        },
+        {
+          "minUnits": 9,
+          "maxUnits": 10,
+          "style": 3,
+          "label": "You can buy 2 Wisps per round"
+        },
+        {
+          "minUnits": 11,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "Wisps overflow with power"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games + local Set 18 tier rule",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "bountyseeker",
+      "apiName": "TFT18_BountySeeker",
+      "name": "Bounty Seeker",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/e868cc211031cc91.svg",
+      "description": "There is 1 champion that uses the Bounty Seeker trait in TFT Set 18: Draven (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "brawler",
+      "apiName": "TFT18_Brawler",
+      "name": "Brawler",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/af3e67af5e62226e.svg",
+      "description": "Your team gains max Health. Brawlers gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Health"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Increased Health"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased Health"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "caustic",
+      "apiName": "TFT18_Caustic",
+      "name": "Caustic",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/4184ed0646951fa8.svg",
+      "description": "There is 1 champion that uses the Caustic trait in TFT Set 18: Kog'Maw (3-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "coven",
+      "apiName": "TFT18_Coven",
+      "name": "Coven",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/72e24446e67c2a03.svg",
+      "description": "Gather Essence by killing champions, plus more by losing player combat. Beginning at a set Essence threshold, choose to convert Essence into rewards or keep gathering. Each reward requires increasing amounts of Essence.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Essence per kill, Essence per loss"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Increased Essence per kill and per loss"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "Increased again"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased again"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "defender",
+      "apiName": "TFT18_Defender",
+      "name": "Defender",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/4733ce9082fea6d8.svg",
+      "description": "Your team gains Armor and Magic Resist. Defenders gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Armor & MR"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Increased Armor & MR"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased Armor & MR"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "elderwood",
+      "apiName": "TFT18_Elderwood",
+      "name": "Elderwood",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/0f7a9aab3458165e.svg",
+      "description": "Gain placeable Elderwood plants. Plants gain max Health and Ability Power per Elderwood star level.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "A Stonebark Tree and a Lifebloom"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "A second Stonebark Tree"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 8,
+          "style": 3,
+          "label": "And the Deepwood Protector"
+        },
+        {
+          "minUnits": 9,
+          "maxUnits": 10,
+          "style": 3,
+          "label": "Plants star up to 2-star"
+        },
+        {
+          "minUnits": 11,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "Plants star up to 3-star"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games + local Set 18 tier rule",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "eldritch",
+      "apiName": "TFT18_Eldritch",
+      "name": "Eldritch",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/61f3bf38e7d61de9.svg",
+      "description": "The ally on the Eldritch hex is sacrificed at combat start, granting your team Health. Eldritch champions gain additional stats based on the sacrifice's Role, Star Level, and Cost.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Health"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Bonus is stronger"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "The sacrifice doesn't die — it also gains bonus stats"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "emeraldaspect",
+      "apiName": "TFT18_EmeraldAspect",
+      "name": "Emerald Aspect",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/c31f4f1ffe1990b5.svg",
+      "description": "There is 1 champion that uses the Emerald Aspect trait in TFT Set 18: Taric (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "executioner",
+      "apiName": "TFT18_Executioner",
+      "name": "Executioner",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/da0bb87c8a109909.svg",
+      "description": "(2) Executioners gain Precision and Critical Strike Chance",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Executioners gain Precision and Critical Strike Chance"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Additionally, enemies bleed for bonus true damage over time"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bleed damage increased"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "fae",
+      "apiName": "TFT18_Fae",
+      "name": "Fae",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/be9b76152ad65981.svg",
+      "description": "Your team's damage, healing, and shielding attracts Pixies. Each Pixie grants Fae champions Attack Damage and Ability Power, and after they fall below a Health threshold, they heal for each Pixie.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "AD/AP and Heal"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased AD/AP and Heal. After attracting 7 Pixies, start attracting Golden Pixies instead, which grant gold"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "florafatalis",
+      "apiName": "TFT18_FloraFatalis",
+      "name": "Flora Fatalis",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/4b29ed967e571db1.svg",
+      "description": "Flora Fatalis champions harvest enemies on takedown.",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 1,
+          "style": 1,
+          "label": "Gain Mana on takedown"
+        },
+        {
+          "minUnits": 2,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "And grant a max Health heal to the lowest Health ally"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "greenfather",
+      "apiName": "TFT18_Greenfather",
+      "name": "Greenfather",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/b0b142689c7508f0.svg",
+      "description": "There is 1 champion that uses the Greenfather trait in TFT Set 18: Ivern (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "hunter",
+      "apiName": "TFT18_Hunter",
+      "name": "Hunter",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/af6861b3b8fc9080.svg",
+      "description": "Hunters gain Attack Damage. If a Hunter hasn't swapped targets for a few seconds, they gain Damage Amp.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "AD"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Increased AD"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Increased AD"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased AD"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "inferno",
+      "apiName": "TFT18_Inferno",
+      "name": "Inferno",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/7bd3afe691d55ba9.svg",
+      "description": "Inferno damage Burns and Wounds enemies. Inferno Burns stack with other Burns.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Burn"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "After combat, some of your shop slots without an Inferno champion ignite, rolling a champion one tier higher"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "More ignited shop slots, stronger Burn"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "More ignited shop slots, stronger Burn"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "invoker",
+      "apiName": "TFT18_Invoker",
+      "name": "Invoker",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/5c85c07cc9b4194c.svg",
+      "description": "Your team gains Mana Regen, increased for Invokers.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Mana Regen"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Increased Mana Regen"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Increased Mana Regen"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased Mana Regen"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "juggernaut",
+      "apiName": "TFT18_Juggernaut",
+      "name": "Juggernaut",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/37045d12d070a342.svg",
+      "description": "Your team gains Durability. Juggernauts gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Durability"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Increased Durability"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased Durability"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "lunar",
+      "apiName": "TFT18_Lunar",
+      "name": "Lunar",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/27e6420163a757b1.svg",
+      "description": "Lunar champions and adjacent allies gain Attack Speed and Ability Power. Lunar champions gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "AS & AP"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Increased AS & AP"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Increased AS & AP"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased AS & AP"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "monolith",
+      "apiName": "TFT18_Monolith",
+      "name": "Monolith",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/e67bd5017c05b288.svg",
+      "description": "There is 1 champion that uses the Monolith trait in TFT Set 18: Malphite (4-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "oldgrowth",
+      "apiName": "TFT18_OldGrowth",
+      "name": "Old Growth",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/0d9a8747b9e44587.svg",
+      "description": "There is 1 champion that uses the Old Growth trait in TFT Set 18: Maokai (5-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "primal",
+      "apiName": "TFT18_Primal",
+      "name": "Primal",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/12a420cb60335ecc.svg",
+      "description": "Choose one of four Primal Blessings.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Primal Blessing 1"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Primal Blessing 2"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "rapidfire",
+      "apiName": "TFT18_Rapidfire",
+      "name": "Rapidfire",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/fe0c055329e7ae72.svg",
+      "description": "Your team gains Attack Speed. Rapidfire champions gain more on every attack, up to a stack cap.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "AS per attack"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Increased AS per attack"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Increased AS per attack"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased AS per attack"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "ravager",
+      "apiName": "TFT18_Ravager",
+      "name": "Ravager",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/d0ab72a5ff89a383.svg",
+      "description": "Ravagers gain Omnivamp. Additionally, Ravagers deal bonus damage, doubled against units below a Health threshold.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Bonus Damage"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Increased Bonus Damage"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased Bonus Damage"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "riftbeast",
+      "apiName": "TFT18_Riftbeast",
+      "name": "Riftbeast",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/547452220e263763.svg",
+      "description": "The jungle monster trait. Riftbeasts are buffed individually via the Alpha Mark system.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "Use the Alpha Mark to grant a Riftbeast their unique Buff"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "Every few combats, your next shop is overrun with Riftbeasts"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 9,
+          "style": 3,
+          "label": "On combat start and every 5 seconds, Riftbeasts grow, gaining stats"
+        },
+        {
+          "minUnits": 10,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "Increased maximum team size"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games + local Set 18 tier rule",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "rival",
+      "apiName": "TFT18_Rival",
+      "name": "Rival",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/d2e981ace3d131da.svg",
+      "description": "Rivals collect takedowns, gaining 3 if they take down another Rival. Only applies to your strongest Rival.",
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 1,
+          "style": 1,
+          "label": "Only active while fielding 1 Rival"
+        },
+        {
+          "minUnits": 2,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Rivals can be fielded together"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "solar",
+      "apiName": "TFT18_Solar",
+      "name": "Solar",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/76a1bcf261c6d674.svg",
+      "description": "(3) Your champions gain a max Health shield and deal bonus magic damage. Gain additional bonuses for each unique 3-star champion — increased shield and magic damage per 3-star, conversion of some bonus magic damage to true damage, and 3-star champions ascending to 4-star during combat",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Your champions gain a max Health shield and deal bonus magic damage. Gain additional bonuses for each unique 3-star champion — increased shield and magic damage per 3-star, conversion of some bonus magic damage to true damage, and 3-star champions ascending to 4-star during combat"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "spellweaver",
+      "apiName": "TFT18_Spellweaver",
+      "name": "Spellweaver",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/b6700c7d3832fdcb.svg",
+      "description": "Your team gains Ability Power. Spellweavers gain more, plus extra Ability Power whenever a Spellweaver casts an Ability.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "AP per cast"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Increased AP per cast"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased AP per cast"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "sprykin",
+      "apiName": "TFT18_Sprykin",
+      "name": "Sprykin",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set18/48904d6d1f38748a.svg",
+      "description": "Gain the Big Furry Friend (BFF). Drop a Sprykin onto the BFF to pick its Rider. The BFF's attacks and Ability change depending on whether the Rider is melee or ranged.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "The Rider gains Health and Attack Speed"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "A percentage of the BFF's Ability applies to your team"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "A percentage of the BFF's Ability applies to your Sprykin champions"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "summoner",
+      "apiName": "TFT18_Summoner",
+      "name": "Summoner",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/784c558b9eb543ef.svg",
+      "description": "Summoners empower their summons in different ways:",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Empower Summons"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Improve each effect by 50%"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "thornmaiden",
+      "apiName": "TFT18_Thornmaiden",
+      "name": "Thornmaiden",
+      "category": "unknown",
+      "iconUrl": "/data/assets/pbe-preview-set18/d3fd33606adb7060.svg",
+      "description": "There is 1 champion that uses the Thornmaiden trait in TFT Set 18: Zyra (4-cost).",
+      "effects": [],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": null,
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "vanguard",
+      "apiName": "TFT18_Vanguard",
+      "name": "Vanguard",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set18/5fee08aa391123ad.svg",
+      "description": "At combat start and after dropping below a Health threshold, Vanguards gain a max Health Shield.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "max Health shield"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Increased max Health shield"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Increased max Health shield. Gain Durability while shielded"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "outof.games",
+        "description": "outof.games",
+        "effects": "outof.games",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    }
+  ],
+  "units": [
+    {
+      "id": "akali",
+      "apiName": "TFT18_Akali",
+      "name": "Akali",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Kunai Strike",
+        "description": "Adaptor (AD): Throw a volley of kunai at the target, dealing physical damage. If the target is Burning, deal additional damage. Adaptor (AP): If the Ability kills, cast it again."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/36347b70c3820b9b.avif",
+      "originTraitIds": [
+        "inferno"
+      ],
+      "classTraitIds": [
+        "adaptor",
+        "ravager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "inferno",
+        "adaptor",
+        "ravager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "camille",
+      "apiName": "TFT18_Camille",
+      "name": "Camille",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 25,
+      "ability": {
+        "name": "Defensive Sweep",
+        "description": "Slice the target for physical damage and gain a Shield."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/245cf5c6b2bb49d8.avif",
+      "originTraitIds": [
+        "coven"
+      ],
+      "classTraitIds": [
+        "ravager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "coven",
+        "ravager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "cinderling",
+      "apiName": "TFT18_Cinderling",
+      "name": "Cinderling",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Razor Leaves",
+        "description": "Summon five razor-sharp leaves that converge on the current target, dealing physical damage and applying Wound and Burn. Scarlet Buff (Riftbeast Alpha Mark): Cinderling gains Attack Damage each cast."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/2472c2deeee66a4b.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "hunter"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "hunter"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "karma",
+      "apiName": "TFT18_Karma",
+      "name": "Karma",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Karmic Bond",
+        "description": "Tether the current target, dealing magic damage over time. Then release a burst of power around them, dealing magic damage to all enemies in a radius and Slowing them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/e467546fb90bbb11.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "spellweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "kobuko",
+      "apiName": "TFT18_Kobuko",
+      "name": "Kobuko",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Dance of Life",
+        "description": "Restore Health over a duration. The next attack is replaced with a bash that deals magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/d3abd79a99c4b7d8.avif",
+      "originTraitIds": [
+        "sprykin"
+      ],
+      "classTraitIds": [
+        "brawler"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "sprykin",
+        "brawler"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "leona",
+      "apiName": "TFT18_Leona",
+      "name": "Leona",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Shield Bash",
+        "description": "Passive: Start combat with bonus Armor and Magic Resist that decays over time. Active: Bash the current target, dealing magic damage and Stunning them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/122a724bc89c9a3b.avif",
+      "originTraitIds": [
+        "solar"
+      ],
+      "classTraitIds": [
+        "defender"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "solar",
+        "defender"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "ornn",
+      "apiName": "TFT18_Ornn",
+      "name": "Ornn",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Bellows Breath",
+        "description": "Active: Gain a Shield and deal magic damage to enemies in a cone. Quest: Each player combat, Ornn stores damage blocked as Forge Power, doubled at 3-star. Gain an Artifact Anvil the first time Forge Power reaches the threshold."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/af7d5d7fa939b416.avif",
+      "originTraitIds": [
+        "elderwood"
+      ],
+      "classTraitIds": [
+        "defender"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "defender"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "pebbles",
+      "apiName": "TFT18_Pebbles",
+      "name": "Pebbles",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 55,
+      "ability": {
+        "name": "Azure Laser",
+        "description": "Begin consuming max Mana per second and channel a laser on the target. Each second while casting, deal magic damage and reduce their Magic Resist. Teal Buff (Riftbeast Alpha Mark): Gain Mana Regen for every few seconds channeled."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/dae4c40a031e5d2b.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "invoker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "invoker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "rakan",
+      "apiName": "TFT18_Rakan",
+      "name": "Rakan",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 20,
+      "manaMax": 90,
+      "ability": {
+        "name": "Entrancing Dance",
+        "description": "Gain a Shield. Then grant the ally who has dealt the most damage this combat decaying Attack Speed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/fb95dcff6147d506.avif",
+      "originTraitIds": [
+        "fae"
+      ],
+      "classTraitIds": [
+        "juggernaut",
+        "vanguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "fae",
+        "juggernaut",
+        "vanguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "reksai",
+      "apiName": "TFT18_RekSai",
+      "name": "Rek'Sai",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Uproot",
+        "description": "Passive: Restore Health each second, tripled for a few seconds after casting. Active: Lunge out of the ground, Stunning adjacent enemies and dealing magic damage to them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/e2a0ba98844dd9ee.avif",
+      "originTraitIds": [
+        "eldritch"
+      ],
+      "classTraitIds": [
+        "brawler"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "eldritch",
+        "brawler"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "varus",
+      "apiName": "TFT18_Varus",
+      "name": "Varus",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 30,
+      "manaMax": 110,
+      "ability": {
+        "name": "Piercing Arrow",
+        "description": "Wind up, then fire an arrow at the most enemies in line with the target. It deals physical damage to enemies hit, reduced for each enemy it passes through."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/fcb2db96803bee71.avif",
+      "originTraitIds": [
+        "inferno"
+      ],
+      "classTraitIds": [
+        "rapidfire"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "inferno",
+        "rapidfire"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "veigar",
+      "apiName": "TFT18_Veigar",
+      "name": "Veigar",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Primordial Burst",
+        "description": "Launch a giant blast at the target that deals magic damage, increased if they're below a max Health threshold. If they die, permanently gain Ability Power ."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/83e37b07d263327b.avif",
+      "originTraitIds": [
+        "eldritch",
+        "sprykin"
+      ],
+      "classTraitIds": [
+        "spellweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "eldritch",
+        "sprykin",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "xayah",
+      "apiName": "TFT18_Xayah",
+      "name": "Xayah",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Deadly Plumage",
+        "description": "Gain Attack Speed for the next few attacks. These attacks are replaced with feathers that deal physical damage and reduce Armor."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/25b5ab59ff2d90c0.avif",
+      "originTraitIds": [
+        "elderwood",
+        "fae"
+      ],
+      "classTraitIds": [
+        "rapidfire"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "fae",
+        "rapidfire"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "yorick",
+      "apiName": "TFT18_Yorick",
+      "name": "Yorick",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 50,
+      "manaMax": 110,
+      "ability": {
+        "name": "Last Rites",
+        "description": "Passive: On death, spawn a Spirit Walker. Active: Restore Health and strike the target, dealing physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/a667d184b16d0136.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "juggernaut",
+        "summoner"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "juggernaut",
+        "summoner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "alistar",
+      "apiName": "TFT18_Alistar",
+      "name": "Alistar",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Triumphant Roar",
+        "description": "Roar, restoring Health, cleansing disables, and healing the two lowest percent Health allies. Then slam the current target, dealing magic damage and Stunning them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/5ed543effd0f6053.avif",
+      "originTraitIds": [
+        "elderwood"
+      ],
+      "classTraitIds": [
+        "brawler"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "brawler"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "caitlyn",
+      "apiName": "TFT18_Caitlyn",
+      "name": "Caitlyn",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 3,
+      "ability": {
+        "name": "Headshot",
+        "description": "Passive: Every third attack is replaced with a Headshot that deals physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/2ec744056cb5ffa3.avif",
+      "originTraitIds": [
+        "coven"
+      ],
+      "classTraitIds": [
+        "hunter"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "coven",
+        "hunter"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "elise",
+      "apiName": "TFT18_Elise",
+      "name": "Elise",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 20,
+      "manaMax": 70,
+      "ability": {
+        "name": "Spider Queen",
+        "description": "Transform into a spider and gain max Health. Attacks while in Spider Form deal bonus magic damage and heal. Subsequent casts grant decaying Attack Speed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/e38039c90bd48bd3.avif",
+      "originTraitIds": [
+        "coven"
+      ],
+      "classTraitIds": [
+        "vanguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "coven",
+        "vanguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "gromp",
+      "apiName": "TFT18_Gromp",
+      "name": "Gromp",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 45,
+      "ability": {
+        "name": "Belchy Bubble",
+        "description": "Adaptor (AP): Belch a noxious bubble at the current target that explodes on the first enemy hit, dealing magic damage. Enemies within a 1-hex radius take magic damage over time. Adaptor (AD): Heavily Slows the target. Purple Buff (Riftbeast Alpha Mark): Every few seconds, Gromp gains Ability Power."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/7d8684035fe37a94.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "adaptor"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "adaptor"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "kayle",
+      "apiName": "TFT18_Kayle",
+      "name": "Kayle",
+      "cost": 2,
+      "range": 4,
+      "manaStart": null,
+      "manaMax": null,
+      "ability": {
+        "name": "Solar Judgement — Passive (no mana cost)",
+        "description": "Kayle ascends based on her star level, granting stacking bonuses:"
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/42e1d9be6a71fa7c.avif",
+      "originTraitIds": [
+        "solar"
+      ],
+      "classTraitIds": [
+        "rapidfire"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "solar",
+        "rapidfire"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": null,
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "leblanc",
+      "apiName": "TFT18_LeBlanc",
+      "name": "LeBlanc",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Mirror Image",
+        "description": "Passive: After player combat, your strongest LeBlanc has a chance to create a copy of an ally on your board, increased per takedown. Active: Launch a mirror image at the current target, dealing magic damage to them and adjacent enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/8db5bd10ee02d46a.avif",
+      "originTraitIds": [
+        "elderwood"
+      ],
+      "classTraitIds": [
+        "spellweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "murkwolf",
+      "apiName": "TFT18_Murkwolf",
+      "name": "Murkwolf",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Rending Claws",
+        "description": "Leap to the lowest Health enemy within range and deal physical damage. The next few attacks deal bonus physical damage. Grey Buff (Riftbeast Alpha Mark): Gain Precision and Critical Strike Chance, increased based on missing Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/ca356e2a9454ba08.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "ravager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "ravager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "scuttlecrab",
+      "apiName": "TFT18_Scuttlecrab",
+      "name": "Scuttlecrab",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Can You Dig It?",
+        "description": "Passive: Attacks are replaced by a dance that deals physical damage to all adjacent enemies. Active: Burrow underground, gaining Durability and healing over the duration. Green Buff (Riftbeast Alpha Mark): When allies fall below a Health threshold, they restore max Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/460e20af45363ff1.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "sejuani",
+      "apiName": "TFT18_Sejuani",
+      "name": "Sejuani",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 90,
+      "ability": {
+        "name": "Sun's Wrath",
+        "description": "Gain a Shield. Then cleave in a cone dealing magic damage and strike in a line, dealing magic damage to enemies hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/d460586fcc83cf42.avif",
+      "originTraitIds": [
+        "solar"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "solar",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "shen",
+      "apiName": "TFT18_Shen",
+      "name": "Shen",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Ki Barrier",
+        "description": "Grant a Shield to Shen and a nearby damaged ally. Both of their next few attacks gain Attack Speed and deal bonus magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/65e1d1b5fc6beb4b.avif",
+      "originTraitIds": [
+        "inferno"
+      ],
+      "classTraitIds": [
+        "defender"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "inferno",
+        "defender"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "teemo",
+      "apiName": "TFT18_Teemo",
+      "name": "Teemo",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Fungus Among Us",
+        "description": "Throw 2 clusters of mushrooms that deal magic damage to the nearest enemies. Then hurl a giant mushroom that deals magic damage to the target."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/c580d1db9f97fe04.avif",
+      "originTraitIds": [
+        "sprykin"
+      ],
+      "classTraitIds": [
+        "invoker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "sprykin",
+        "invoker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "warwick",
+      "apiName": "TFT18_Warwick",
+      "name": "Warwick",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Jaws of The Beast",
+        "description": "Bite the current target, dealing physical damage and healing for a percentage of the damage dealt. Gain Attack Speed for the rest of combat."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/6afcccd55f2fdf24.avif",
+      "originTraitIds": [
+        "eldritch"
+      ],
+      "classTraitIds": [
+        "ravager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "eldritch",
+        "ravager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "yunara",
+      "apiName": "TFT18_Yunara",
+      "name": "Yunara",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 35,
+      "ability": {
+        "name": "Cultivation of Spirit",
+        "description": "Dash, then launch an orb at the current target that deals physical damage and splits, dealing physical damage to nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/23623747405bfba8.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "executioner"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "executioner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "azir",
+      "apiName": "TFT18_Azir",
+      "name": "Azir",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 35,
+      "ability": {
+        "name": "Arise!",
+        "description": "Gain Attack Speed and summon soldiers for the next few attacks. These attacks are replaced by commands directing each soldier to deal magic damage per attack."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/fde044e89d9c016a.avif",
+      "originTraitIds": [
+        "eldritch"
+      ],
+      "classTraitIds": [
+        "executioner",
+        "summoner"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "eldritch",
+        "executioner",
+        "summoner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "cassiopeia",
+      "apiName": "TFT18_Cassiopeia",
+      "name": "Cassiopeia",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Noxious Blast",
+        "description": "Poison the target and the nearest non-poisoned enemy, dealing magic damage over time. Poisons stack."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/2dbd268d731912fc.avif",
+      "originTraitIds": [
+        "coven"
+      ],
+      "classTraitIds": [
+        "spellweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "coven",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "diana",
+      "apiName": "TFT18_Diana",
+      "name": "Diana",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Pale Barrier",
+        "description": "Gain a Shield and send out a moonlight orb to the closest enemies, dealing magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/c27609575e34932c.avif",
+      "originTraitIds": [
+        "lunar"
+      ],
+      "classTraitIds": [
+        "ravager",
+        "vanguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "lunar",
+        "ravager",
+        "vanguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "fiddlesticks",
+      "apiName": "TFT18_Fiddlesticks",
+      "name": "Fiddlesticks",
+      "cost": 3,
+      "range": 2,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Harvest",
+        "description": "Reduce the Magic Resist of the nearest enemies. Then drain life from them over time, healing himself and dealing magic damage to each over the duration."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/411ade99e3f133b1.avif",
+      "originTraitIds": [
+        "florafatalis"
+      ],
+      "classTraitIds": [
+        "defender",
+        "spellweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "florafatalis",
+        "defender",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "hecarim",
+      "apiName": "TFT18_Hecarim",
+      "name": "Hecarim",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 110,
+      "ability": {
+        "name": "Spirit of Dread",
+        "description": "Gain Armor and Magic Resist for 3 seconds and restore Health over the duration. Launch spectral riders at the nearest enemies, dealing magic damage and Stunning them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/7bcef35bcd07cf3f.avif",
+      "originTraitIds": [
+        "elderwood"
+      ],
+      "classTraitIds": [
+        "vanguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "vanguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "khazix",
+      "apiName": "TFT18_KhaZix",
+      "name": "Kha'Zix",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 25,
+      "ability": {
+        "name": "Taste Their Fear",
+        "description": "Leap to the farthest enemy within range, dealing magic damage. If they have no adjacent allies, deal increased magic damage instead and gain Mana."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/9094723d4c717c47.avif",
+      "originTraitIds": [
+        "rival"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rival"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "kogmaw",
+      "apiName": "TFT18_KogMaw",
+      "name": "Kog'Maw",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 15,
+      "manaMax": 60,
+      "ability": {
+        "name": "Raining Artillery",
+        "description": "Adaptor (AD): Launch acid at the two nearest enemies, dealing physical damage. Enemies below a max Health threshold take increased physical damage instead. Adaptor (AP): Damages enemies over time."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/8eac07e51eb82db8.avif",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "invoker",
+        "adaptor"
+      ],
+      "unknownTraitIds": [
+        "caustic"
+      ],
+      "allTraitIds": [
+        "caustic",
+        "invoker",
+        "adaptor"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "krug",
+      "apiName": "TFT18_Krug",
+      "name": "Krug",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 80,
+      "manaMax": 135,
+      "ability": {
+        "name": "Rock and Roll",
+        "description": "Passive: On death, split into two Kruglettes. Active: Gain max Health, then roll into the target, dealing damage. Slate Buff (Riftbeast Alpha Mark): On death, Krug and Kruglettes Shield allies for a percentage of max Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/6e2f2a5e277c4356.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "brawler"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "brawler"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "masteryi",
+      "apiName": "TFT18_MasterYi",
+      "name": "Master Yi",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 3,
+      "ability": {
+        "name": "Wuju Style",
+        "description": "Passive: Every third attack is a Double Strike that hits twice. On takedown, gain a burst of movement speed. Adaptor (AD): Double Strikes grant stacking Attack Speed. Adaptor (AP): Double Strikes deal bonus damage and heal."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/dbc64a74e635d8ed.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "adaptor"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "adaptor"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "rammus",
+      "apiName": "TFT18_Rammus",
+      "name": "Rammus",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 80,
+      "ability": {
+        "name": "Defensive Ball Curl",
+        "description": "Taunt, forcing enemies to attack him. For the duration, gain a Shield plus Armor and Magic Resist. When the Shield breaks, deal physical damage to nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/8456929351142301.avif",
+      "originTraitIds": [
+        "sprykin"
+      ],
+      "classTraitIds": [
+        "defender"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "sprykin",
+        "defender"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "raptor",
+      "apiName": "TFT18_Raptor",
+      "name": "Raptor",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 80,
+      "ability": {
+        "name": "Flock Friends",
+        "description": "Summon 4 untargetable Tinybeaks nearby. Whenever Raptor attacks, the Tinybeaks attack the same enemy, dealing physical damage. Orange Buff (Riftbeast Alpha Mark): Dealing physical damage reduces enemy Armor."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/2d38c584fdef7588.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "summoner",
+        "rapidfire"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "summoner",
+        "rapidfire"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "rengar",
+      "apiName": "TFT18_Rengar",
+      "name": "Rengar",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 10,
+      "manaMax": 50,
+      "ability": {
+        "name": "Savagery",
+        "description": "Jump to the lowest percent Health enemy within range and stab them, dealing physical damage. Then heal for a percentage of their missing Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/ba4dcb979b3caf6f.avif",
+      "originTraitIds": [
+        "rival"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rival"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "tristana",
+      "apiName": "TFT18_Tristana",
+      "name": "Tristana",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Explosive Charge",
+        "description": "Attach an explosive charge to the target. While active, gain infinite range and Attack Speed. After the duration, the charge explodes and splits damage between all enemies within 2 hexes, scaling with each attack made while casting. If an enemy with a charge dies, it transfers to Tristana's new target."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/871d2a831e8089e1.avif",
+      "originTraitIds": [
+        "fae",
+        "sprykin"
+      ],
+      "classTraitIds": [
+        "hunter"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "fae",
+        "sprykin",
+        "hunter"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "vi",
+      "apiName": "TFT18_Vi",
+      "name": "Vi",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Furious Fists",
+        "description": "Passive: On attack, restore Health. Active: Unleash a primal roar, restoring Health. Then gain Attack Speed, Durability, and immunity to crowd control ."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/20df13069709f94f.avif",
+      "originTraitIds": [
+        "primal"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "primal",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "ahri",
+      "apiName": "TFT18_Ahri",
+      "name": "Ahri",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 20,
+      "manaMax": 100,
+      "ability": {
+        "name": "Spirit Bomb",
+        "description": "Launch a spirit bomb at the target within range that has the most surrounding enemies. It deals magic damage to enemies in a radius, reduced per hex from the epicenter."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/441f088b3120982e.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "spellweaver"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "amumu",
+      "apiName": "TFT18_Amumu",
+      "name": "Amumu",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 140,
+      "ability": {
+        "name": "Tantrum",
+        "description": "Passive: Every second, restore Health and deal magic damage to nearby enemies. Active: Deal magic damage to nearby enemies and Stun them — with an extended stun duration if the target is Burning."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/75bbe9fb2db00ef2.avif",
+      "originTraitIds": [
+        "inferno"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "inferno",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "ancientsentinel",
+      "apiName": "TFT18_AncientSentinel",
+      "name": "Ancient Sentinel",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 50,
+      "manaMax": 140,
+      "ability": {
+        "name": "Azure Shockwave",
+        "description": "Gain a Shield. Slam the ground, sending a fissure toward the most enemies. Enemies hit are briefly knocked up, take magic damage, and are Mana Reaved (increasing the Mana cost of their next Ability cast). Blue Buff (Riftbeast Alpha Mark): Each time Sentinel casts, allies gain Mana Regen."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/facaf920be9bb64d.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "vanguard",
+        "invoker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "vanguard",
+        "invoker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "aphelios",
+      "apiName": "TFT18_Aphelios",
+      "name": "Aphelios",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Moonlight's Onslaught",
+        "description": "Equip Severum and swipe the target repeatedly, each hit dealing physical damage that scales with max Health. After the onslaught, fire a blast that deals physical damage split among all enemies in a 2-hex radius."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/c517ff16a6f19b04.avif",
+      "originTraitIds": [
+        "lunar"
+      ],
+      "classTraitIds": [
+        "rapidfire"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "lunar",
+        "rapidfire"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "brambleback",
+      "apiName": "TFT18_Brambleback",
+      "name": "Brambleback",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Crimson Fury",
+        "description": "Passive: When the target dies, leap at the next target, dealing physical damage. Active: Gain Attack Damage for a duration. During this time, ignore Armor . Red Buff (Riftbeast Alpha Mark): Attacks Burn enemies and heal Brambleback."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/b8b816dd610d733f.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [
+        "ravager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "riftbeast",
+        "ravager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "ezreal",
+      "apiName": "TFT18_Ezreal",
+      "name": "Ezreal",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Nature's Wrath",
+        "description": "Blink away from the current target, deal physical damage to them, and gain Attack Speed. Every 5th cast consumes the accumulated Attack Speed and fires a blast through the target, dealing physical damage reduced for each enemy it passes through."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/c35524362af3aff2.avif",
+      "originTraitIds": [
+        "elderwood"
+      ],
+      "classTraitIds": [
+        "executioner"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "executioner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "lillia",
+      "apiName": "TFT18_Lillia",
+      "name": "Lillia",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 50,
+      "manaMax": 150,
+      "ability": {
+        "name": "Lilting Lullaby",
+        "description": "Restore Health and send butterflies at nearby enemies. Enemies hit take magic damage and Sleep . If they take damage, they wake up and take additional max Health magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/00db28f903523425.avif",
+      "originTraitIds": [
+        "fae"
+      ],
+      "classTraitIds": [
+        "defender"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "fae",
+        "defender"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "malphite",
+      "apiName": "TFT18_Malphite",
+      "name": "Malphite",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 80,
+      "ability": {
+        "name": "Petrified Bark",
+        "description": "Gain a Shield and become petrified. When the Shield breaks, unleash a wave of dark energy, dealing magic damage to nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/2c1d5396f5c07f5e.avif",
+      "originTraitIds": [
+        "eldritch"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "monolith"
+      ],
+      "allTraitIds": [
+        "eldritch",
+        "monolith"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "morgana",
+      "apiName": "TFT18_Morgana",
+      "name": "Morgana",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Withering Curse",
+        "description": "Passive: Gain Omnivamp. Active: Fire a dark blast at nearby enemies, dealing magic damage and cursing them. Then spawn a withering zone for the same duration that deals magic damage per second. Cursed enemies take more damage per curse."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/56400702fc193c40.avif",
+      "originTraitIds": [
+        "coven"
+      ],
+      "classTraitIds": [
+        "invoker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "coven",
+        "invoker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "nidalee",
+      "apiName": "TFT18_Nidalee",
+      "name": "Nidalee",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Javelin Toss",
+        "description": "Adaptor (AP): Gain Attack Speed for the next few attacks. These attacks are replaced with javelins that deal magic damage. The 3rd attack instead targets the furthest enemy with the least items and deals magic damage. Adaptor (AD): Transform into a melee cougar Fighter that swipes enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/68fed41526ae208b.avif",
+      "originTraitIds": [
+        "primal"
+      ],
+      "classTraitIds": [
+        "adaptor"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "primal",
+        "adaptor"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "t",
+      "apiName": "TFT18_Sett",
+      "name": "Sett",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 60,
+      "manaMax": 150,
+      "ability": {
+        "name": "Haymaker",
+        "description": "Passive: The first time he falls below a max Health threshold each combat, gain 100 Mana. Active: Wind up a big punch, rapidly healing, then deal physical damage in a large cone."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/f4e626a83753100c.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "brawler"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "brawler"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "sivir",
+      "apiName": "TFT18_Sivir",
+      "name": "Sivir",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 20,
+      "manaMax": 60,
+      "ability": {
+        "name": "Boomerang Blade",
+        "description": "Throw a large crossblade that deals physical damage to the current target and bounces between nearby enemies, dealing physical damage each bounce. When this kills an enemy, bounce an additional time."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/ad14ada3f0df4ea1.avif",
+      "originTraitIds": [
+        "primal"
+      ],
+      "classTraitIds": [
+        "hunter"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "primal",
+        "hunter"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "soraka",
+      "apiName": "TFT18_Soraka",
+      "name": "Soraka",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Starcall",
+        "description": "Call down a star on the current target, dealing magic damage. If a star has previously fallen on them, call down additional stars that each deal magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/fb4e90ce7e963bf5.avif",
+      "originTraitIds": [
+        "florafatalis"
+      ],
+      "classTraitIds": [
+        "executioner"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "florafatalis",
+        "executioner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "zyra",
+      "apiName": "TFT18_Zyra",
+      "name": "Zyra",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 45,
+      "ability": {
+        "name": "Rampant Growth",
+        "description": "Spawn plants around the battlefield that attack the nearest enemy repeatedly, each attack dealing magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/93decae61587f36a.avif",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "summoner"
+      ],
+      "unknownTraitIds": [
+        "thornmaiden"
+      ],
+      "allTraitIds": [
+        "thornmaiden",
+        "summoner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "alune",
+      "apiName": "TFT18_Alune",
+      "name": "Alune",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 35,
+      "ability": {
+        "name": "Moonfall",
+        "description": "Rain moonshards split among the nearest enemies, dealing magic damage each. If the moon is full, instead crash it onto the board, dealing magic damage split among all enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/3a5e408549e7b55b.avif",
+      "originTraitIds": [
+        "lunar"
+      ],
+      "classTraitIds": [
+        "spellweaver"
+      ],
+      "unknownTraitIds": [
+        "attuned"
+      ],
+      "allTraitIds": [
+        "attuned",
+        "lunar",
+        "spellweaver"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "ashe",
+      "apiName": "TFT18_Ashe",
+      "name": "Ashe",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 70,
+      "manaMax": 145,
+      "ability": {
+        "name": "Spirit Rift",
+        "description": "Fire an arrow through the longest line of enemies that deals physical damage, reduced per enemy hit. The arrow tears open a rift that deals max Health physical damage per second to enemies within and Slows them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/a582fae9af019a8f.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [
+        "hunter"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "blossom",
+        "hunter"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "draven",
+      "apiName": "TFT18_Draven",
+      "name": "Draven",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 140,
+      "ability": {
+        "name": "Whirling Death",
+        "description": "Passive: Attacks target random enemies in range and apply a Bleed. Every attack has a chance to deal bonus physical damage and apply multiple Bleeds instead. Active: Throw two giant axes toward the enemy with the most Bleeds. Deal physical damage to all enemies hit and consume their Bleed, instantly dealing the remaining damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/b4e2e740957be50d.avif",
+      "originTraitIds": [],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "bountyseeker"
+      ],
+      "allTraitIds": [
+        "bountyseeker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "elderdragon",
+      "apiName": "TFT18_ElderDragon",
+      "name": "Elder Dragon",
+      "cost": 5,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": null,
+        "description": null
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/840bc7c4bbc88b3b.avif",
+      "originTraitIds": [
+        "riftbeast"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "apexpredator"
+      ],
+      "allTraitIds": [
+        "riftbeast",
+        "apexpredator"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": null,
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "traitContributions": {
+        "riftbeast": 2
+      }
+    },
+    {
+      "id": "gnar",
+      "apiName": "TFT18_Gnar",
+      "name": "Gnar",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 70,
+      "ability": {
+        "name": "Rage Gene",
+        "description": "Passive: Gain Rage per second and per attack. Active: Transform into Mega Gnar and leap into the largest group of enemies. Deal physical damage nearby, reduce Armor and Magic Resist, and Stun them. Mega Gnar gains Health and replaces his Ability with Grab n' Throw . Grab n' Throw: Throw the target at the farthest enemy, dealing physical damage to both and to enemies passed through. If there's only 1 enemy left, throw them off the battlefield instead."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/c29701445fcfa104.avif",
+      "originTraitIds": [
+        "elderwood",
+        "sprykin"
+      ],
+      "classTraitIds": [
+        "brawler"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "elderwood",
+        "sprykin",
+        "brawler"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "ivern",
+      "apiName": "TFT18_Ivern",
+      "name": "Ivern",
+      "cost": 5,
+      "range": 3,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Triggerseed",
+        "description": "Passive: Shields from this ability can critically strike with Precision. Active: Grant allies a Shield and Damage Amp. Then deal magic damage to enemies adjacent to them. After casting several times, also grant stacking Attack Speed to targets."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/4e3ab455c0dd1556.avif",
+      "originTraitIds": [],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "greenfather"
+      ],
+      "allTraitIds": [
+        "greenfather"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "kennen",
+      "apiName": "TFT18_Kennen",
+      "name": "Kennen",
+      "cost": 5,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Firestorm",
+        "description": "Charge up, gaining Ability Power per Burning enemy . Then gain a Shield and rush through a nearby group of enemies, dealing magic damage to each. After rushing, unleash a firestorm dealing magic damage split among all enemies hit over time."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/a56195b0e4da0ad8.avif",
+      "originTraitIds": [
+        "inferno"
+      ],
+      "classTraitIds": [
+        "executioner"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "inferno",
+        "executioner"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "luxfae",
+      "apiName": "TFT18_LuxFae",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/57b11adbd1746aa7.avif",
+      "originTraitIds": [
+        "fae"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "fae",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Fae",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "fae": 2
+      }
+    },
+    {
+      "id": "luxcoven",
+      "apiName": "TFT18_LuxCoven",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/d32656bad30a4c64.avif",
+      "originTraitIds": [
+        "coven"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "coven",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Coven",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "coven": 2
+      }
+    },
+    {
+      "id": "luxsolar",
+      "apiName": "TFT18_LuxSolar",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/1c23882d228bad32.avif",
+      "originTraitIds": [
+        "solar"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "solar",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Solar",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "solar": 2
+      }
+    },
+    {
+      "id": "luxprimal",
+      "apiName": "TFT18_LuxPrimal",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/46a6b3d38d0580f8.avif",
+      "originTraitIds": [
+        "primal"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "primal",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Primal",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "primal": 2
+      }
+    },
+    {
+      "id": "luxeldritch",
+      "apiName": "TFT18_LuxEldritch",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/f8532d6cbc8a7c0e.avif",
+      "originTraitIds": [
+        "eldritch"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "eldritch",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Eldritch",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "eldritch": 2
+      }
+    },
+    {
+      "id": "luxblossom",
+      "apiName": "TFT18_LuxBlossom",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/2b6b0ff5e57270b2.avif",
+      "originTraitIds": [
+        "blossom"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "blossom",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Blossom",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "blossom": 2
+      }
+    },
+    {
+      "id": "luxinferno",
+      "apiName": "TFT18_LuxInferno",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/3989beb3768026d1.avif",
+      "originTraitIds": [
+        "inferno"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "inferno",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Inferno",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "inferno": 2
+      }
+    },
+    {
+      "id": "luxelderwood",
+      "apiName": "TFT18_LuxElderwood",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/c12d72a2cad80ea0.avif",
+      "originTraitIds": [
+        "elderwood"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "elderwood",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Elderwood",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "elderwood": 2
+      }
+    },
+    {
+      "id": "luxlunar",
+      "apiName": "TFT18_LuxLunar",
+      "name": "Lux",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Final Spark",
+        "description": "Passive: On cast, all allies that share a trait with Lux gain Mana. Active: Fire a laser toward the largest group of enemies that deals magic damage, reduced for each enemy hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/e326210aecaae897.avif",
+      "originTraitIds": [
+        "lunar"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [
+        "avatar"
+      ],
+      "allTraitIds": [
+        "lunar",
+        "avatar"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools",
+        "traitContributions": "local Set 18 rule"
+      },
+      "variantLabel": "Lunar",
+      "selectionGroupId": "set18-lux",
+      "traitContributions": {
+        "lunar": 2
+      }
+    },
+    {
+      "id": "maokai",
+      "apiName": "TFT18_Maokai",
+      "name": "Maokai",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Sow the Seeds",
+        "description": "Passive: After every threshold of damage blocked, a sapling jumps toward a nearby enemy and deals magic damage. On death, saplings jump out. Active: Deal magic damage to the target and restore missing Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/32d434b035eab1ac.avif",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [
+        "oldgrowth"
+      ],
+      "allTraitIds": [
+        "oldgrowth",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "taric",
+      "apiName": "TFT18_Taric",
+      "name": "Taric",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 65,
+      "ability": {
+        "name": "Emerald Radiance",
+        "description": "Passive: The first time Taric or his paired ally drops below a Health threshold, unleash emerald energy from both, granting a Shield to nearby allies. Active: Restore Health. Taric and his paired ally deal bonus magic damage on their next few attacks."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set18/1805fe44e21f3ee5.avif",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "vanguard"
+      ],
+      "unknownTraitIds": [
+        "emeraldaspect"
+      ],
+      "allTraitIds": [
+        "emeraldaspect",
+        "vanguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "outof.games",
+        "ability": "outof.games",
+        "icon": "tactics.tools"
+      }
+    }
+  ]
+}

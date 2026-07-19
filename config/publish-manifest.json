@@ -1,0 +1,15 @@
+{
+  "defaultSnapshotId": "pbe-preview-set18",
+  "datasets": [
+    {
+      "id": "pbe-preview-set18",
+      "version": "pbe",
+      "setId": "preview:set18"
+    },
+    {
+      "id": "latest-set17",
+      "version": "latest",
+      "setId": "17"
+    }
+  ]
+}
