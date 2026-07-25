@@ -216,10 +216,12 @@ function App() {
   const [linkPaths, setLinkPaths] = useState<LinkPath[]>([]);
   const [linkSize, setLinkSize] = useState({ width: 0, height: 0 });
   const [showBackToTop, setShowBackToTop] = useState(false);
+  const [stickyControlsHeight, setStickyControlsHeight] = useState(0);
   const matrixShellRef = useRef<HTMLElement | null>(null);
   const matrixLayerRef = useRef<HTMLDivElement | null>(null);
   const matrixGridRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
+  const controlsRowRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     void loadPublishedData();
@@ -230,6 +232,22 @@ function App() {
     updateBackToTop();
     window.addEventListener('scroll', updateBackToTop, { passive: true });
     return () => window.removeEventListener('scroll', updateBackToTop);
+  }, []);
+
+  useLayoutEffect(() => {
+    const controlsRow = controlsRowRef.current;
+    if (!controlsRow) {
+      return;
+    }
+
+    const updateHeight = () => {
+      setStickyControlsHeight(Math.ceil(controlsRow.getBoundingClientRect().height));
+    };
+
+    updateHeight();
+    const observer = new ResizeObserver(updateHeight);
+    observer.observe(controlsRow);
+    return () => observer.disconnect();
   }, []);
 
   const traitsById = useMemo(() => {
@@ -700,7 +718,10 @@ function App() {
   const hasFilters = searchText.trim().length > 0 || selectedTraitFilterIds.length > 0;
 
   return (
-    <main className="app-shell">
+    <main
+      className="app-shell"
+      style={{ '--sticky-controls-height': `${stickyControlsHeight}px` } as CSSProperties}
+    >
       <header className="topbar">
         <div>
           <p className="eyebrow">Teamfight Tactics</p>
@@ -796,7 +817,10 @@ function App() {
         </div>
       )}
 
-      <section className={`controls-row ${isSearchOpen ? 'search-active' : ''}`}>
+      <section
+        className={`controls-row ${isSearchOpen ? 'search-active' : ''}`}
+        ref={controlsRowRef}
+      >
         <div
           className="search-combobox"
           onFocusCapture={() => setIsSearchOpen(true)}
