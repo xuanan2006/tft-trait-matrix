@@ -1,7 +1,10 @@
 import {
   ArrowRightLeft,
+  ChevronLeft,
+  ChevronRight,
   ChevronUp,
   CircleAlert,
+  CircleHelp,
   DatabaseZap,
   RefreshCw,
   Search,
@@ -195,6 +198,69 @@ const tierRank: Record<TraitTier, number> = {
 
 const floatingPopoverOpenEvent = 'tft-floating-popover-open';
 const selectionHistoryLimit = 50;
+const onboardingStorageKey = 'tft-trait-matrix:onboarding-v1';
+
+const onboardingSteps = [
+  {
+    eyebrow: 'Bước 1',
+    title: 'Chọn đúng Set và phiên bản',
+    description: 'Bắt đầu với đúng dữ liệu trước khi thử các kết nối Tộc/Hệ.',
+    bullets: [
+      'Version chọn nguồn dữ liệu, chẳng hạn latest hoặc pbe.',
+      'Set chọn mùa TFT bạn muốn khám phá.',
+      'Khi đổi Set, website sẽ tải dữ liệu mới và xóa các lựa chọn trước đó.'
+    ],
+    note: 'Preview data có thể thay đổi trước hoặc trong giai đoạn PBE.'
+  },
+  {
+    eyebrow: 'Bước 2',
+    title: 'Đọc ma trận Tộc/Hệ',
+    description: 'Mỗi ô là giao điểm giữa một Tộc và một Hệ.',
+    bullets: [
+      'Origin tương ứng với Tộc.',
+      'Class tương ứng với Hệ.',
+      'Transpose đổi vị trí hai trục để bạn quan sát theo hướng thuận tiện hơn.'
+    ]
+  },
+  {
+    eyebrow: 'Bước 3',
+    title: 'Chọn Tướng cho đội hình',
+    description: 'Nhấn vào Tướng để thêm hoặc loại Tướng đó khỏi đội hình thử nghiệm.',
+    bullets: [
+      'Tướng chưa chọn có portrait đen trắng và viền cost nhẹ.',
+      'Tướng đã chọn trở lại đầy đủ màu sắc với viền cost rõ hơn.',
+      'Các bản sao của cùng một Tướng ở nhiều ô luôn được đồng bộ.',
+      'Di chuột vào Tướng để xem giá, tầm đánh, Tộc/Hệ và kỹ năng khi có dữ liệu.'
+    ]
+  },
+  {
+    eyebrow: 'Bước 4',
+    title: 'Quan sát liên kết phát sáng',
+    description: 'Các Tướng được chọn có chung Tộc/Hệ sẽ tạo thành những đường kết nối.',
+    bullets: [
+      'Ánh sáng mạnh dần khi trait đạt mốc cao hơn.',
+      'Nhờ đó, bạn có thể nhận ra trait sắp đạt mốc tiếp theo nhanh hơn.'
+    ],
+    tiers: [
+      { label: 'Đồng', className: 'bronze' },
+      { label: 'Bạc', className: 'silver' },
+      { label: 'Vàng', className: 'gold' },
+      { label: 'Kim Cương', className: 'prismatic' }
+    ]
+  },
+  {
+    eyebrow: 'Bước 5',
+    title: 'Tìm nhiều Tộc/Hệ cùng lúc',
+    description: 'Search box hỗ trợ tên Tướng và nhiều trait filter trong cùng một lần tìm.',
+    bullets: [
+      'Nhập tên Tộc/Hệ rồi chọn suggestion bằng chuột hoặc Enter.',
+      'Tiếp tục tìm để thêm trait, hoặc nhấn dấu x trên filter để xóa.',
+      'Các filter dùng OR: Tướng chỉ cần thuộc ít nhất một trait đã chọn.',
+      'Bạn vẫn có thể nhập tên Tướng để thu hẹp kết quả sau khi thêm filter.'
+    ],
+    note: 'Đây là công cụ visualization miễn phí, không phải tier list hay hệ thống tự động xây dựng đội hình.'
+  }
+] as const;
 
 function App() {
   const [data, setData] = useState<TftData | null>(null);
@@ -217,6 +283,17 @@ function App() {
   const [linkSize, setLinkSize] = useState({ width: 0, height: 0 });
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [stickyControlsHeight, setStickyControlsHeight] = useState(0);
+  const [isOnboardingOpen, setIsOnboardingOpen] = useState(() => {
+    if (typeof window === 'undefined') {
+      return false;
+    }
+    try {
+      return window.localStorage.getItem(onboardingStorageKey) !== 'seen';
+    } catch {
+      return true;
+    }
+  });
+  const [onboardingStep, setOnboardingStep] = useState(0);
   const matrixShellRef = useRef<HTMLElement | null>(null);
   const matrixLayerRef = useRef<HTMLDivElement | null>(null);
   const matrixGridRef = useRef<HTMLDivElement | null>(null);
@@ -713,6 +790,20 @@ function App() {
     window.scrollTo({ top: 0, behavior: reducedMotion ? 'auto' : 'smooth' });
   }
 
+  const openOnboarding = useCallback(() => {
+    setOnboardingStep(0);
+    setIsOnboardingOpen(true);
+  }, []);
+
+  const dismissOnboarding = useCallback(() => {
+    try {
+      window.localStorage.setItem(onboardingStorageKey, 'seen');
+    } catch {
+      // The guide can still close when browser storage is unavailable.
+    }
+    setIsOnboardingOpen(false);
+  }, []);
+
   const fetchedLabel = data?.meta.fetchedAt ? formatter.format(new Date(data.meta.fetchedAt)) : '';
   const hasMatrix = loadState === 'ready' && data && matrix.rows.length > 0 && matrix.columns.length > 0;
   const hasFilters = searchText.trim().length > 0 || selectedTraitFilterIds.length > 0;
@@ -756,6 +847,14 @@ function App() {
               ))}
             </select>
           </label>
+          <button
+            className="icon-button guide-trigger"
+            type="button"
+            onClick={openOnboarding}
+          >
+            <CircleHelp size={16} aria-hidden="true" />
+            <span>Hướng dẫn</span>
+          </button>
         </div>
       </header>
 
@@ -1038,7 +1137,191 @@ function App() {
       >
         <ChevronUp size={22} aria-hidden="true" />
       </button>
+      {isOnboardingOpen && typeof document !== 'undefined'
+        ? createPortal(
+            <OnboardingModal
+              step={onboardingStep}
+              onStepChange={setOnboardingStep}
+              onClose={dismissOnboarding}
+            />,
+            document.body
+          )
+        : null}
     </main>
+  );
+}
+
+function OnboardingModal({
+  step,
+  onStepChange,
+  onClose
+}: {
+  step: number;
+  onStepChange: (step: number) => void;
+  onClose: () => void;
+}) {
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const closeButtonRef = useRef<HTMLButtonElement | null>(null);
+  const currentStep = onboardingSteps[step];
+  const isFirstStep = step === 0;
+  const isLastStep = step === onboardingSteps.length - 1;
+
+  useEffect(() => {
+    const previouslyFocused = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    closeButtonRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        onClose();
+        return;
+      }
+
+      if (event.key !== 'Tab' || !dialogRef.current) {
+        return;
+      }
+
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>(
+          'button:not(:disabled), [href], input:not(:disabled), select:not(:disabled), [tabindex]:not([tabindex="-1"])'
+        )
+      );
+      if (focusable.length === 0) {
+        return;
+      }
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+      previouslyFocused?.focus();
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      className="onboarding-backdrop"
+      onMouseDown={(event) => {
+        if (event.target === event.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      <div
+        className="onboarding-dialog"
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="onboarding-title"
+      >
+        <header className="onboarding-header">
+          <div className="onboarding-brand">
+            <CircleHelp size={20} aria-hidden="true" />
+            <div>
+              <span>Hướng dẫn nhanh</span>
+              <strong>TFT Trait Matrix</strong>
+            </div>
+          </div>
+          <button
+            className="onboarding-close"
+            ref={closeButtonRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Đóng hướng dẫn"
+            title="Đóng hướng dẫn"
+          >
+            <X size={18} aria-hidden="true" />
+          </button>
+        </header>
+
+        <nav className="onboarding-progress" aria-label="Các bước hướng dẫn">
+          {onboardingSteps.map((guideStep, index) => (
+            <button
+              className={`${index === step ? 'active' : ''} ${index < step ? 'completed' : ''}`}
+              type="button"
+              onClick={() => onStepChange(index)}
+              aria-label={`Mở ${guideStep.eyebrow}: ${guideStep.title}`}
+              aria-current={index === step ? 'step' : undefined}
+              key={guideStep.title}
+            >
+              <span>{index + 1}</span>
+            </button>
+          ))}
+        </nav>
+
+        <section className="onboarding-content">
+          <p className="onboarding-eyebrow">{currentStep.eyebrow}</p>
+          <h2 id="onboarding-title">{currentStep.title}</h2>
+          <p className="onboarding-description">{currentStep.description}</p>
+          <ul className="onboarding-list">
+            {currentStep.bullets.map((bullet) => (
+              <li key={bullet}>{bullet}</li>
+            ))}
+          </ul>
+          {'tiers' in currentStep && currentStep.tiers ? (
+            <div className="onboarding-tiers" aria-label="Các mốc kích hoạt trait">
+              {currentStep.tiers.map((tier) => (
+                <span className={`tier-${tier.className}`} key={tier.label}>
+                  {tier.label}
+                </span>
+              ))}
+            </div>
+          ) : null}
+          {'note' in currentStep && currentStep.note ? (
+            <p className="onboarding-note">{currentStep.note}</p>
+          ) : null}
+        </section>
+
+        <footer className="onboarding-footer">
+          <button className="onboarding-skip" type="button" onClick={onClose}>
+            Bỏ qua
+          </button>
+          <div>
+            {!isFirstStep && (
+              <button
+                className="icon-button ghost-action"
+                type="button"
+                onClick={() => onStepChange(step - 1)}
+              >
+                <ChevronLeft size={16} aria-hidden="true" />
+                <span>Quay lại</span>
+              </button>
+            )}
+            <button
+              className="icon-button primary-action"
+              type="button"
+              onClick={() => {
+                if (isLastStep) {
+                  onClose();
+                } else {
+                  onStepChange(step + 1);
+                }
+              }}
+            >
+              <span>{isLastStep ? 'Bắt đầu khám phá' : 'Tiếp theo'}</span>
+              {isLastStep ? (
+                <Sparkles size={16} aria-hidden="true" />
+              ) : (
+                <ChevronRight size={16} aria-hidden="true" />
+              )}
+            </button>
+          </div>
+        </footer>
+      </div>
+    </div>
   );
 }
 
