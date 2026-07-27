@@ -36,14 +36,22 @@ npm ci
 npm run build
 ```
 
-Cloudflare Pages settings:
+Cloudflare Workers build settings:
 
 - Production branch: `main`
 - Build command: `npm ci && npm run build`
 - Build output directory: `dist`
 - Node.js version: `22`
 
-Pushing to `main` triggers the public deployment. Snapshot and icon files are immutable; `catalog.json` is revalidated so newly published data becomes available without stale paths.
+The GitHub Pages workflow also deploys each push to `main` at:
+
+`https://xuanan2006.github.io/tft-trait-matrix/`
+
+In the repository settings, select **Pages > Build and deployment > GitHub Actions**.
+The Pages workflow runs `npm run build:pages` with `/tft-trait-matrix/` as its
+base path while the standard build keeps `/` for Cloudflare. Snapshot and icon
+files are immutable; `catalog.json` is revalidated so newly published data
+becomes available without stale paths.
 
 ## Fan Project Notice
 

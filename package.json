@@ -8,6 +8,7 @@
     "data:publish": "node scripts/publish-data.mjs",
     "data:publish:test-failure": "node scripts/publish-data.mjs --simulate-failure",
     "build": "tsc -b && vite build",
+    "build:pages": "tsc -b && vite build --base=/tft-trait-matrix/",
     "preview": "vite preview"
   },
   "dependencies": {

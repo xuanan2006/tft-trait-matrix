@@ -162,6 +162,28 @@ type PopoverPosition = {
 type LoadState = 'loading' | 'ready' | 'empty' | 'error';
 type MessageTone = 'info' | 'error';
 
+function resolvePublicUrl(path?: string) {
+  if (!path || !path.startsWith('/')) {
+    return path;
+  }
+
+  return `${import.meta.env.BASE_URL}${path.slice(1)}`;
+}
+
+function resolveDataAssetUrls(data: TftData): TftData {
+  return {
+    ...data,
+    traits: data.traits.map((trait) => ({
+      ...trait,
+      iconUrl: resolvePublicUrl(trait.iconUrl)
+    })),
+    units: data.units.map((unit) => ({
+      ...unit,
+      iconUrl: resolvePublicUrl(unit.iconUrl)
+    }))
+  };
+}
+
 const fallbackTraits: Record<MatrixAxis, AxisTrait> = {
   origin: {
     id: '__other_origin',
@@ -567,7 +589,7 @@ function App() {
     setMessageTone('info');
 
     try {
-      const response = await fetch('/data/catalog.json', { cache: 'no-cache' });
+      const response = await fetch(resolvePublicUrl('/data/catalog.json')!, { cache: 'no-cache' });
       if (!response.ok) {
         throw new Error('Published data catalog could not be loaded.');
       }
@@ -585,7 +607,9 @@ function App() {
       await loadPublishedSnapshot(defaultSnapshot, false);
     } catch (catalogError) {
       try {
-        const fallbackResponse = await fetch('/data/tft-current.json', { cache: 'no-cache' });
+        const fallbackResponse = await fetch(resolvePublicUrl('/data/tft-current.json')!, {
+          cache: 'no-cache'
+        });
         if (!fallbackResponse.ok) {
           throw catalogError;
         }
@@ -606,7 +630,7 @@ function App() {
           defaultSnapshotId: fallbackEntry.id,
           snapshots: [fallbackEntry]
         });
-        setData(fallbackData);
+        setData(resolveDataAssetUrls(fallbackData));
         setSelectedVersion(fallbackEntry.version);
         setSelectedSetId(fallbackEntry.setId);
         setSelectedSnapshotId(fallbackEntry.id);
@@ -636,7 +660,7 @@ function App() {
     setSelectedSetId(snapshot.setId);
 
     try {
-      const response = await fetch(snapshot.path);
+      const response = await fetch(resolvePublicUrl(snapshot.path)!);
       if (!response.ok) {
         throw new Error(`${snapshot.setName} could not be loaded. Please try again.`);
       }
@@ -645,7 +669,7 @@ function App() {
         throw new Error(`${snapshot.setName} contains invalid published data.`);
       }
 
-      setData(nextData);
+      setData(resolveDataAssetUrls(nextData));
       setSelectedSnapshotId(snapshot.id);
       setLoadState('ready');
       resetSelection();
