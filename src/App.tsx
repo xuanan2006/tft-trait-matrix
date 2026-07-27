@@ -34,6 +34,11 @@ import {
   onboardingSteps,
   uiText
 } from './i18n';
+import {
+  getVietnameseAbility,
+  getVietnameseTrait,
+  getVietnameseTraitEffectLabel
+} from './dataTranslations';
 
 type TraitCategory = 'origin' | 'class' | 'unknown';
 type TraitTier = 'inactive' | 'bronze' | 'silver' | 'unique' | 'gold' | 'prismatic';
@@ -389,10 +394,13 @@ function App() {
       return (
         tierRank[b.tier] - tierRank[a.tier] ||
         b.count - a.count ||
-        a.trait.name.localeCompare(b.trait.name)
+        getTraitDisplayName(a.trait, language).localeCompare(
+          getTraitDisplayName(b.trait, language),
+          language
+        )
       );
     });
-  }, [selectedTraitCounts, traitsById]);
+  }, [language, selectedTraitCounts, traitsById]);
 
   const selectedTraitFilters = useMemo(() => {
     return selectedTraitFilterIds
@@ -405,14 +413,19 @@ function App() {
     const selectedIds = new Set(selectedTraitFilterIds);
     return (data?.traits ?? [])
       .filter((trait) => !selectedIds.has(trait.id))
-      .filter((trait) => !query || trait.name.toLowerCase().includes(query))
+      .filter((trait) => {
+        const localizedName = getTraitDisplayName(trait, language).toLowerCase();
+        return !query || trait.name.toLowerCase().includes(query) || localizedName.includes(query);
+      })
       .sort((a, b) => {
-        const aStarts = query && a.name.toLowerCase().startsWith(query) ? 0 : 1;
-        const bStarts = query && b.name.toLowerCase().startsWith(query) ? 0 : 1;
-        return aStarts - bStarts || a.name.localeCompare(b.name);
+        const aName = getTraitDisplayName(a, language);
+        const bName = getTraitDisplayName(b, language);
+        const aStarts = query && aName.toLowerCase().startsWith(query) ? 0 : 1;
+        const bStarts = query && bName.toLowerCase().startsWith(query) ? 0 : 1;
+        return aStarts - bStarts || aName.localeCompare(bName, language);
       })
       .slice(0, 8);
-  }, [data, searchText, selectedTraitFilterIds]);
+  }, [data, language, searchText, selectedTraitFilterIds]);
 
   useEffect(() => {
     setActiveSuggestionIndex(0);
@@ -446,7 +459,12 @@ function App() {
       if (!unitSearch) return true;
 
       const traitText = unit.allTraitIds
-        .map((traitId) => traitsById.get(traitId)?.name ?? '')
+        .map((traitId) => {
+          const trait = traitsById.get(traitId);
+          return trait
+            ? `${trait.name} ${getTraitDisplayName(trait, language)}`
+            : '';
+        })
         .join(' ')
         .toLowerCase();
 
@@ -481,8 +499,8 @@ function App() {
       }
     }
 
-    const rows = toAxisTraits(usedRowIds, traitsById);
-    const columns = toAxisTraits(usedColumnIds, traitsById);
+    const rows = toAxisTraits(usedRowIds, traitsById, language);
+    const columns = toAxisTraits(usedColumnIds, traitsById, language);
 
     if (needsOtherRow) {
       rows.push(fallbackTraits[rowAxis]);
@@ -514,7 +532,7 @@ function App() {
     }
 
     return { rowAxis, columnAxis, rows, columns, unitsByCell, visibleUnitCount: visibleUnits.length };
-  }, [data, isTransposed, searchText, selectedTraitFilterIds, traitsById]);
+  }, [data, isTransposed, language, searchText, selectedTraitFilterIds, traitsById]);
 
   useLayoutEffect(() => {
     const shell = matrixShellRef.current;
@@ -1660,14 +1678,14 @@ function TraitHeader({
   position: HeaderPosition;
   count: number;
 }) {
-  const { text } = useI18n();
+  const { language, text } = useI18n();
   const floating = useFloatingPopover<HTMLDivElement>();
   const hasPopover = !trait.isFallback;
   const displayName = trait.isFallback
     ? trait.category === 'origin'
       ? text.otherOrigin
       : text.otherClass
-    : trait.name;
+    : getTraitDisplayName(trait, language);
   return (
     <>
       <div
@@ -1703,7 +1721,7 @@ function TraitFilterToken({
   count: number;
   onRemove: () => void;
 }) {
-  const { text } = useI18n();
+  const { language, text } = useI18n();
   const floating = useFloatingPopover<HTMLButtonElement>();
   const visualTier = trait.isUnique ? 'unique' : getTraitTier(trait, count);
   return (
@@ -1717,11 +1735,13 @@ function TraitFilterToken({
         onPointerLeave={floating.closePointer}
         onFocus={floating.openFocus}
         onBlur={floating.closeFocus}
-        aria-label={interpolate(text.removeFilter, { name: trait.name })}
+        aria-label={interpolate(text.removeFilter, {
+          name: getTraitDisplayName(trait, language)
+        })}
         aria-describedby={floating.isOpen ? floating.tooltipId : undefined}
       >
         {trait.iconUrl ? <img src={trait.iconUrl} alt="" /> : <ShieldQuestion size={14} aria-hidden="true" />}
-        <span>{trait.name}</span>
+        <span>{getTraitDisplayName(trait, language)}</span>
         <X size={12} aria-hidden="true" />
       </button>
       {floating.isOpen && <TraitStatusPopover trait={trait} count={count} floating={floating} />}
@@ -1744,7 +1764,7 @@ function TraitSuggestionOption({
   onHover: () => void;
   onSelect: () => void;
 }) {
-  const { text } = useI18n();
+  const { language, text } = useI18n();
   const floating = useFloatingPopover<HTMLButtonElement>();
   const visualTier = trait.isUnique ? 'unique' : getTraitTier(trait, count);
   return (
@@ -1771,7 +1791,7 @@ function TraitSuggestionOption({
       >
         {trait.iconUrl ? <img src={trait.iconUrl} alt="" /> : <ShieldQuestion size={16} aria-hidden="true" />}
         <span>
-          <strong>{trait.name}</strong>
+          <strong>{getTraitDisplayName(trait, language)}</strong>
           <small>{trait.isUnique ? text.unique : formatCategory(trait.category, text)}</small>
         </span>
         <span className="suggestion-add">{text.enter}</span>
@@ -1794,7 +1814,7 @@ function TraitStatusPopover({
     position: PopoverPosition | null;
   };
 }) {
-  const { text } = useI18n();
+  const { language, text } = useI18n();
   if (typeof document === 'undefined') return null;
 
   const currentTier = getTraitTier(trait, count);
@@ -1826,14 +1846,16 @@ function TraitStatusPopover({
           )}
         </span>
         <span className="trait-popover-heading">
-          <strong>{trait.name}</strong>
+          <strong>{getTraitDisplayName(trait, language)}</strong>
           <span>{trait.isUnique ? text.uniqueTrait : formatCategory(trait.category, text)}</span>
         </span>
         <span className={`trait-tier-badge tier-${visualTier}`}>
           {formatTraitTier(visualTier, text)}
         </span>
       </div>
-      {trait.description && <p className="trait-description">{trait.description}</p>}
+      {getTraitDisplayDescription(trait, language) && (
+        <p className="trait-description">{getTraitDisplayDescription(trait, language)}</p>
+      )}
       <div className="trait-current-status">
         <span>{text.selectedContribution}</span>
         <strong>{count}</strong>
@@ -1848,7 +1870,9 @@ function TraitStatusPopover({
       {effects.length > 0 ? (
         <div
           className="trait-effects"
-          aria-label={interpolate(text.thresholds, { name: trait.name })}
+          aria-label={interpolate(text.thresholds, {
+            name: getTraitDisplayName(trait, language)
+          })}
         >
           {effects.map((effect) => {
             const effectTier = getEffectTier(effect.style);
@@ -1860,7 +1884,11 @@ function TraitStatusPopover({
                 key={`${effect.minUnits}-${effect.maxUnits}-${effect.style}`}
               >
                 <strong>{formatThreshold(effect)}</strong>
-                <span>{effect.label || formatTraitTier(effectTier, text)}</span>
+                <span>
+                  {(language === 'vi'
+                    ? getVietnameseTraitEffectLabel(effect.label)
+                    : effect.label) || formatTraitTier(effectTier, text)}
+                </span>
                 {(isCurrent || isNext) && (
                   <small>{isCurrent ? text.current : text.next}</small>
                 )}
@@ -1893,7 +1921,7 @@ function UnitChip({
   columnId?: string;
   onToggle: (unitId: string) => void;
 }) {
-  const { text } = useI18n();
+  const { language, text } = useI18n();
   const chipRef = useRef<HTMLButtonElement | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const tooltipId = useId();
@@ -1915,9 +1943,12 @@ function UnitChip({
   const uniqueTraits = getUnitTraits(unit, traitsById, 'unique');
   const otherTraits = getUnitTraits(unit, traitsById, 'other');
   const manaText = formatMana(unit);
-  const abilityName = unit.ability?.name?.trim();
-  const abilityDescription = unit.ability?.description?.trim();
-  const displayName = getUnitDisplayName(unit);
+  const abilityTranslation =
+    language === 'vi' ? getVietnameseAbility(unit.ability?.name?.trim()) : undefined;
+  const abilityName = abilityTranslation?.name ?? unit.ability?.name?.trim();
+  const abilityDescription =
+    abilityTranslation?.description ?? unit.ability?.description?.trim();
+  const displayName = getUnitDisplayName(unit, language);
 
   const positionPopover = useCallback(() => {
     const chip = chipRef.current;
@@ -2083,6 +2114,7 @@ function PopoverTraitGroup({
   traits: Trait[];
   unit: Unit;
 }) {
+  const { language } = useI18n();
   if (traits.length === 0) {
     return null;
   }
@@ -2094,7 +2126,8 @@ function PopoverTraitGroup({
         {traits
           .map((trait) => {
             const contribution = getTraitContribution(unit, trait.id);
-            return contribution > 1 ? `${trait.name} x${contribution}` : trait.name;
+            const name = getTraitDisplayName(trait, language);
+            return contribution > 1 ? `${name} x${contribution}` : name;
           })
           .join(' / ')}
       </strong>
@@ -2103,6 +2136,7 @@ function PopoverTraitGroup({
 }
 
 function TraitPill({ status }: { status: TraitStatus }) {
+  const { language } = useI18n();
   const floating = useFloatingPopover<HTMLSpanElement>();
   const thresholdText = status.nextThreshold
     ? `${status.count}/${status.nextThreshold}`
@@ -2121,7 +2155,7 @@ function TraitPill({ status }: { status: TraitStatus }) {
         aria-describedby={floating.isOpen ? floating.tooltipId : undefined}
       >
         {status.trait.iconUrl ? <img src={status.trait.iconUrl} alt="" /> : null}
-        <span>{status.trait.name}</span>
+        <span>{getTraitDisplayName(status.trait, language)}</span>
         <strong>{thresholdText}</strong>
       </span>
       {floating.isOpen && (
@@ -2255,11 +2289,20 @@ function getPlacementTraitIds(
   });
 }
 
-function toAxisTraits(traitIds: Set<string>, traitsById: Map<string, Trait>) {
+function toAxisTraits(
+  traitIds: Set<string>,
+  traitsById: Map<string, Trait>,
+  language: Language
+) {
   return Array.from(traitIds)
     .map((traitId) => traitsById.get(traitId))
     .filter((trait): trait is Trait => Boolean(trait))
-    .sort((a, b) => a.name.localeCompare(b.name)) as AxisTrait[];
+    .sort((a, b) =>
+      getTraitDisplayName(a, language).localeCompare(
+        getTraitDisplayName(b, language),
+        language
+      )
+    ) as AxisTrait[];
 }
 
 function getUnitTraits(unit: Unit, traitsById: Map<string, Trait>, group: MatrixAxis | 'unique' | 'other') {
@@ -2360,8 +2403,29 @@ function formatMana(unit: Unit) {
   return `${unit.manaStart}/${unit.manaMax}`;
 }
 
-function getUnitDisplayName(unit: Unit) {
-  return unit.variantLabel ? `${unit.name} (${unit.variantLabel})` : unit.name;
+function getTraitDisplayName(trait: Trait, language: Language) {
+  if (language === 'vi') {
+    return getVietnameseTrait(trait.name)?.name ?? trait.name;
+  }
+  return trait.name;
+}
+
+function getTraitDisplayDescription(trait: Trait, language: Language) {
+  if (language === 'vi') {
+    return getVietnameseTrait(trait.name)?.description ?? trait.description;
+  }
+  return trait.description;
+}
+
+function getUnitDisplayName(unit: Unit, language: Language) {
+  if (!unit.variantLabel) {
+    return unit.name;
+  }
+  const localizedVariant =
+    language === 'vi'
+      ? getVietnameseTrait(unit.variantLabel)?.name ?? unit.variantLabel
+      : unit.variantLabel;
+  return `${unit.name} (${localizedVariant})`;
 }
 
 function axisLabel(axis: MatrixAxis, text: UiText) {
