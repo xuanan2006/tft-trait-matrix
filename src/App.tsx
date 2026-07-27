@@ -6,6 +6,7 @@ import {
   CircleAlert,
   CircleHelp,
   DatabaseZap,
+  Languages,
   RefreshCw,
   Search,
   ShieldQuestion,
@@ -15,15 +16,24 @@ import {
 } from 'lucide-react';
 import {
   type CSSProperties,
+  createContext,
   useCallback,
   useEffect,
   useId,
   useLayoutEffect,
   useMemo,
   useRef,
-  useState
+  useState,
+  useContext
 } from 'react';
 import { createPortal } from 'react-dom';
+import {
+  type Language,
+  type UiText,
+  interpolate,
+  onboardingSteps,
+  uiText
+} from './i18n';
 
 type TraitCategory = 'origin' | 'class' | 'unknown';
 type TraitTier = 'inactive' | 'bronze' | 'silver' | 'unique' | 'gold' | 'prismatic';
@@ -201,14 +211,6 @@ const fallbackTraits: Record<MatrixAxis, AxisTrait> = {
   }
 };
 
-const formatter = new Intl.DateTimeFormat(undefined, {
-  year: 'numeric',
-  month: 'short',
-  day: 'numeric',
-  hour: '2-digit',
-  minute: '2-digit'
-});
-
 const tierRank: Record<TraitTier, number> = {
   inactive: 0,
   bronze: 1,
@@ -221,70 +223,44 @@ const tierRank: Record<TraitTier, number> = {
 const floatingPopoverOpenEvent = 'tft-floating-popover-open';
 const selectionHistoryLimit = 50;
 const onboardingStorageKey = 'tft-trait-matrix:onboarding-v1';
+const languageStorageKey = 'tft-trait-matrix:language-v1';
+const I18nContext = createContext<{ language: Language; text: UiText }>({
+  language: 'en',
+  text: uiText.en
+});
 
-const onboardingSteps = [
-  {
-    eyebrow: 'Bước 1',
-    title: 'Chọn đúng Set và phiên bản',
-    description: 'Bắt đầu với đúng dữ liệu trước khi thử các kết nối Tộc/Hệ.',
-    bullets: [
-      'Version chọn nguồn dữ liệu, chẳng hạn latest hoặc pbe.',
-      'Set chọn mùa TFT bạn muốn khám phá.',
-      'Khi đổi Set, website sẽ tải dữ liệu mới và xóa các lựa chọn trước đó.'
-    ],
-    note: 'Preview data có thể thay đổi trước hoặc trong giai đoạn PBE.'
-  },
-  {
-    eyebrow: 'Bước 2',
-    title: 'Đọc ma trận Tộc/Hệ',
-    description: 'Mỗi ô là giao điểm giữa một Tộc và một Hệ.',
-    bullets: [
-      'Origin tương ứng với Tộc.',
-      'Class tương ứng với Hệ.',
-      'Transpose đổi vị trí hai trục để bạn quan sát theo hướng thuận tiện hơn.'
-    ]
-  },
-  {
-    eyebrow: 'Bước 3',
-    title: 'Chọn Tướng cho đội hình',
-    description: 'Nhấn vào Tướng để thêm hoặc loại Tướng đó khỏi đội hình thử nghiệm.',
-    bullets: [
-      'Tướng chưa chọn có portrait đen trắng và viền cost nhẹ.',
-      'Tướng đã chọn trở lại đầy đủ màu sắc với viền cost rõ hơn.',
-      'Các bản sao của cùng một Tướng ở nhiều ô luôn được đồng bộ.',
-      'Di chuột vào Tướng để xem giá, tầm đánh, Tộc/Hệ và kỹ năng khi có dữ liệu.'
-    ]
-  },
-  {
-    eyebrow: 'Bước 4',
-    title: 'Quan sát liên kết phát sáng',
-    description: 'Các Tướng được chọn có chung Tộc/Hệ sẽ tạo thành những đường kết nối.',
-    bullets: [
-      'Ánh sáng mạnh dần khi trait đạt mốc cao hơn.',
-      'Nhờ đó, bạn có thể nhận ra trait sắp đạt mốc tiếp theo nhanh hơn.'
-    ],
-    tiers: [
-      { label: 'Đồng', className: 'bronze' },
-      { label: 'Bạc', className: 'silver' },
-      { label: 'Vàng', className: 'gold' },
-      { label: 'Kim Cương', className: 'prismatic' }
-    ]
-  },
-  {
-    eyebrow: 'Bước 5',
-    title: 'Tìm nhiều Tộc/Hệ cùng lúc',
-    description: 'Search box hỗ trợ tên Tướng và nhiều trait filter trong cùng một lần tìm.',
-    bullets: [
-      'Nhập tên Tộc/Hệ rồi chọn suggestion bằng chuột hoặc Enter.',
-      'Tiếp tục tìm để thêm trait, hoặc nhấn dấu x trên filter để xóa.',
-      'Các filter dùng OR: Tướng chỉ cần thuộc ít nhất một trait đã chọn.',
-      'Bạn vẫn có thể nhập tên Tướng để thu hẹp kết quả sau khi thêm filter.'
-    ],
-    note: 'Đây là công cụ visualization miễn phí, không phải tier list hay hệ thống tự động xây dựng đội hình.'
+function useI18n() {
+  return useContext(I18nContext);
+}
+
+function readStoredLanguage(): Language | null {
+  if (typeof window === 'undefined') {
+    return null;
   }
-] as const;
+  try {
+    const stored = window.localStorage.getItem(languageStorageKey);
+    return stored === 'en' || stored === 'vi' ? stored : null;
+  } catch {
+    return null;
+  }
+}
+
+function hasSeenOnboarding() {
+  if (typeof window === 'undefined') {
+    return false;
+  }
+  try {
+    return window.localStorage.getItem(onboardingStorageKey) === 'seen';
+  } catch {
+    return false;
+  }
+}
 
 function App() {
+  const [language, setLanguage] = useState<Language>(() => readStoredLanguage() ?? 'en');
+  const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(
+    () => readStoredLanguage() === null
+  );
   const [data, setData] = useState<TftData | null>(null);
   const [catalog, setCatalog] = useState<SnapshotCatalog | null>(null);
   const [loadState, setLoadState] = useState<LoadState>('loading');
@@ -306,14 +282,7 @@ function App() {
   const [showBackToTop, setShowBackToTop] = useState(false);
   const [stickyControlsHeight, setStickyControlsHeight] = useState(0);
   const [isOnboardingOpen, setIsOnboardingOpen] = useState(() => {
-    if (typeof window === 'undefined') {
-      return false;
-    }
-    try {
-      return window.localStorage.getItem(onboardingStorageKey) !== 'seen';
-    } catch {
-      return true;
-    }
+    return readStoredLanguage() !== null && !hasSeenOnboarding();
   });
   const [onboardingStep, setOnboardingStep] = useState(0);
   const matrixShellRef = useRef<HTMLElement | null>(null);
@@ -321,10 +290,26 @@ function App() {
   const matrixGridRef = useRef<HTMLDivElement | null>(null);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
   const controlsRowRef = useRef<HTMLElement | null>(null);
+  const text = uiText[language];
+  const formatter = useMemo(
+    () =>
+      new Intl.DateTimeFormat(language === 'vi' ? 'vi-VN' : 'en-US', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      }),
+    [language]
+  );
 
   useEffect(() => {
     void loadPublishedData();
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   useEffect(() => {
     const updateBackToTop = () => setShowBackToTop(window.scrollY > 320);
@@ -591,12 +576,12 @@ function App() {
     try {
       const response = await fetch(resolvePublicUrl('/data/catalog.json')!, { cache: 'no-cache' });
       if (!response.ok) {
-        throw new Error('Published data catalog could not be loaded.');
+        throw new Error(text.catalogLoadError);
       }
 
       const publishedCatalog = (await response.json()) as SnapshotCatalog;
       if (!Array.isArray(publishedCatalog.snapshots) || publishedCatalog.snapshots.length === 0) {
-        throw new Error('Published data catalog is empty.');
+        throw new Error(text.catalogEmpty);
       }
 
       const defaultSnapshot =
@@ -638,7 +623,7 @@ function App() {
         resetFilters();
         setLoadState('ready');
         setMessageTone('error');
-        setMessage('Published catalog unavailable. Showing the fallback dataset.');
+        setMessage(text.catalogUnavailable);
       } catch (fallbackError) {
         setData(null);
         setLoadState('error');
@@ -646,7 +631,7 @@ function App() {
         setMessage(
           fallbackError instanceof Error
             ? fallbackError.message
-            : 'Published TFT data could not be loaded.'
+            : text.dataLoadError
         );
       }
     }
@@ -662,11 +647,11 @@ function App() {
     try {
       const response = await fetch(resolvePublicUrl(snapshot.path)!);
       if (!response.ok) {
-        throw new Error(`${snapshot.setName} could not be loaded. Please try again.`);
+        throw new Error(interpolate(text.snapshotLoadError, { name: snapshot.setName }));
       }
       const nextData = (await response.json()) as TftData;
       if (!nextData?.meta || !Array.isArray(nextData.units) || !Array.isArray(nextData.traits)) {
-        throw new Error(`${snapshot.setName} contains invalid published data.`);
+        throw new Error(interpolate(text.invalidSnapshot, { name: snapshot.setName }));
       }
 
       setData(resolveDataAssetUrls(nextData));
@@ -687,8 +672,8 @@ function App() {
       setMessageTone('error');
       setMessage(
         error instanceof Error
-          ? `${error.message} The current dataset is still available.`
-          : 'The selected dataset could not be loaded. The current dataset is still available.'
+          ? `${error.message} ${text.currentDatasetRetained}`
+          : text.selectedDatasetError
       );
     } finally {
       setIsDatasetLoading(false);
@@ -828,15 +813,36 @@ function App() {
     setIsOnboardingOpen(false);
   }, []);
 
+  const changeLanguage = useCallback(
+    (nextLanguage: Language) => {
+      setLanguage(nextLanguage);
+      try {
+        window.localStorage.setItem(languageStorageKey, nextLanguage);
+      } catch {
+        // Language still changes for the current visit when storage is unavailable.
+      }
+
+      if (isLanguageModalOpen) {
+        setIsLanguageModalOpen(false);
+        if (!hasSeenOnboarding()) {
+          setOnboardingStep(0);
+          setIsOnboardingOpen(true);
+        }
+      }
+    },
+    [isLanguageModalOpen]
+  );
+
   const fetchedLabel = data?.meta.fetchedAt ? formatter.format(new Date(data.meta.fetchedAt)) : '';
   const hasMatrix = loadState === 'ready' && data && matrix.rows.length > 0 && matrix.columns.length > 0;
   const hasFilters = searchText.trim().length > 0 || selectedTraitFilterIds.length > 0;
 
   return (
-    <main
-      className="app-shell"
-      style={{ '--sticky-controls-height': `${stickyControlsHeight}px` } as CSSProperties}
-    >
+    <I18nContext.Provider value={{ language, text }}>
+      <main
+        className="app-shell"
+        style={{ '--sticky-controls-height': `${stickyControlsHeight}px` } as CSSProperties}
+      >
       <header className="topbar">
         <div>
           <p className="eyebrow">Teamfight Tactics</p>
@@ -844,7 +850,7 @@ function App() {
         </div>
         <div className="toolbar">
           <label className="select-control">
-            <span>Version</span>
+            <span>{text.version}</span>
             <select
               value={selectedVersion}
               onChange={(event) => changeVersion(event.target.value)}
@@ -858,7 +864,7 @@ function App() {
             </select>
           </label>
           <label className="select-control">
-            <span>Set</span>
+            <span>{text.set}</span>
             <select
               value={selectedSetId}
               onChange={(event) => changeSet(event.target.value)}
@@ -877,38 +883,52 @@ function App() {
             onClick={openOnboarding}
           >
             <CircleHelp size={16} aria-hidden="true" />
-            <span>Hướng dẫn</span>
+            <span>{text.guide}</span>
           </button>
+          <label className="select-control language-control">
+            <span>{text.language}</span>
+            <span className="language-select-shell">
+              <Languages size={15} aria-hidden="true" />
+              <select
+                value={language}
+                onChange={(event) => changeLanguage(event.target.value as Language)}
+                aria-label={text.language}
+              >
+                <option value="en">English</option>
+                <option value="vi">Tiếng Việt</option>
+              </select>
+            </span>
+          </label>
         </div>
       </header>
 
       <section className="status-band" aria-live="polite">
         <div>
-          <span className="status-label">Loaded Set</span>
-          <strong>{data?.meta.setName ?? 'Not loaded'}</strong>
-          {data?.meta.preview && <span className="preview-badge">Preview data</span>}
+          <span className="status-label">{text.loadedSet}</span>
+          <strong>{data?.meta.setName ?? text.notLoaded}</strong>
+          {data?.meta.preview && <span className="preview-badge">{text.previewData}</span>}
         </div>
         <div>
-          <span className="status-label">Version</span>
+          <span className="status-label">{text.version}</span>
           <strong>{data?.meta.version ?? data?.meta.sourceVersion ?? 'latest'}</strong>
         </div>
         <div>
-          <span className="status-label">Units</span>
+          <span className="status-label">{text.units}</span>
           <strong>{rosterUnitCount}</strong>
         </div>
         <div>
-          <span className="status-label">Updated</span>
-          <strong>{fetchedLabel || 'Never'}</strong>
+          <span className="status-label">{text.updated}</span>
+          <strong>{fetchedLabel || text.never}</strong>
         </div>
       </section>
 
       {data?.meta.preview && (
         <section className="preview-disclosure">
           <div className="preview-warning">
-            Set 18 preview data - values may change before and during PBE.
+            {text.previewWarning}
           </div>
           <details className="preview-details">
-            <summary>Preview sources and data warnings</summary>
+            <summary>{text.previewDetails}</summary>
             {data.meta.sources && data.meta.sources.length > 0 && (
               <div className="source-links">
                 {data.meta.sources.map((source) => (
@@ -963,7 +983,7 @@ function App() {
                 onRemove={() => removeTraitFilter(trait.id)}
               />
             ))}
-            <span className="visually-hidden" id="trait-search-label">Search units or add trait filters</span>
+            <span className="visually-hidden" id="trait-search-label">{text.searchLabel}</span>
             <input
               ref={searchInputRef}
               value={searchText}
@@ -973,7 +993,11 @@ function App() {
               }}
               onKeyDown={handleSearchKeyDown}
               onClick={() => setIsSearchOpen(true)}
-              placeholder={selectedTraitFilters.length > 0 ? 'Add trait or search units' : 'Search units or traits'}
+              placeholder={
+                selectedTraitFilters.length > 0
+                  ? text.searchWithFilters
+                  : text.searchWithoutFilters
+              }
               role="combobox"
               aria-labelledby="trait-search-label"
               aria-autocomplete="list"
@@ -986,7 +1010,13 @@ function App() {
               }
             />
             {hasFilters && (
-              <button className="search-clear" type="button" onClick={resetFilters} aria-label="Clear search filters" title="Clear search filters">
+              <button
+                className="search-clear"
+                type="button"
+                onClick={resetFilters}
+                aria-label={text.clearSearchFilters}
+                title={text.clearSearchFilters}
+              >
                 <X size={14} aria-hidden="true" />
               </button>
             )}
@@ -1010,16 +1040,16 @@ function App() {
         <div className="control-actions">
           <button className="icon-button ghost-action" onClick={() => setIsTransposed((value) => !value)}>
             <ArrowRightLeft size={15} aria-hidden="true" />
-            <span>Transpose</span>
+            <span>{text.transpose}</span>
           </button>
           <button
             className="icon-button ghost-action"
             onClick={undoSelection}
             disabled={selectionHistory.length === 0}
-            title="Undo last board selection change"
+            title={text.undoTitle}
           >
             <Undo2 size={15} aria-hidden="true" />
-            <span>Undo</span>
+            <span>{text.undo}</span>
           </button>
           <button
             className="icon-button ghost-action"
@@ -1027,21 +1057,25 @@ function App() {
             disabled={selectedUnitIds.size === 0}
           >
             <X size={15} aria-hidden="true" />
-            <span>Clear</span>
+            <span>{text.clear}</span>
           </button>
         </div>
       </section>
 
-      {loadState === 'loading' && <EmptyState icon="database" title="Loading TFT data" />}
+      {loadState === 'loading' && <EmptyState icon="database" title={text.loadingData} />}
 
       {(loadState === 'empty' || loadState === 'error') && (
         <EmptyState
           icon={loadState === 'error' ? 'warning' : 'database'}
-          title={loadState === 'error' ? 'Published data unavailable' : 'No TFT data published'}
+          title={
+            loadState === 'error'
+              ? text.publishedDataUnavailable
+              : text.noDataPublished
+          }
           action={
             <button className="icon-button primary-action" onClick={loadPublishedData}>
               <RefreshCw size={16} aria-hidden="true" />
-              <span>Retry</span>
+              <span>{text.retry}</span>
             </button>
           }
         />
@@ -1061,11 +1095,11 @@ function App() {
             {!hasMatrix && (
               <EmptyState
                 icon={hasFilters ? 'search' : 'database'}
-                title={hasFilters ? 'No units match these filters' : 'No playable units in this set'}
+                title={hasFilters ? text.noUnitsMatch : text.noPlayableUnits}
                 action={hasFilters ? (
                   <button className="icon-button ghost-action" onClick={resetFilters}>
                     <X size={15} aria-hidden="true" />
-                    <span>Clear filters</span>
+                    <span>{text.clearFilters}</span>
                   </button>
                 ) : undefined}
               />
@@ -1074,7 +1108,7 @@ function App() {
             {hasMatrix && (
         <section
           className="matrix-shell"
-          aria-label="TFT origin by class matrix"
+          aria-label={text.matrixLabel}
           ref={matrixShellRef}
         >
           <div className="matrix-layer" ref={matrixLayerRef}>
@@ -1106,8 +1140,8 @@ function App() {
               }}
             >
               <div className="corner-cell">
-                <span className="corner-column-label">{axisLabel(matrix.columnAxis)}</span>
-                <span className="corner-row-label">{axisLabel(matrix.rowAxis)}</span>
+                <span className="corner-column-label">{axisLabel(matrix.columnAxis, text)}</span>
+                <span className="corner-row-label">{axisLabel(matrix.rowAxis, text)}</span>
               </div>
               {matrix.columns.map((columnTrait) => (
                 <TraitHeader
@@ -1139,28 +1173,32 @@ function App() {
       )}
       <footer className="public-footer">
         <p>
-          TFT Trait Matrix was created under Riot Games&apos; &quot;Legal Jibber Jabber&quot;
-          policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this
-          project.
+          {text.riotDisclaimer}
         </p>
         <div>
           <a href="https://www.riotgames.com/en/legal" target="_blank" rel="noreferrer">
-            Riot fan project policy
+            {text.riotPolicy}
           </a>
           <span aria-hidden="true">|</span>
-          <span>Free community project</span>
+          <span>{text.freeProject}</span>
         </div>
       </footer>
       <button
         className={`back-to-top ${showBackToTop ? 'visible' : ''}`}
         type="button"
         onClick={scrollToTop}
-        aria-label="Back to top"
-        title="Back to top"
+        aria-label={text.backToTop}
+        title={text.backToTop}
         tabIndex={showBackToTop ? 0 : -1}
       >
         <ChevronUp size={22} aria-hidden="true" />
       </button>
+      {isLanguageModalOpen && typeof document !== 'undefined'
+        ? createPortal(
+            <LanguageModal onSelect={changeLanguage} />,
+            document.body
+          )
+        : null}
       {isOnboardingOpen && typeof document !== 'undefined'
         ? createPortal(
             <OnboardingModal
@@ -1171,7 +1209,78 @@ function App() {
             document.body
           )
         : null}
-    </main>
+      </main>
+    </I18nContext.Provider>
+  );
+}
+
+function LanguageModal({ onSelect }: { onSelect: (language: Language) => void }) {
+  const dialogRef = useRef<HTMLDivElement | null>(null);
+  const firstOptionRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    firstOptionRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== 'Tab' || !dialogRef.current) {
+        return;
+      }
+
+      const focusable = Array.from(
+        dialogRef.current.querySelectorAll<HTMLElement>('button:not(:disabled)')
+      );
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
+  return (
+    <div className="onboarding-backdrop language-backdrop">
+      <div
+        className="language-dialog"
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="language-title"
+        aria-describedby="language-description"
+      >
+        <div className="language-dialog-icon" aria-hidden="true">
+          <Languages size={26} />
+        </div>
+        <p className="language-kicker">TFT Trait Matrix</p>
+        <h2 id="language-title">Choose your language</h2>
+        <p id="language-description">Chọn ngôn ngữ bạn muốn sử dụng</p>
+        <div className="language-options">
+          <button
+            ref={firstOptionRef}
+            type="button"
+            onClick={() => onSelect('en')}
+          >
+            <strong>English</strong>
+            <span>Continue in English</span>
+          </button>
+          <button type="button" onClick={() => onSelect('vi')}>
+            <strong>Tiếng Việt</strong>
+            <span>Tiếp tục bằng Tiếng Việt</span>
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -1184,11 +1293,13 @@ function OnboardingModal({
   onStepChange: (step: number) => void;
   onClose: () => void;
 }) {
+  const { language, text } = useI18n();
   const dialogRef = useRef<HTMLDivElement | null>(null);
   const closeButtonRef = useRef<HTMLButtonElement | null>(null);
-  const currentStep = onboardingSteps[step];
+  const steps = onboardingSteps[language];
+  const currentStep = steps[step];
   const isFirstStep = step === 0;
-  const isLastStep = step === onboardingSteps.length - 1;
+  const isLastStep = step === steps.length - 1;
 
   useEffect(() => {
     const previouslyFocused = document.activeElement as HTMLElement | null;
@@ -1255,7 +1366,7 @@ function OnboardingModal({
           <div className="onboarding-brand">
             <CircleHelp size={20} aria-hidden="true" />
             <div>
-              <span>Hướng dẫn nhanh</span>
+              <span>{text.guideQuick}</span>
               <strong>TFT Trait Matrix</strong>
             </div>
           </div>
@@ -1264,20 +1375,23 @@ function OnboardingModal({
             ref={closeButtonRef}
             type="button"
             onClick={onClose}
-            aria-label="Đóng hướng dẫn"
-            title="Đóng hướng dẫn"
+            aria-label={text.closeGuide}
+            title={text.closeGuide}
           >
             <X size={18} aria-hidden="true" />
           </button>
         </header>
 
-        <nav className="onboarding-progress" aria-label="Các bước hướng dẫn">
-          {onboardingSteps.map((guideStep, index) => (
+        <nav className="onboarding-progress" aria-label={text.guideSteps}>
+          {steps.map((guideStep, index) => (
             <button
               className={`${index === step ? 'active' : ''} ${index < step ? 'completed' : ''}`}
               type="button"
               onClick={() => onStepChange(index)}
-              aria-label={`Mở ${guideStep.eyebrow}: ${guideStep.title}`}
+              aria-label={interpolate(text.openGuideStep, {
+                step: guideStep.eyebrow,
+                title: guideStep.title
+              })}
               aria-current={index === step ? 'step' : undefined}
               key={guideStep.title}
             >
@@ -1296,7 +1410,7 @@ function OnboardingModal({
             ))}
           </ul>
           {'tiers' in currentStep && currentStep.tiers ? (
-            <div className="onboarding-tiers" aria-label="Các mốc kích hoạt trait">
+            <div className="onboarding-tiers" aria-label={text.activationTiers}>
               {currentStep.tiers.map((tier) => (
                 <span className={`tier-${tier.className}`} key={tier.label}>
                   {tier.label}
@@ -1311,7 +1425,7 @@ function OnboardingModal({
 
         <footer className="onboarding-footer">
           <button className="onboarding-skip" type="button" onClick={onClose}>
-            Bỏ qua
+            {text.skip}
           </button>
           <div>
             {!isFirstStep && (
@@ -1321,7 +1435,7 @@ function OnboardingModal({
                 onClick={() => onStepChange(step - 1)}
               >
                 <ChevronLeft size={16} aria-hidden="true" />
-                <span>Quay lại</span>
+                <span>{text.back}</span>
               </button>
             )}
             <button
@@ -1335,7 +1449,7 @@ function OnboardingModal({
                 }
               }}
             >
-              <span>{isLastStep ? 'Bắt đầu khám phá' : 'Tiếp theo'}</span>
+              <span>{isLastStep ? text.startExploring : text.continue}</span>
               {isLastStep ? (
                 <Sparkles size={16} aria-hidden="true" />
               ) : (
@@ -1364,22 +1478,23 @@ function SelectedBoardPanel({
   traitsById: Map<string, Trait>;
   onToggleUnit: (unitId: string) => void;
 }) {
+  const { text } = useI18n();
   return (
-    <section className="selected-band" aria-label="Selected board status">
+    <section className="selected-band" aria-label={text.selectedBoardStatus}>
       <div className="selected-header">
         <div>
-          <span className="status-label">Selected Units</span>
+          <span className="status-label">{text.selectedUnits}</span>
           <strong data-testid="selected-unit-count">{selectedUnitCount}</strong>
         </div>
         <div>
-          <span className="status-label">Active Traits</span>
+          <span className="status-label">{text.activeTraits}</span>
           <strong>{activeTraitCount}</strong>
         </div>
       </div>
       {selectedUnits.length > 0 ? (
         <div className="selected-content">
           <div className="selected-panel-section">
-            <span className="panel-section-label">Board Units</span>
+            <span className="panel-section-label">{text.boardUnits}</span>
             <div className="selected-units">
               {selectedUnits.map((unit) => (
                 <UnitChip
@@ -1393,7 +1508,7 @@ function SelectedBoardPanel({
             </div>
           </div>
           <div className="selected-panel-section">
-            <span className="panel-section-label">Trait Status</span>
+            <span className="panel-section-label">{text.traitStatus}</span>
             <div className="trait-counts">
               {traitStatuses.map((status) => (
                 <TraitPill status={status} key={status.trait.id} />
@@ -1402,7 +1517,7 @@ function SelectedBoardPanel({
           </div>
         </div>
       ) : (
-        <div className="empty-selection">No units selected</div>
+        <div className="empty-selection">{text.noUnitsSelected}</div>
       )}
     </section>
   );
@@ -1545,8 +1660,14 @@ function TraitHeader({
   position: HeaderPosition;
   count: number;
 }) {
+  const { text } = useI18n();
   const floating = useFloatingPopover<HTMLDivElement>();
   const hasPopover = !trait.isFallback;
+  const displayName = trait.isFallback
+    ? trait.category === 'origin'
+      ? text.otherOrigin
+      : text.otherClass
+    : trait.name;
   return (
     <>
       <div
@@ -1564,7 +1685,7 @@ function TraitHeader({
         ) : (
           <ShieldQuestion size={16} aria-hidden="true" />
         )}
-        <span>{trait.name}</span>
+        <span>{displayName}</span>
       </div>
       {hasPopover && floating.isOpen && (
         <TraitStatusPopover trait={trait} count={count} floating={floating} />
@@ -1582,6 +1703,7 @@ function TraitFilterToken({
   count: number;
   onRemove: () => void;
 }) {
+  const { text } = useI18n();
   const floating = useFloatingPopover<HTMLButtonElement>();
   const visualTier = trait.isUnique ? 'unique' : getTraitTier(trait, count);
   return (
@@ -1595,7 +1717,7 @@ function TraitFilterToken({
         onPointerLeave={floating.closePointer}
         onFocus={floating.openFocus}
         onBlur={floating.closeFocus}
-        aria-label={`Remove ${trait.name} filter`}
+        aria-label={interpolate(text.removeFilter, { name: trait.name })}
         aria-describedby={floating.isOpen ? floating.tooltipId : undefined}
       >
         {trait.iconUrl ? <img src={trait.iconUrl} alt="" /> : <ShieldQuestion size={14} aria-hidden="true" />}
@@ -1622,6 +1744,7 @@ function TraitSuggestionOption({
   onHover: () => void;
   onSelect: () => void;
 }) {
+  const { text } = useI18n();
   const floating = useFloatingPopover<HTMLButtonElement>();
   const visualTier = trait.isUnique ? 'unique' : getTraitTier(trait, count);
   return (
@@ -1649,9 +1772,9 @@ function TraitSuggestionOption({
         {trait.iconUrl ? <img src={trait.iconUrl} alt="" /> : <ShieldQuestion size={16} aria-hidden="true" />}
         <span>
           <strong>{trait.name}</strong>
-          <small>{trait.isUnique ? 'Unique' : formatCategory(trait.category)}</small>
+          <small>{trait.isUnique ? text.unique : formatCategory(trait.category, text)}</small>
         </span>
-        <span className="suggestion-add">Enter</span>
+        <span className="suggestion-add">{text.enter}</span>
       </button>
       {floating.isOpen && <TraitStatusPopover trait={trait} count={count} floating={floating} />}
     </>
@@ -1671,6 +1794,7 @@ function TraitStatusPopover({
     position: PopoverPosition | null;
   };
 }) {
+  const { text } = useI18n();
   if (typeof document === 'undefined') return null;
 
   const currentTier = getTraitTier(trait, count);
@@ -1703,22 +1827,29 @@ function TraitStatusPopover({
         </span>
         <span className="trait-popover-heading">
           <strong>{trait.name}</strong>
-          <span>{trait.isUnique ? 'Unique trait' : formatCategory(trait.category)}</span>
+          <span>{trait.isUnique ? text.uniqueTrait : formatCategory(trait.category, text)}</span>
         </span>
         <span className={`trait-tier-badge tier-${visualTier}`}>
-          {formatTraitTier(visualTier)}
+          {formatTraitTier(visualTier, text)}
         </span>
       </div>
       {trait.description && <p className="trait-description">{trait.description}</p>}
       <div className="trait-current-status">
-        <span>Selected contribution</span>
+        <span>{text.selectedContribution}</span>
         <strong>{count}</strong>
         {!trait.isUnique && nextThreshold != null && (
-          <small>{Math.max(0, nextThreshold - count)} to next tier</small>
+          <small>
+            {interpolate(text.toNextTier, {
+              count: Math.max(0, nextThreshold - count)
+            })}
+          </small>
         )}
       </div>
       {effects.length > 0 ? (
-        <div className="trait-effects" aria-label={`${trait.name} thresholds`}>
+        <div
+          className="trait-effects"
+          aria-label={interpolate(text.thresholds, { name: trait.name })}
+        >
           {effects.map((effect) => {
             const effectTier = getEffectTier(effect.style);
             const isCurrent = reachedEffect?.minUnits === effect.minUnits;
@@ -1729,15 +1860,17 @@ function TraitStatusPopover({
                 key={`${effect.minUnits}-${effect.maxUnits}-${effect.style}`}
               >
                 <strong>{formatThreshold(effect)}</strong>
-                <span>{effect.label || formatTraitTier(effectTier)}</span>
-                {(isCurrent || isNext) && <small>{isCurrent ? 'Current' : 'Next'}</small>}
+                <span>{effect.label || formatTraitTier(effectTier, text)}</span>
+                {(isCurrent || isNext) && (
+                  <small>{isCurrent ? text.current : text.next}</small>
+                )}
               </div>
             );
           })}
         </div>
       ) : (
         <div className="trait-effect-empty">
-          {trait.isUnique ? 'Unique trait' : 'No activation thresholds available'}
+          {trait.isUnique ? text.uniqueTrait : text.noThresholds}
         </div>
       )}
     </div>,
@@ -1760,6 +1893,7 @@ function UnitChip({
   columnId?: string;
   onToggle: (unitId: string) => void;
 }) {
+  const { text } = useI18n();
   const chipRef = useRef<HTMLButtonElement | null>(null);
   const popoverRef = useRef<HTMLDivElement | null>(null);
   const tooltipId = useId();
@@ -1880,7 +2014,9 @@ function UnitChip({
         onFocus={() => openPopover('focus')}
         onBlur={() => setIsFocused(false)}
         aria-pressed={selected}
-        aria-label={`${selected ? 'Deselect' : 'Select'} ${displayName}`}
+        aria-label={interpolate(selected ? text.deselectUnit : text.selectUnit, {
+          name: displayName
+        })}
         aria-describedby={isPopoverOpen ? tooltipId : undefined}
         data-testid="unit-chip"
         data-unit-id={unit.id}
@@ -1912,8 +2048,11 @@ function UnitChip({
               <span>
                 <strong>{displayName}</strong>
                 <span>
-                  Cost {unit.cost} / Range {unit.range ?? '-'}
-                  {manaText ? ` / Mana ${manaText}` : ''}
+                  {interpolate(text.costRange, {
+                    cost: unit.cost,
+                    range: unit.range ?? '-'
+                  })}
+                  {manaText ? ` / ${text.mana} ${manaText}` : ''}
                 </span>
               </span>
             </span>
@@ -1923,10 +2062,10 @@ function UnitChip({
                 {abilityDescription && <span>{abilityDescription}</span>}
               </span>
             )}
-            <PopoverTraitGroup label="Origins" traits={originTraits} unit={unit} />
-            <PopoverTraitGroup label="Classes" traits={classTraits} unit={unit} />
-            <PopoverTraitGroup label="Unique" traits={uniqueTraits} unit={unit} />
-            <PopoverTraitGroup label="Other" traits={otherTraits} unit={unit} />
+            <PopoverTraitGroup label={text.origins} traits={originTraits} unit={unit} />
+            <PopoverTraitGroup label={text.classes} traits={classTraits} unit={unit} />
+            <PopoverTraitGroup label={text.unique} traits={uniqueTraits} unit={unit} />
+            <PopoverTraitGroup label={text.other} traits={otherTraits} unit={unit} />
           </div>,
           document.body
         )
@@ -2181,14 +2320,14 @@ function formatThreshold(effect: TraitEffect) {
   return `${effect.minUnits}-${effect.maxUnits}`;
 }
 
-function formatTraitTier(tier: TraitTier) {
-  return tier.charAt(0).toUpperCase() + tier.slice(1);
+function formatTraitTier(tier: TraitTier, text: UiText) {
+  return text[tier];
 }
 
-function formatCategory(category: TraitCategory) {
-  if (category === 'origin') return 'Origin';
-  if (category === 'class') return 'Class';
-  return 'Other';
+function formatCategory(category: TraitCategory, text: UiText) {
+  if (category === 'origin') return text.origin;
+  if (category === 'class') return text.class;
+  return text.other;
 }
 
 function traitTierColor(tier: TraitTier) {
@@ -2225,8 +2364,8 @@ function getUnitDisplayName(unit: Unit) {
   return unit.variantLabel ? `${unit.name} (${unit.variantLabel})` : unit.name;
 }
 
-function axisLabel(axis: MatrixAxis) {
-  return axis === 'origin' ? 'Origin' : 'Class';
+function axisLabel(axis: MatrixAxis, text: UiText) {
+  return axis === 'origin' ? text.origin : text.class;
 }
 
 function cellKey(rowId: string, columnId: string) {
