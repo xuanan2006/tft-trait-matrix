@@ -27,7 +27,8 @@ try {
 
     const localized = structuredClone(snapshot);
     const stagedAssetDir = path.join(stageDir, 'assets', dataset.id);
-    await localizeSnapshotAssets(localized, dataset.id, stagedAssetDir);
+    const previousAssets = await readPreviousAssets(dataset.id);
+    await localizeSnapshotAssets(localized, dataset.id, stagedAssetDir, previousAssets);
     validateLocalAssets(localized);
 
     const serialized = `${JSON.stringify(localized, null, 2)}\n`;
@@ -146,21 +147,39 @@ function validateSnapshot(snapshot, dataset) {
   }
 }
 
-async function localizeSnapshotAssets(snapshot, snapshotId, outputDir) {
+async function localizeSnapshotAssets(snapshot, snapshotId, outputDir, previousAssets) {
   const targets = [
-    ...snapshot.traits.map((trait) => ({ record: trait, label: `trait ${trait.name}` })),
-    ...snapshot.units.map((unit) => ({ record: unit, label: `unit ${unit.name}` }))
+    ...snapshot.traits.map((trait) => ({
+      record: trait,
+      label: `trait ${trait.name}`,
+      previousIconUrl: previousAssets.get(`trait:${trait.id}`)
+    })),
+    ...snapshot.units.map((unit) => ({
+      record: unit,
+      label: `unit ${unit.name}`,
+      previousIconUrl: previousAssets.get(`unit:${unit.id}`)
+    }))
   ].filter(({ record }) => /^https?:\/\//i.test(record.iconUrl ?? ''));
 
   const cachedUrls = new Map();
-  await runWithConcurrency(targets, 8, async ({ record, label }) => {
+  await runWithConcurrency(targets, 8, async ({ record, label, previousIconUrl }) => {
     const existing = cachedUrls.get(record.iconUrl);
     if (existing) {
       record.iconUrl = existing;
       return;
     }
 
-    const asset = await downloadImage(record.iconUrl, label);
+    let asset;
+    try {
+      asset = await downloadImage(record.iconUrl, label);
+    } catch (error) {
+      if (!previousIconUrl) {
+        throw error;
+      }
+      process.stdout.write(`Reusing published icon for ${label}; current source is unavailable.\n`);
+      record.iconUrl = previousIconUrl;
+      return;
+    }
     const contentHash = sha256(asset.bytes).slice(0, 16);
     const fileName = `${contentHash}.${asset.extension}`;
     await fs.mkdir(outputDir, { recursive: true });
@@ -170,6 +189,40 @@ async function localizeSnapshotAssets(snapshot, snapshotId, outputDir) {
     cachedUrls.set(record.iconUrl, publicPath);
     record.iconUrl = publicPath;
   });
+}
+
+async function readPreviousAssets(snapshotId) {
+  const assets = new Map();
+  try {
+    const catalog = JSON.parse(await fs.readFile(catalogPath, 'utf8'));
+    const entry = catalog.snapshots?.find((snapshot) => snapshot.id === snapshotId);
+    if (!entry?.path) {
+      return assets;
+    }
+
+    const snapshotPath = path.join(rootDir, 'public', entry.path.replace(/^\/+/, ''));
+    const snapshot = JSON.parse(await fs.readFile(snapshotPath, 'utf8'));
+    for (const [type, records] of [
+      ['trait', snapshot.traits],
+      ['unit', snapshot.units]
+    ]) {
+      for (const record of records ?? []) {
+        if (!record.id || !safeText(record.iconUrl).startsWith('/data/assets/')) {
+          continue;
+        }
+        const localPath = path.join(rootDir, 'public', record.iconUrl.replace(/^\/+/, ''));
+        try {
+          await fs.access(localPath);
+          assets.set(`${type}:${record.id}`, record.iconUrl);
+        } catch {
+          // A missing prior asset cannot be used as a publishing fallback.
+        }
+      }
+    }
+  } catch {
+    return assets;
+  }
+  return assets;
 }
 
 async function downloadImage(url, label) {
@@ -234,7 +287,13 @@ async function runWithConcurrency(items, concurrency, worker) {
       await worker(item);
     }
   }
-  await Promise.all(Array.from({ length: Math.min(concurrency, items.length) }, run));
+  const results = await Promise.allSettled(
+    Array.from({ length: Math.min(concurrency, items.length) }, run)
+  );
+  const failed = results.find((result) => result.status === 'rejected');
+  if (failed) {
+    throw failed.reason;
+  }
 }
 
 async function writeJsonAtomic(targetPath, value) {

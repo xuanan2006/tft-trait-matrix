@@ -8,7 +8,7 @@ const pbeVersion = 'pbe';
 const set18PreviewSetId = 'preview:set18';
 const set18LuxSelectionGroupId = 'set18-lux';
 const set18LuxVariantPattern =
-  /^TFT18_Lux(Blossom|Coven|Elderwood|Eldritch|Fae|Inferno|Lunar|Primal|Solar)$/i;
+  /^TFT18_Lux_?(Blackthorn|Blossom|Coven|Elderwood|Eldritch|Fae|Inferno|Lunar|Primal|Solar)$/i;
 const rootDir = fileURLToPath(new URL('../', import.meta.url));
 const dataPath = path.join(rootDir, 'public', 'data', 'tft-current.json');
 
@@ -42,6 +42,7 @@ const originTraitNames = new Set([
   'astral',
   'bilgewater',
   'blackrose',
+  'blackthorn',
   'blossom',
   'bulwark',
   'celestial',
@@ -332,7 +333,10 @@ async function buildSet18PreviewSnapshot({ version, inheritedWarnings }) {
     parseOutOfGamesChampions(outOfGamesChampionsHtml, warnings),
     parseMobalyticsChampions(mobalyticsHtml, warnings)
   );
-  const traitEnrichment = parseOutOfGamesTraits(outOfGamesTraitsHtml, warnings);
+  const traitEnrichment = mergeTraitEnrichment(
+    parseTacticsToolsTraits(tacticsHtml, warnings),
+    parseOutOfGamesTraits(outOfGamesTraitsHtml, warnings)
+  );
 
   validateChampionSource({
     html: outOfGamesChampionsHtml,
@@ -465,6 +469,7 @@ function normalizePreviewData({
   const fetchedAt = new Date().toISOString();
   const traitLookup = new Map();
   const traitRosterMembers = new Map();
+  const traitIconUrls = new Map();
 
   for (const champion of tacticsChampions) {
     for (const traitApiName of champion.traits) {
@@ -472,6 +477,10 @@ function normalizePreviewData({
       const rosterMembers = traitRosterMembers.get(traitId) ?? new Set();
       rosterMembers.add(set18RosterIdentity(champion.apiName));
       traitRosterMembers.set(traitId, rosterMembers);
+      const iconUrl = champion.traitIconUrls?.[traitApiName];
+      if (iconUrl) {
+        traitIconUrls.set(traitId, iconUrl);
+      }
     }
   }
 
@@ -495,18 +504,18 @@ function normalizePreviewData({
         apiName,
         name: enrichment?.name ?? fallbackName,
         category: enrichment?.category ?? classifyTrait({ apiName, name: fallbackName }),
-        iconUrl: tacticsTraitIconUrl(apiName),
+        iconUrl: traitIconUrls.get(traitId) ?? tacticsTraitIconUrl(apiName),
         description: enrichment?.description ?? null,
         effects,
         preview: true,
         fieldSources: {
           roster: 'tactics.tools',
-          category: enrichment ? 'outof.games' : 'local override',
-          description: enrichment?.description ? 'outof.games' : null,
+          category: enrichment?.source ?? 'local override',
+          description: enrichment?.description ? enrichment.source : null,
           effects: enrichment?.effects?.length
             ? usesLocalPrismaticRule
-              ? 'outof.games + local Set 18 tier rule'
-              : 'outof.games'
+              ? `${enrichment.source} + local Set 18 tier rule`
+              : enrichment.source
             : null,
           icon: 'tactics.tools'
         },
@@ -706,22 +715,37 @@ function parseTacticsToolsChampions(html, warnings) {
     .slice(1);
 
   for (const block of cardBlocks) {
-    const header = block.match(
+    const legacyHeader = block.match(
       />(TFT18_[A-Za-z0-9]+)<div class="flex items-end text-\[16px\]">(\d+)/
     );
-    if (!header || !block.includes('_ability')) {
+    const currentHeader = block.match(
+      /font-semibold[^>]*>([^<]+)<div class="flex items-end text-\[16px\]">(\d+)/
+    );
+    if (!legacyHeader && !currentHeader) {
       continue;
     }
 
-    const apiName = header[1];
-    const cost = Number(header[2]);
+    const displayName = normalizePreviewText(currentHeader?.[1]);
+    const apiName = legacyHeader?.[1] ?? set18ApiNameFromDisplayName(displayName);
+    const cost = Number(legacyHeader?.[2] ?? currentHeader?.[2]);
     const traitRegionEnd = block.indexOf('<div class="p-3 flex flex-col text-sm">');
     const traitRegion = traitRegionEnd >= 0 ? block.slice(0, traitRegionEnd) : block;
-    const traitApiNames = Array.from(
-      new Set(
-        Array.from(traitRegion.matchAll(/alt="(TFT18_[A-Za-z0-9]+) 0"/g), (match) => match[1])
-      )
-    ).filter((traitApiName) => traitApiName !== apiName);
+    const traitIconUrls = {};
+    const currentTraits = Array.from(
+      traitRegion.matchAll(/alt="([^"]+) 0"[^>]*src="([^"]*\/trait-icons\/[^"?]+_w\.svg[^"]*)"/g),
+      (match) => {
+        const traitApiName = set18TraitApiNameFromDisplayName(match[1]);
+        traitIconUrls[traitApiName] = decodeHtmlEntities(match[2]);
+        return traitApiName;
+      }
+    );
+    const legacyTraits = Array.from(
+      traitRegion.matchAll(/alt="(TFT18_[A-Za-z0-9]+) 0"/g),
+      (match) => match[1]
+    );
+    const traitApiNames = Array.from(new Set([...currentTraits, ...legacyTraits])).filter(
+      (traitApiName) => traitApiName !== apiName
+    );
 
     if (!Number.isFinite(cost) || cost <= 0 || traitApiNames.length === 0) {
       continue;
@@ -730,8 +754,14 @@ function parseTacticsToolsChampions(html, warnings) {
     const range = normalizeRange(matchFirst(block, /alt="Range"[\s\S]*?break-all">([^<]+)<\/div>/));
     const mana = parseMana(matchFirst(block, /alt="Mana"[\s\S]*?<div class="pt-\[1px\]">([^<]+)<\/div>/));
     const abilityName = normalizePreviewText(matchFirst(block, /<div class="font-medium text-sm">([^<]+)<\/div>/));
-    const abilityDescription = normalizePreviewText(
-      matchFirst(block, /<div class="leading-tight "><span class=""><span>([\s\S]*?)<\/span><\/span><\/div>/)
+    const abilityDescription =
+      normalizePreviewText(matchFirst(block, /<div class="leading-tight ">([\s\S]*?)<hr/)) ??
+      normalizePreviewText(
+        matchFirst(block, /<div class="leading-tight "><span class=""><span>([\s\S]*?)<\/span><\/span><\/div>/)
+      );
+    const iconUrl = decodeHtmlEntities(
+      matchFirst(block, /src="([^"]*\/face\/[^"?]+\.jpg[^"]*)"/) ||
+        matchFirst(block, /src="([^"]*\/face_full_ultrawide\/[^"?]+\.jpg[^"]*)"/)
     );
 
     champions.push({
@@ -745,7 +775,8 @@ function parseTacticsToolsChampions(html, warnings) {
         name: abilityName,
         description: abilityDescription
       },
-      iconUrl: tacticsChampionIconUrl(apiName)
+      iconUrl: iconUrl || tacticsChampionIconUrl(apiName),
+      traitIconUrls
     });
   }
 
@@ -756,6 +787,85 @@ function parseTacticsToolsChampions(html, warnings) {
     warnings.push('Duplicate tactics.tools Set 18 champion cards were collapsed by champion id.');
   }
   return uniqueChampions;
+}
+
+function set18ApiNameFromDisplayName(name) {
+  const normalizedName = safeText(name);
+  const luxMatch = normalizedName.match(/^Lux\s*\(([^)]+)\)$/i);
+  if (luxMatch) {
+    return `TFT18_Lux_${luxMatch[1].replace(/[^A-Za-z0-9]/g, '')}`;
+  }
+  return `TFT18_${normalizedName.replace(/[^A-Za-z0-9]/g, '')}`;
+}
+
+function set18TraitApiNameFromDisplayName(name) {
+  return `TFT18_${safeText(name).replace(/[^A-Za-z0-9]/g, '')}`;
+}
+
+function parseTacticsToolsTraits(html, warnings) {
+  const records = new Map();
+  const sectionStart = safeText(html).indexOf('id="set-update-traits"');
+  if (sectionStart < 0) {
+    warnings.push('tactics.tools Set 18 trait section was not found.');
+    return records;
+  }
+
+  const sectionEnd = html.indexOf('id="set-update-items"', sectionStart);
+  const section = html.slice(sectionStart, sectionEnd < 0 ? html.length : sectionEnd);
+  const blocks = section.split('<div class="p-4 rounded text-white1  bg-bg">').slice(1);
+
+  for (const block of blocks) {
+    const header = block.match(
+      /<img alt="([^"]+) 0"[^>]*\/trait-icons\/[^>]*><h3[^>]*>([^<]+)<\/h3>/
+    );
+    if (!header) {
+      continue;
+    }
+
+    const name = normalizePreviewText(header[2] ?? header[1]);
+    const body = matchFirst(
+      block,
+      /<div class="py-3 text-sm leading-tight">([\s\S]*?)<div class="flex pt-2 gap-\[10px\] flex-wrap">/
+    );
+    const bodyText = stripHtml(body);
+    const breakpointMatches = Array.from(bodyText.matchAll(/\((\d+)\)\s*/g));
+    const rawEffects = breakpointMatches.map((match, index) => {
+      const next = breakpointMatches[index + 1];
+      return {
+        minUnits: Number(match[1]),
+        label: normalizePreviewText(
+          bodyText.slice((match.index ?? 0) + match[0].length, next?.index ?? bodyText.length)
+        )
+      };
+    });
+    const effectsByThreshold = new Map();
+    for (const effect of rawEffects) {
+      const current = effectsByThreshold.get(effect.minUnits);
+      effectsByThreshold.set(effect.minUnits, {
+        minUnits: effect.minUnits,
+        label: [current?.label, effect.label].filter(Boolean).join(' ')
+      });
+    }
+    const groupedEffects = Array.from(effectsByThreshold.values());
+    const effects = groupedEffects.map((effect, index) => ({
+      ...effect,
+      style: previewBreakpointStyle(index, groupedEffects.length)
+    }));
+    const firstBreakpoint = breakpointMatches[0]?.index ?? bodyText.length;
+    const id = makeId(set18TraitApiNameFromDisplayName(name));
+    records.set(id, {
+      name,
+      category: classifyTrait({ name }),
+      description: normalizePreviewText(bodyText.slice(0, firstBreakpoint)),
+      effects,
+      source: 'tactics.tools'
+    });
+  }
+
+  if (records.size === 0) {
+    warnings.push('tactics.tools Set 18 trait section was fetched but no trait records were parsed.');
+  }
+  return records;
 }
 
 function parseOutOfGamesChampions(html, warnings) {
@@ -878,7 +988,8 @@ function parseOutOfGamesTraits(html, warnings) {
       name,
       category,
       description,
-      effects
+      effects,
+      source: 'outof.games'
     });
   }
 
@@ -887,6 +998,25 @@ function parseOutOfGamesTraits(html, warnings) {
   }
 
   return records;
+}
+
+function mergeTraitEnrichment(primary, secondary) {
+  const merged = new Map(primary);
+  for (const [id, record] of secondary.entries()) {
+    const current = merged.get(id);
+    if (!current) {
+      merged.set(id, record);
+      continue;
+    }
+    merged.set(id, {
+      ...record,
+      ...current,
+      description: current.description ?? record.description ?? null,
+      effects: current.effects?.length ? current.effects : record.effects ?? [],
+      source: current.source ?? record.source
+    });
+  }
+  return merged;
 }
 
 function mergeChampionEnrichment(primary, secondary) {

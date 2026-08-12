@@ -78,6 +78,11 @@ export const vietnameseTraitTranslations: Record<string, DataTranslation> = {
     description:
       'Đồng minh đứng trên ô Quái Linh bị hiến tế khi bắt đầu giao tranh, cho đội của bạn thêm Máu. Tướng Quái Linh nhận thêm chỉ số dựa trên vai trò, cấp sao và giá của đơn vị bị hiến tế.'
   },
+  Blackthorn: {
+    name: 'Hắc Gai',
+    description:
+      'Đồng minh đứng trên ô Hắc Gai bị hiến tế trước giao tranh, cho đội của bạn thêm Máu. Tướng Hắc Gai nhận thêm chỉ số dựa trên vai trò, cấp sao và giá của đơn vị bị hiến tế.'
+  },
   Fae: {
     name: 'Tiên Linh',
     description:
@@ -418,6 +423,16 @@ export const vietnameseAbilityTranslations: Record<string, DataTranslation> = {
     name: 'Gọi Bầy',
     description:
       'Triệu hồi 4 chim non không thể bị chọn làm mục tiêu. Khi Raptor tấn công, chim non tấn công cùng mục tiêu và gây sát thương vật lý. Bùa Cam (Dấu Ấn Thủ Lĩnh Quái Rừng): Gây sát thương vật lý làm giảm Giáp của kẻ địch.'
+  },
+  'Flock Family': {
+    name: 'Gia Đình Chim Non',
+    description:
+      'Triệu hồi 4 chim non không thể bị chọn làm mục tiêu trong vài giây. Khi Mama Beak tấn công, chim non tấn công cùng mục tiêu và gây sát thương vật lý. Bùa Cam: Sát thương vật lý làm giảm Giáp của kẻ địch.'
+  },
+  'Heat Without Equal': {
+    name: 'Sức Nóng Vô Song',
+    description:
+      'Nội tại: Đòn đánh gây sát thương lên kẻ địch cạnh mục tiêu. Kích hoạt: Trở nên bất tử và bay lên không trung. Khi đáp xuống, Làm Choáng toàn bộ kẻ địch, nhận Hút Máu Toàn Phần và Thiêu Đốt chúng. Sau đó thay kỹ năng bằng Hơi Thở Lửa và lập tức dùng kỹ năng: phun lửa xuyên qua hàng nhiều kẻ địch nhất, gây sát thương vật lý giảm dần theo mỗi mục tiêu trúng chiêu. Cường hóa Elder Dragon: Gây sát thương sẽ kết liễu kẻ địch dưới ngưỡng Máu.'
   },
   Uproot: {
     name: 'Trồi Lên',

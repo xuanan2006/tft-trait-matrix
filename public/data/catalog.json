@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T07:37:39.356Z",
+  "generatedAt": "2026-08-12T09:01:14.898Z",
   "defaultSnapshotId": "pbe-preview-set18",
   "snapshots": [
     {
@@ -8,8 +8,8 @@
       "setId": "preview:set18",
       "setName": "Set 18 Preview: Enchanted Wilds",
       "preview": true,
-      "path": "/data/snapshots/pbe-preview-set18-b3706063113b.json",
-      "updatedAt": "2026-07-19T07:37:35.756Z"
+      "path": "/data/snapshots/pbe-preview-set18-eff5083904a3.json",
+      "updatedAt": "2026-08-12T09:01:09.380Z"
     },
     {
       "id": "latest-set17",
@@ -17,8 +17,8 @@
       "setId": "17",
       "setName": "Set17",
       "preview": false,
-      "path": "/data/snapshots/latest-set17-acbf47eb47bd.json",
-      "updatedAt": "2026-07-19T07:37:36.983Z"
+      "path": "/data/snapshots/latest-set17-6204d8dc7251.json",
+      "updatedAt": "2026-08-12T09:01:10.282Z"
     }
   ]
 }
