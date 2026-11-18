@@ -21,6 +21,25 @@ try {
   const published = [];
 
   for (const dataset of manifest.datasets) {
+    if (dataset.frozenPath) {
+      process.stdout.write(`Reusing frozen snapshot ${dataset.id} (${dataset.frozenPath})...\n`);
+      const snapshot = await readFrozenSnapshot(dataset);
+      validateSnapshot(snapshot, dataset);
+      validateLocalAssets(snapshot);
+      await validateExistingAssets(snapshot, dataset.id);
+      published.push({
+        id: dataset.id,
+        version: snapshot.meta.version,
+        setId: snapshot.meta.setId,
+        setName: snapshot.meta.setName,
+        preview: Boolean(snapshot.meta.preview),
+        path: dataset.frozenPath,
+        updatedAt: snapshot.meta.fetchedAt,
+        snapshot
+      });
+      continue;
+    }
+
     process.stdout.write(`Building ${dataset.id} (${dataset.version}/${dataset.setId})...\n`);
     const snapshot = await buildTftData(dataset);
     validateSnapshot(snapshot, dataset);
@@ -87,8 +106,12 @@ async function readManifest() {
 
   const ids = new Set();
   for (const dataset of parsed.datasets) {
-    if (!safeText(dataset.id) || !safeText(dataset.version) || !safeText(dataset.setId)) {
-      throw new Error('Every publish dataset requires id, version, and setId.');
+    const isFrozen = safeText(dataset.frozenPath).startsWith('/data/snapshots/');
+    const isGenerated = safeText(dataset.version) && safeText(dataset.setId);
+    if (!safeText(dataset.id) || (!isFrozen && !isGenerated)) {
+      throw new Error(
+        'Every publish dataset requires id plus either version/setId or a frozen snapshot path.'
+      );
     }
     if (!/^[a-z0-9-]+$/.test(dataset.id)) {
       throw new Error(`Dataset id ${dataset.id} must use lowercase letters, numbers, and dashes.`);
@@ -100,6 +123,16 @@ async function readManifest() {
   }
 
   return parsed;
+}
+
+async function readFrozenSnapshot(dataset) {
+  const relativePath = dataset.frozenPath.replace(/^\/+/, '');
+  const snapshotPath = path.resolve(rootDir, 'public', relativePath);
+  const publicRoot = path.resolve(rootDir, 'public');
+  if (!snapshotPath.startsWith(`${publicRoot}${path.sep}`)) {
+    throw new Error(`Frozen snapshot ${dataset.id} resolves outside public/.`);
+  }
+  return JSON.parse(await fs.readFile(snapshotPath, 'utf8'));
 }
 
 function validateSnapshot(snapshot, dataset) {
@@ -274,6 +307,20 @@ function validateLocalAssets(snapshot) {
   for (const record of [...snapshot.traits, ...snapshot.units]) {
     if (record.iconUrl && !record.iconUrl.startsWith('/data/assets/')) {
       throw new Error(`Asset localization failed for ${record.name}.`);
+    }
+  }
+}
+
+async function validateExistingAssets(snapshot, snapshotId) {
+  for (const record of [...snapshot.traits, ...snapshot.units]) {
+    if (!record.iconUrl) {
+      continue;
+    }
+    const assetPath = path.resolve(rootDir, 'public', record.iconUrl.replace(/^\/+/, ''));
+    try {
+      await fs.access(assetPath);
+    } catch {
+      throw new Error(`Frozen snapshot ${snapshotId} is missing ${record.iconUrl}.`);
     }
   }
 }

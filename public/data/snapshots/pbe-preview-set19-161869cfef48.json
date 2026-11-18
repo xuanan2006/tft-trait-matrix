@@ -1,0 +1,4887 @@
+{
+  "meta": {
+    "sourceUrl": "https://tactics.tools/tc/info/set-update",
+    "fetchedAt": "2026-11-18T09:01:29.220Z",
+    "sourceVersion": "pbe",
+    "version": "pbe",
+    "setId": "preview:set19",
+    "setName": "Set 19 Preview: Prismatic Tour",
+    "preview": true,
+    "sourceMode": "hybrid-preview",
+    "canonicalSource": "tactics.tools",
+    "sources": [
+      {
+        "id": "communityDragon",
+        "label": "CommunityDragon PBE/latest",
+        "role": "future canonical json",
+        "url": "https://raw.communitydragon.org/pbe/cdragon/tft/en_us.json",
+        "status": "checked"
+      },
+      {
+        "id": "tactics.tools",
+        "label": "tactics.tools Set 19 Info",
+        "role": "canonical preview roster and mechanics",
+        "url": "https://tactics.tools/tc/info/set-update",
+        "status": "ok"
+      },
+      {
+        "id": "riotOverview",
+        "label": "Riot Set 19 overview",
+        "role": "official preview validation",
+        "url": "https://teamfighttactics.leagueoflegends.com/en-gb/news/media/tft-set-19-prismatic-tour-overview/",
+        "status": "ok"
+      },
+      {
+        "id": "tft.ninja",
+        "label": "TFT Ninja Set 19",
+        "role": "roster validation",
+        "url": "https://tft.ninja/sets/19/units",
+        "status": "ok"
+      },
+      {
+        "id": "lolchess",
+        "label": "LoLChess Set 19",
+        "role": "roster validation",
+        "url": "https://lolchess.gg/tft/19?hl=en",
+        "status": "ok"
+      }
+    ],
+    "warnings": [
+      "CommunityDragon pbe does not expose a complete Set 19 object yet; using preview sources.",
+      "LoLChess Set 19 page did not contain most sampled tactics.tools champions."
+    ],
+    "verifiedAt": "2026-11-18T09:01:29.220Z"
+  },
+  "traits": [
+    {
+      "id": "8bit",
+      "apiName": "TFT19_8Bit",
+      "name": "8-Bit",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/d4500764c1c8feaa.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Keep score of your team's damage dealt, with Miss Fortune’s damage contributing triple. When you beat a high score, get a prize."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "arcanist",
+      "apiName": "TFT19_Arcanist",
+      "name": "Arcanist",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/c5a289c14ba4749b.svg",
+      "description": "Your team gains Ability Power, Arcanists gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Bonus Ability Power, more for Arcanists"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Bonus Ability Power, more for Arcanists"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Ability Power, more for Arcanists"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "beachpop",
+      "apiName": "TFT19_BeachPop",
+      "name": "Beach Pop",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/173180b992f17c66.svg",
+      "description": "Gain placeable instruments that empower adjacent allies. Empowered allies regenerate a portion of their Health periodically. Empowered Beach Pop champions gain Attack Speed and also regenerate Mana periodically.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "1 Instrument; bonus Attack Speed, Mana regeneration"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "2 Instruments; bonus Attack Speed, Mana regeneration"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "AND periodically, an ocean breeze heals Beach Pop champions and grants them Mana."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "beatmaster",
+      "apiName": "TFT19_BeatMaster",
+      "name": "Beat Master",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/5d6eca81eb1b5aa2.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "At a threshold of her max Health, Rell mounts up and fully heals over time. While mounted, her max Mana is reduced and every 3rd attack deals a portion of her total Armor and Magic Resist as magic damage in a line."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "bodyguard",
+      "apiName": "TFT19_Bodyguard",
+      "name": "Bodyguard",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/871c26a05433a0a2.svg",
+      "description": "While at least one Bodyguard is alive, your team gains bonus Armor and Magic Resist. Bodyguards gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Bonus Armor and Magic Resist for Bodyguards"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Bonus Armor and Magic Resist for Bodyguards"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Armor and Magic Resist for Bodyguards"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "boyband",
+      "apiName": "TFT19_BoyBand",
+      "name": "Boy Band",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/aeba4130a728dd90.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Rakan is accompanied by placeable clones that have a portion of his max Health, deal damage, and copy his Completed and Radiant items."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "choreographer",
+      "apiName": "TFT19_Choreographer",
+      "name": "Choreographer",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/d79c778158762921.svg",
+      "description": "Allies who start in the front 2 rows gain Shield. All other allies gain Damage Amp. Choreographers gain double.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Shield; Damage Amp"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Shield; Damage Amp"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Shield; Damage Amp"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Shield; Damage Amp"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "classical",
+      "apiName": "TFT19_Classical",
+      "name": "Classical",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/efaf7872dce4f9c6.svg",
+      "description": "Classical champions Captivate enemies in unique ways. They gain Damage Amp, increased periodically while an enemy is Captivated.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Bonus Damage Amp; the Captivated deal reduced damage."
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Bonus Damage Amp; the Captivated throw roses on death, healing a Classical champion."
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Damage Amp; the Captivated have a chance to join your bench on death."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "collab",
+      "apiName": "TFT19_Collab",
+      "name": "Collab",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/5d5d75efd3fa363b.svg",
+      "description": "Collab champions become inspired after taking or dealing damage a set number of times, gaining Attack Damage and Ability Power. Every time you reach the required number of inspirations during player combat, gain copies of Collab champions.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "Bonus Attack Damage and Ability Power"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Attack Damage and Ability Power Each game a different set of champions gain the Collab trait!"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "composer",
+      "apiName": "TFT19_Composer",
+      "name": "Composer",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/b95d34cfb19d153b.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Mystical Instruments can appear in your shop. There is one of each rarity. For each one you have, your team gains bonus Ability Power. Malzahar gains double. If he has dealt enough damage and you have all 5 instruments, Malzahar writes his masterpiece, unlocking Baron Nashor."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "country",
+      "apiName": "TFT19_Country",
+      "name": "Country",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/84ad5c0ed58a026b.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Combat Start: If your strongest Alistar has enough bonus Health, he gains Durability."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "disco",
+      "apiName": "TFT19_Disco",
+      "name": "Disco",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/74f9efde5f99eab3.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Your team heals for a portion of max Health per second. Enter Disco Fever after casting enough times, granting your team Attack Speed."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "edm",
+      "apiName": "TFT19_EDM",
+      "name": "EDM",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/5dcfa17804f3632f.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "EDM Abilities become harder, better, faster, and stronger."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "emo",
+      "apiName": "TFT19_Emo",
+      "name": "Emo",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/f69a473f560dc5c0.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Amumu gains bonus Armor and Magic Resist if he starts combat with no adjacent allies."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "encore",
+      "apiName": "TFT19_Encore",
+      "name": "Encore",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/8b6645958b0ecafe.svg",
+      "description": "When Encore champions fire projectiles with their abilities, they fire an extra one with reduced effectiveness.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Reduced projectile effectiveness"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Reduced projectile effectiveness"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "freestyle",
+      "apiName": "TFT19_Freestyle",
+      "name": "Freestyle",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/dcb0246726cda5da.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Akali gains a different passive on each side of the True Damage record. A-Side prints gold. B-Side restores Player Health."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "frontman",
+      "apiName": "TFT19_Frontman",
+      "name": "Frontman",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/c356c59fbaa19454.svg",
+      "description": "Your team gains bonus Health. Frontmen gain more, which increases after the first time they cast.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Bonus Health, increased after the first cast"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Bonus Health, increased after the first cast"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Health, increased after the first cast"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "goth",
+      "apiName": "TFT19_Goth",
+      "name": "Goth",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/252f68a1a632ad83.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "The first time your strongest Zeri damages an enemy each combat, vampiric bats steal some Attack Damage from them, bringing it back to her."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "gufeng",
+      "apiName": "TFT19_GuFeng",
+      "name": "Gu Feng",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/a7db0a485c98afa2.svg",
+      "description": "Gu Feng champions gain stats, scaling with your player level.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Attack Damage and Ability Power, plus Armor and Magic Resist per level."
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "and bonus Health per level."
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Choose between two Scrolls that can be equipped by Gu Feng champions. One of the Scrolls opens a dangerous path to Level 11."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "heartsteel",
+      "apiName": "TFT19_Heartsteel",
+      "name": "Heartsteel",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/b69a40b0a23adb58.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Heartsteel members grant your team bonuses."
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Choose a Bias, empowering their Ability."
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "Choose a 2nd Bias."
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "Heartsteel champions gain an additional portion of active Heartsteel bonuses. Heartsteel champions gain an additional portion of active Heartsteel bonuses. Prismatic: Buckle up—HEARTSTEEL IS BACK! Sett: Health Kayn: Attack Damage Ezreal: Critical Strike Chance K'Sante: Armor and Magic Resist Alune: Ability Power Yone: Omnivamp Aphelios: Attack Speed Emblem: Durability Sona: Increased Healing and Shielding"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "hitmaker",
+      "apiName": "TFT19_Hitmaker",
+      "name": "Hitmaker",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/2437c8d66bdb53f9.svg",
+      "description": "Hitmakers gain bonus Attack Damage. The Hitmakers with the most items become Big Shots, gaining even more Attack Damage.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Big Shot, bonus Attack Damage"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Big Shots, bonus Attack Damage"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "hypeman",
+      "apiName": "TFT19_HypeMan",
+      "name": "Hype Man",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/67b4433cc3fbaf91.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Whenever a Hyperpop champion deals enough damage or takes enough damage, store an extra Hyperpop Hype."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "hyperpop",
+      "apiName": "TFT19_Hyperpop",
+      "name": "Hyperpop",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/278f6f90a4e5e17c.svg",
+      "description": "Hyperpop champions gain Health and Attack Speed. After player combat, they generate 4/6/12/40 Hype based on their star level + 1 Hype per takedown. Each time you hit a new Hype Level, gain special rewards! At higher trait tiers, gain more Hype!",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Health, bonus Attack Speed"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Bonus Health, bonus Attack Speed, Hype multiplier"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Bonus Health, bonus Attack Speed, Hype multiplier"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Health, bonus Attack Speed, Hype multiplier"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "illbeats",
+      "apiName": "TFT19_Illbeats",
+      "name": "Illbeats",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/8a454f45637ed866.svg",
+      "description": "Open the Illbeats Mixer to allocate Decibels. Illbeats champions receive different stats based on your mix. Your team gains a portion of the mix.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Decibels"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Decibels"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Decibels. The mix is stronger. Health Attack Damage Ability Power Gold Chance on Takedown"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "indie",
+      "apiName": "TFT19_Indie",
+      "name": "Indie",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/ed735f9e60c017a1.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "After combat, Seraphine attracts new followers, granting you a random champion. When you 3-star a champion, she becomes a Rising Star, upgrading her Ability and granting you a special subscriber reward. After 3-starring enough champions, she becomes a Superstar!"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "ionicspark",
+      "apiName": "TFT19_IonicSpark",
+      "name": "Ionic Spark",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/25cb4ce995cda63e.svg",
+      "description": "Fans cheer on Ionic Spark members with gifts periodically. Ionic Spark members gain Health.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "Bonus Health; Letters that restore Health and grant Attack Speed"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "Bonus Health; Personalized gifts that grant Attack Damage or Ability Power"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 9,
+          "style": 3,
+          "label": "Bonus Health; Periodically after player combat, gain gold and a consumable!"
+        },
+        {
+          "minUnits": 10,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "Fans rush the stage!"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools + local Set 19 tier rule",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "jazz",
+      "apiName": "TFT19_Jazz",
+      "name": "Jazz",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/dc1566c9b91605ed.svg",
+      "description": "For each active trait (except uniques), your team gains bonus Health and Damage Amp.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Health, bonus Damage Amp"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Bonus Health, bonus Damage Amp"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Health, bonus Damage Amp"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "juggernaut",
+      "apiName": "TFT19_Juggernaut",
+      "name": "Juggernaut",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/21529b9217b97b52.svg",
+      "description": "Juggernauts gain Durability, increasing based on their missing Health.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Base to maximum Durability"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Base to maximum Durability"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Base to maximum Durability"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "kda",
+      "apiName": "TFT19_KDA",
+      "name": "K|DA",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/4cb03fafe3a32765.svg",
+      "description": "K|DA champions release new songs based on their total star level. At Combat Start and after a delay, they gain power for each of their songs.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "POP|STARS: Reduced max Mana."
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "DRUM GO DUM: Shield based on max Health."
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 9,
+          "style": 3,
+          "label": "VILLAIN: Attack Speed that decays over time."
+        },
+        {
+          "minUnits": 10,
+          "maxUnits": 12,
+          "style": 3,
+          "label": "I'LL SHOW YOU: Boost all previous effects."
+        },
+        {
+          "minUnits": 13,
+          "maxUnits": 14,
+          "style": 3,
+          "label": "WATCH ME: Stun all enemies temporarily."
+        },
+        {
+          "minUnits": 15,
+          "maxUnits": 20,
+          "style": 3,
+          "label": "FIRESTARTER: Enemies take magic damage based on their max Health over time."
+        },
+        {
+          "minUnits": 21,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "GIRLS: K|DA members ascend to 4-star."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools + local Set 19 tier rule",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "manager",
+      "apiName": "TFT19_Manager",
+      "name": "Manager",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/a3afde307c4b1475.svg",
+      "description": "Gain a Spotlight Hex. The ally who starts combat in it gains bonuses at Combat Start and periodically thereafter.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Attack Damage and Ability Power"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "AND Mana"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "AND they drop Gold!"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "mariachi",
+      "apiName": "TFT19_Mariachi",
+      "name": "Mariachi",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/c58f4d656a0d9481.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "When Nidalee casts her Ability while above a Health threshold, she transforms into Cougar Form and casts Pounce Party. Otherwise, she casts Dance of Life. Whenever she drops below a Health threshold, she leaps away and transforms back to Human form."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "melodicheart",
+      "apiName": "TFT19_MelodicHeart",
+      "name": "Melodic Heart",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/240bcdd9359a6e4e.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "For the opening moments of combat, your strongest Gwen is surrounded by Mist and cannot be targeted by attacks. Allies gain Durability while within the Mist."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "onemonsterband",
+      "apiName": "TFT19_OneMonsterBand",
+      "name": "One Monster Band",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/7d5a6f94fbdfb1ac.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Baron Nashor takes up 2 team slots and is unstoppable. After the first time Baron Nashor casts, he envelops the board in song, stealing a portion of the Attack Damage, Ability Power, Attack Speed, and Critical Strike Chance from all enemies."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "pentakill",
+      "apiName": "TFT19_Pentakill",
+      "name": "Pentakill",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/baf3e472a96e456e.svg",
+      "description": "Pentakill members gain Attack Damage and Ability Power. The first few enemies to drop below a Health threshold are executed and summon an allied ghoul in their place.",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "Bonus Attack Damage and Ability Power, a set number of enemies executed"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "Bonus Attack Damage and Ability Power, a set number of enemies executed"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Attack Damage and Ability Power, a set number of enemies executed. The first enemy to die summons the Iron Maiden instead. Bonus Attack Damage and Ability Power. MOSH PIT!!!!!!!"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "prodigy",
+      "apiName": "TFT19_Prodigy",
+      "name": "Prodigy",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/55de5070180e9bd2.svg",
+      "description": "Your team gains bonus Mana Regen. Prodigies gain more.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Mana Regen"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Bonus Mana Regen"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Bonus Mana Regen"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Mana Regen; The lowest Health ally heals for a portion of damage dealt by Prodigies' abilities."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "producer",
+      "apiName": "TFT19_Producer",
+      "name": "Producer",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/32550c92b6d9db3d.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "When Sona is fielded, choose a band to feature, gaining their trait. Sona converts all bonus Attack Damage and Attack Speed into Ability Power."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "rb",
+      "apiName": "TFT19_RB",
+      "name": "R&B",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/49b44636641579a3.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 1,
+          "style": 1,
+          "label": "Your team takes less damage from abilities."
+        },
+        {
+          "minUnits": 2,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Your strongest Mel and Rell are soul-linked. A portion of damage Mel takes is redirected to Rell. Rell heals for a portion of damage dealt by Mel."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "recordmogul",
+      "apiName": "TFT19_RecordMogul",
+      "name": "Record Mogul",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/3278e2056f0eea0a.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Gain a Record Contract now and periodically thereafter. Contracted champions gain Damage Amp and their kills grant Dr. Mundo permanent Health. The Record Contract is returned when the Recording Artist is sold or benched."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "renegade",
+      "apiName": "TFT19_Renegade",
+      "name": "Renegade",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/8fad275b60e6bbdc.svg",
+      "description": "Renegades gain Precision , Critical Strike Chance, and Critical Strike Damage.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Critical Strike Chance, bonus Critical Strike Damage"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Bonus Critical Strike Chance, bonus Critical Strike Damage"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Bonus Critical Strike Chance, bonus Critical Strike Damage"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Critical Strike Chance, bonus Critical Strike Damage. Additionally, Renegades gain Durability."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "rock",
+      "apiName": "TFT19_Rock",
+      "name": "Rock",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/29c7f4d875362e61.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Summon the Infernal Idol."
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "He heals for a portion of damage dealt by Rock champions."
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 6,
+          "style": 3,
+          "label": "On cast, he fires a massive blast through the most enemies!"
+        },
+        {
+          "minUnits": 7,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Periodically while he lives, bolts blast nearby enemies, repeating a portion of damage dealt by Rock champions as magic damage. The Infernal Idol grows stronger based on the star level of your Rock champions."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "slayer",
+      "apiName": "TFT19_Slayer",
+      "name": "Slayer",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/d7d28e02283b7d07.svg",
+      "description": "Slayers gain Attack Speed and Omnivamp, which increases up to a cap, based on their missing Health.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 3,
+          "style": 1,
+          "label": "Bonus Attack Speed, bonus Omnivamp"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 5,
+          "style": 3,
+          "label": "Bonus Attack Speed, bonus Omnivamp"
+        },
+        {
+          "minUnits": 6,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Attack Speed, bonus Omnivamp"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "swiftstriker",
+      "apiName": "TFT19_Swiftstriker",
+      "name": "Swiftstriker",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/235051eed08de671.svg",
+      "description": "Your team gains Attack Speed. Swiftstrikers gain more periodically, up to a stack limit.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Bonus Attack Speed per stack"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Bonus Attack Speed per stack"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 4,
+          "style": 3,
+          "label": "Bonus Attack Speed per stack"
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Bonus Attack Speed per stack"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "synthwave",
+      "apiName": "TFT19_Synthwave",
+      "name": "Synthwave",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/12b17b30ccdbefc0.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "At a Health threshold, gain a temporary Shield equal to a portion of Healing and Shielding received this combat."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "tango",
+      "apiName": "TFT19_Tango",
+      "name": "Tango",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/1a182f252f50f1eb.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Twisted Fate marks the nearest ally as his Tango Partner. They ignite with passion, gaining Attack Speed. Their damage Burns and Wounds enemies for a time. Burn: Deals a percent of the target’s max Health as true damage every second. Wound: Reduces healing received."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    },
+    {
+      "id": "trickshot",
+      "apiName": "TFT19_Trickshot",
+      "name": "Trickshot",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/df7730b4c6ce4821.svg",
+      "description": "Trickshots' Attacks and Abilities ricochet. Each ricochet deals a percentage of the previous bounce's damage.",
+      "effects": [
+        {
+          "minUnits": 2,
+          "maxUnits": 2,
+          "style": 1,
+          "label": "Ricochets; a portion of previous damage"
+        },
+        {
+          "minUnits": 3,
+          "maxUnits": 3,
+          "style": 3,
+          "label": "Ricochets; a portion of previous damage"
+        },
+        {
+          "minUnits": 4,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Ricochets; a portion of previous damage"
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "truedamage",
+      "apiName": "TFT19_TrueDamage",
+      "name": "True Damage",
+      "category": "origin",
+      "iconUrl": "/data/assets/pbe-preview-set19/6d3ff7b6d6f7b624.svg",
+      "description": "While on the A-Side, earn Bling for winning player combat. On the B-Side, earn Bling for losing. Periodically, choose to convert Bling into rewards or Keep Rising. A-Side: Win",
+      "effects": [
+        {
+          "minUnits": 3,
+          "maxUnits": 4,
+          "style": 1,
+          "label": "True Damage members deal bonus true damage. Gain Bling on kill + additional Bling if you win combat. After losing, gain Bling + additional Bling per consecutive loss on the B-Side. If you win, lose a portion of your Bling."
+        },
+        {
+          "minUnits": 5,
+          "maxUnits": 25000,
+          "style": 6,
+          "label": "Bonus true damage. Bling on kill + additional Bling if you win combat. Prismatic: KNOW MY NAME blasts from the record player! True Damage members deal 99% bonus true damage and earn double the bling. B-Side: Lose Each round after combat, heal some player Health and gain XP. Prismatic: GIANTS blasts from the record player! True Damage members deal 99% bonus true damage and drop gold on kill."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": "tactics.tools",
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": false
+    },
+    {
+      "id": "windblessed",
+      "apiName": "TFT19_Windblessed",
+      "name": "Windblessed",
+      "category": "class",
+      "iconUrl": "/data/assets/pbe-preview-set19/02cdcade47933d6d.svg",
+      "description": null,
+      "effects": [
+        {
+          "minUnits": 1,
+          "maxUnits": 25000,
+          "style": 4,
+          "label": "Combat Start: Your strongest Janna releases a tornado that travels forward, knocking up enemies in its path."
+        }
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "category": "tactics.tools",
+        "description": null,
+        "effects": "tactics.tools",
+        "icon": "tactics.tools"
+      },
+      "isUnique": true
+    }
+  ],
+  "units": [
+    {
+      "id": "da19elise",
+      "apiName": "DA_19_Elise",
+      "name": "Elise",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 60,
+      "manaMax": 120,
+      "ability": {
+        "name": "Cocoon",
+        "description": "Transform into Spider Form, gaining Health. Fire webbing at the enemy that dealt the most damage this round, stunning the first enemy hit and dealing magic damage. Subsequent casts heal, then fire webbing."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/152b0eae1b03878a.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19gnar",
+      "apiName": "DA_19_Gnar",
+      "name": "Gnar",
+      "cost": 1,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 3,
+      "ability": {
+        "name": "Hard Rock",
+        "description": "Passive: Every 3rd attack is replaced with a rock that deals physical damage and grants Gnar Attack Speed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/f34bd0330ea21cfc.avif",
+      "originTraitIds": [
+        "pentakill"
+      ],
+      "classTraitIds": [
+        "trickshot"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill",
+        "trickshot"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19katarina",
+      "apiName": "DA_19_Katarina",
+      "name": "Katarina",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Blade Sonata",
+        "description": "Twirl, slashing adjacent enemies for magic damage, then eviscerate the current target for magic damage. Enemies hit are Captivated, and Captivated enemies grant bonuses to Classical champions."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/c09b85ca8799fc3c.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19kayn",
+      "apiName": "DA_19_Kayn",
+      "name": "Kayn",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Shadow of the Night",
+        "description": "Dash and swipe, dealing physical damage to enemies in a 2-hex line. With the Heartsteel upgrade, transform into the Shadow Assassin at a health threshold, briefly becoming untargetable and dealing bonus magic damage for the rest of combat."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/18a39f38363f749a.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19kennen",
+      "apiName": "DA_19_Kennen",
+      "name": "Kennen",
+      "cost": 1,
+      "range": 2,
+      "manaStart": null,
+      "manaMax": null,
+      "ability": {
+        "name": "Electric Shock",
+        "description": "Passive: Reduce all incoming damage. Every second, zap adjacent enemies, dealing magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/be7eb2cbc2e691af.avif",
+      "originTraitIds": [
+        "truedamage"
+      ],
+      "classTraitIds": [
+        "bodyguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "truedamage",
+        "bodyguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": null,
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19kobuko",
+      "apiName": "DA_19_Kobuko",
+      "name": "Kobuko",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 90,
+      "ability": {
+        "name": "Pump It Up!",
+        "description": "Passive: Your strongest Kobuko gains bonus Health based on Hyperpop Hype. Active: Amp Up, healing each second for the duration."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2ea4b3c5f4b14eed.avif",
+      "originTraitIds": [
+        "hyperpop"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "hyperpop",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19lillia",
+      "apiName": "DA_19_Lillia",
+      "name": "Lillia",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "We Love You K|DA",
+        "description": "Heals and strikes the target, dealing magic damage to nearby enemies and weakening them for a duration. Weakening reduces damage dealt."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/036031aa0a981918.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "bodyguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "bodyguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19neeko",
+      "apiName": "DA_19_Neeko",
+      "name": "Neeko",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "K|DA Fan Club",
+        "description": "Convene the K/DA fan club and throw confetti streams at the target, each dealing magic damage. If a stream kills, permanently gain Ability Power."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/111f6076ad4547ad.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "encore",
+        "prodigy"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "encore",
+        "prodigy"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19olaf",
+      "apiName": "DA_19_Olaf",
+      "name": "Olaf",
+      "cost": 1,
+      "range": 1,
+      "manaStart": null,
+      "manaMax": null,
+      "ability": {
+        "name": "Ragnarok 'n' Roll",
+        "description": "Passive: On attack, heal. On death, instead heal to full and gain Attack Speed, but lose a percentage of maximum Health each second."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/426ac953783ecf48.avif",
+      "originTraitIds": [
+        "pentakill",
+        "rock"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill",
+        "rock",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": null,
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19sett",
+      "apiName": "DA_19_Sett",
+      "name": "Sett",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Live My Life",
+        "description": "Passive: Gain more maximum Health from all sources. Active: Heal, then strike the target twice, dealing physical damage with each hit. Heartsteel Upgrade: Periodically heal a portion of maximum Health, increased based on missing Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/ef05d127762cb026.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19taric",
+      "apiName": "DA_19_Taric",
+      "name": "Taric",
+      "cost": 1,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Good Reverberations",
+        "description": "Grant a shield to Taric and a nearby damaged ally for a duration."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/9b5ff0fbd4a50de6.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19varus",
+      "apiName": "DA_19_Varus",
+      "name": "Varus",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 30,
+      "manaMax": 70,
+      "ability": {
+        "name": "One Thousand Arrows",
+        "description": "Fire a hail of arrows, dealing physical damage to the target and damage to adjacent enemies. Slow them, reducing their Attack Speed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/1ffd633bc2e15d7d.avif",
+      "originTraitIds": [
+        "rock"
+      ],
+      "classTraitIds": [
+        "encore"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rock",
+        "encore"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19yunara",
+      "apiName": "DA_19_Yunara",
+      "name": "Yunara",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 40,
+      "manaMax": 80,
+      "ability": {
+        "name": "Cultivation of Teen Spirit",
+        "description": "For the rest of combat, attacks fire an additional orb that deals physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/549ad1bd52dc6a3e.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19ziggs",
+      "apiName": "DA_19_Ziggs",
+      "name": "Ziggs",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "GlitterBOM3S",
+        "description": "Passive: Attacks deal bonus magic damage. Active: Throw a bomb at the target, dealing magic damage to them and adjacent enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/bc4b402e1f7ec0ff.avif",
+      "originTraitIds": [
+        "hyperpop"
+      ],
+      "classTraitIds": [
+        "arcanist",
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "hyperpop",
+        "arcanist",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19zoe",
+      "apiName": "DA_19_Zoe",
+      "name": "Zoe",
+      "cost": 1,
+      "range": 4,
+      "manaStart": 15,
+      "manaMax": 90,
+      "ability": {
+        "name": "Paddle Ball",
+        "description": "Fires a paddle ball backwards, then redirects it toward the farthest enemy, dealing magic damage to the first enemy hit. If that enemy dies, the ball ricochets to the next enemy hit and deals excess damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/3aa6bcf047802389.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "arcanist"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "arcanist"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19annie",
+      "apiName": "DA_19_Annie",
+      "name": "Annie",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 20,
+      "manaMax": 80,
+      "ability": {
+        "name": "We DID Start the Fire",
+        "description": "Gain a shield, then unleash a cone of fire that deals magic damage to enemies and Burns and Wounds them for 4 seconds."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/66276aa01d0105fe.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "arcanist",
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "arcanist",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19ashe",
+      "apiName": "DA_19_Ashe",
+      "name": "Ashe",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 20,
+      "manaMax": 60,
+      "ability": {
+        "name": "Feelin' Shot Shot Shot",
+        "description": "Her next attacks gain Attack Speed and become flurries of arrows. Each arrow deals physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/daaad7b5eb5684be.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19camille",
+      "apiName": "DA_19_Camille",
+      "name": "Camille",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Hookshot Through the Heart",
+        "description": "Passive: When the target dies, hookshot to the next target and deal physical damage to them. Active: Sweep-kick in a cone, dealing physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/9fa800db0e607747.avif",
+      "originTraitIds": [
+        "rock"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rock",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19ezreal",
+      "apiName": "DA_19_Ezreal",
+      "name": "Ezreal",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 35,
+      "ability": {
+        "name": "Bite the Bullet",
+        "description": "Fire a missile that marks the target, then launch a second blast that detonates the mark, dealing physical damage to the target and units within 1 Hex. Heartsteel Upgrade: The detonation deals increased damage. Every 3rd cast hits enemies within a 2 Hex radius instead."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/d129b6794bf79862.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [
+        "encore"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel",
+        "encore"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19gragas",
+      "apiName": "DA_19_Gragas",
+      "name": "Gragas",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 80,
+      "ability": {
+        "name": "Fan Clubbing",
+        "description": "Become boisterous, restoring Health each second and dealing bonus magic damage on attack. For each 3-star K/DA ally, both effects increase."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/dc36ef95a3aa64e2.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19illaoi",
+      "apiName": "DA_19_Illaoi",
+      "name": "Illaoi",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Smash-Hit Royalties",
+        "description": "Active: Heal and deal magic damage in a 2-hex line. Quest: On cast during player combat, gain Fame, with bonus Fame for every 10g you have up to a gold cap. At the Fame threshold, go Platinum, gaining Durability and dropping gold on cast instead."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/28a56ae3ee80d1f4.avif",
+      "originTraitIds": [
+        "illbeats"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "illbeats",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19jax",
+      "apiName": "DA_19_Jax",
+      "name": "Jax",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Instant Crush",
+        "description": "Bash the current target, dealing magic damage and healing for a percentage of damage dealt. Gain Attack Speed for the rest of combat. EDM Upgrade: Fire beams at nearby enemies, dealing magic damage reduced for each enemy the beams pass through."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/093846cedca043ec.avif",
+      "originTraitIds": [
+        "edm"
+      ],
+      "classTraitIds": [
+        "bodyguard",
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "edm",
+        "bodyguard",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19karthus",
+      "apiName": "DA_19_Karthus",
+      "name": "Karthus",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 10,
+      "manaMax": 50,
+      "ability": {
+        "name": "Requiem",
+        "description": "After a brief delay, deal magic damage to the current target. If they die, recast this ability at reduced effectiveness."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/dc140700980987d5.avif",
+      "originTraitIds": [
+        "pentakill"
+      ],
+      "classTraitIds": [
+        "arcanist"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill",
+        "arcanist"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19lucian",
+      "apiName": "DA_19_Lucian",
+      "name": "Lucian",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 20,
+      "ability": {
+        "name": "Relentless Pursuit",
+        "description": "Dash to a nearby hex, then fire 2 shots at the target, each dealing physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/76c81d92f1dc9190.avif",
+      "originTraitIds": [
+        "jazz"
+      ],
+      "classTraitIds": [
+        "hitmaker",
+        "encore"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "jazz",
+        "hitmaker",
+        "encore"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19lulu",
+      "apiName": "DA_19_Lulu",
+      "name": "Lulu",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Hype Girl",
+        "description": "Rotate between two effects: Whimsy! grants an ally decaying Attack Speed and deals magic damage on hit. Wild Growth increases an ally’s Health; while active, adjacent enemies take magic damage each second."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/3219b0f6901c2f4f.avif",
+      "originTraitIds": [
+        "hyperpop"
+      ],
+      "classTraitIds": [
+        "choreographer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "hyperpop",
+        "choreographer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19lux",
+      "apiName": "DA_19_Lux",
+      "name": "Lux",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Lux Lux Beam!",
+        "description": "Toss a prism into the air and blast it with a beam of light. The beam splits, dealing magic damage to the target and another nearby enemy. Gain Mana for each enemy killed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/443c155baaf08565.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "prodigy"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "prodigy"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19nasus",
+      "apiName": "DA_19_Nasus",
+      "name": "Nasus",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 25,
+      "manaMax": 75,
+      "ability": {
+        "name": "Patron of the Arts",
+        "description": "Create a magnificent hex field that lasts several seconds. While active, heal each second, and allies within the field heal. Enemies take magic damage and are Captivated if they have less maximum Health than Nasus. Captivated enemies grant bonuses to Classical champions."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/57b826e4f8321deb.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "bodyguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "bodyguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19qiyana",
+      "apiName": "DA_19_Qiyana",
+      "name": "Qiyana",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Shuffled Playlist",
+        "description": "Passive: Qiyana’s ring changes color periodically, granting her ability different bonus effects. Active: Dash through enemies in a line, dealing physical damage to the target and other enemies hit. Red deals bonus damage; Green heals based on damage dealt; Blue refunds mana; Gold grants gold and randomly applies one of the other effects."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/05c2911dad0bbd72.avif",
+      "originTraitIds": [
+        "truedamage"
+      ],
+      "classTraitIds": [
+        "renegade"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "truedamage",
+        "renegade"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19renataglasc",
+      "apiName": "DA_19_RenataGlasc",
+      "name": "Renata Glasc",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 45,
+      "ability": {
+        "name": "Hostile Measures",
+        "description": "Fires a musical bar at the target, applying Toxin stacks that deal magic damage over time. Also applies Toxin to nearby enemies, prioritizing unpoisoned enemies. Enemies are Captivated when Toxin is applied; the effect lasts longer if their star level is less than or equal to Renata’s. Captivated enemies grant bonuses to Classical champions."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/0d472358e33b4a85.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "choreographer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "choreographer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19renekton",
+      "apiName": "DA_19_Renekton",
+      "name": "Renekton",
+      "cost": 2,
+      "range": 1,
+      "manaStart": 60,
+      "manaMax": 110,
+      "ability": {
+        "name": "Crocodile Rock",
+        "description": "Grow larger, gaining max Health for the rest of combat. Then spin, dealing physical damage to adjacent enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/e97996f25e16d348.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19samira",
+      "apiName": "DA_19_Samira",
+      "name": "Samira",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Bullets N' Roses",
+        "description": "Passive: When Samira critically strikes an enemy, they become Captivated. Active: Fire bullets at the current target, each dealing physical damage. Captivated enemies grant bonuses to Classical champions."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/0181f7045890b14d.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "renegade",
+        "trickshot"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "renegade",
+        "trickshot"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19seraphine",
+      "apiName": "DA_19_Seraphine",
+      "name": "Seraphine",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Livestream of Note",
+        "description": "Indie: Release a stream of notes at the target while posing for the fans, dealing magic damage over 2.5 seconds. Rising Star: Release bonus notes at nearby enemies. Superstar: Toss high notes at every enemy."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/cf0a6f330af5ab89.avif",
+      "originTraitIds": [
+        "indie"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "indie"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19tristana",
+      "apiName": "DA_19_Tristana",
+      "name": "Tristana",
+      "cost": 2,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 55,
+      "ability": {
+        "name": "Head Banger",
+        "description": "Throw bombs at nearby enemies and detonate them, dealing physical damage. The final blast deals different physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/592d6f28e057a9dc.avif",
+      "originTraitIds": [
+        "hyperpop"
+      ],
+      "classTraitIds": [
+        "hitmaker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "hyperpop",
+        "hitmaker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19amumu",
+      "apiName": "DA_19_Amumu",
+      "name": "Amumu",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 60,
+      "manaMax": 120,
+      "ability": {
+        "name": "So Sad and Lorn",
+        "description": "Heal and toss bandages at the nearest enemies, dealing magic damage and stunning them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2991ab86cca93f17.avif",
+      "originTraitIds": [
+        "emo"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "emo"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19bard",
+      "apiName": "DA_19_Bard",
+      "name": "Bard",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 20,
+      "manaMax": 80,
+      "ability": {
+        "name": "Come Chime with Me",
+        "description": "Passive: Gain the Horn of the Traveler. While equipped, casts generate XP and attacks grant bonus Mana. Active: Summon a wave of meeps that deals magic damage to enemies hit, with damage reduced for each enemy it passes through."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2becd09171f2e34e.avif",
+      "originTraitIds": [
+        "jazz"
+      ],
+      "classTraitIds": [
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "jazz",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19braum",
+      "apiName": "DA_19_Braum",
+      "name": "Braum",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 75,
+      "manaMax": 135,
+      "ability": {
+        "name": "Percussive Slam",
+        "description": "Gain a shield, then slam the ground, dealing magic damage to adjacent enemies and stunning them."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/1fc1d0e39d91cbeb.avif",
+      "originTraitIds": [
+        "illbeats"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "illbeats",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19briar",
+      "apiName": "DA_19_Briar",
+      "name": "Briar",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Snack Attack",
+        "description": "Heals and kicks a snack at the furthest enemy within range. Dashes toward it, dealing physical damage in an area. Then chow downs, gaining Attack Speed for the next several attacks and replacing them with slashes that deal physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/3c810d5926785ced.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19draven",
+      "apiName": "DA_19_Draven",
+      "name": "Draven",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "You Spin Me Round (Like An Axe)",
+        "description": "Throws a massive spinning record at the target, dealing physical damage. It leaves behind a vortex that deals physical damage per second, split among enemies within 1 hex."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/d8e12ac9c33faa0b.avif",
+      "originTraitIds": [
+        "illbeats"
+      ],
+      "classTraitIds": [
+        "trickshot"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "illbeats",
+        "trickshot"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19ekko",
+      "apiName": "DA_19_Ekko",
+      "name": "Ekko",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 120,
+      "ability": {
+        "name": "Turn Back Time",
+        "description": "Passive: Rewinds a portion of damage taken over time. Active: Instantly heals all damage being rewound and restores bonus Health, then deals magic damage to the current target."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/febafc22e4dd305a.avif",
+      "originTraitIds": [
+        "truedamage"
+      ],
+      "classTraitIds": [
+        "juggernaut",
+        "prodigy"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "truedamage",
+        "juggernaut",
+        "prodigy"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19evelynn",
+      "apiName": "DA_19_Evelynn",
+      "name": "Evelynn",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Villainous",
+        "description": "Passive: At combat start, teleport behind the current target and become enshrouded for a duration. While enshrouded, become untargetable to attacks and gain Durability if enough other allies are alive. Active: Deal magic damage to the current target and other enemies in a semi-circle, ignoring a portion of their Magic Resist."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/423ee04d8bf700c7.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "renegade"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "renegade"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19galio",
+      "apiName": "DA_19_Galio",
+      "name": "Galio",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 50,
+      "manaMax": 120,
+      "ability": {
+        "name": "Blow Up a Storm",
+        "description": "Gain a shield for a duration. Fire wind at the enemy who dealt the most damage this fight, dealing magic damage and stunning them for a duration."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/1228edf19acb79da.avif",
+      "originTraitIds": [
+        "jazz"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "jazz",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19ksante",
+      "apiName": "DA_19_KSante",
+      "name": "K'Sante",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 70,
+      "manaMax": 140,
+      "ability": {
+        "name": "In Your House!",
+        "description": "Gain a shield, then charge and push the target, stunning them and other enemies hit before slamming them for physical damage. After charging, taunt nearby enemies. Heartsteel Upgrade: Gain Armor and Magic Resist and deal bonus physical damage on attack."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/490bf1891474d4b2.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [
+        "bodyguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel",
+        "bodyguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19kaisa",
+      "apiName": "DA_19_KaiSa",
+      "name": "Kai'Sa",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Make it Rain",
+        "description": "Passive: Every few attacks, fire missiles that deal physical damage. Active: Gain Attack Speed for the rest of combat."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/30b6c8b31f98c5ea.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "trickshot"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "trickshot"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19malzahar",
+      "apiName": "DA_19_Malzahar",
+      "name": "Malzahar",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Forbidden Cacophony",
+        "description": "Fire a beam at the target, dealing magic damage over time. The energy rhythmically explodes 4 times, reducing the Magic Resist of enemies in an area and dealing magic damage with each explosion."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/0fc577d12e0f3ea1.avif",
+      "originTraitIds": [
+        "composer"
+      ],
+      "classTraitIds": [
+        "prodigy"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "composer",
+        "prodigy"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19senna",
+      "apiName": "DA_19_Senna",
+      "name": "Senna",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 20,
+      "ability": {
+        "name": "Reverberation Devastation",
+        "description": "Blast the target, dealing physical damage and marking them. If they’re already marked, detonate the mark instead, dealing damage. Detonating the mark or killing a marked enemy grants Damage Amp until the end of combat."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/acaa4f1dff1f6434.avif",
+      "originTraitIds": [
+        "truedamage"
+      ],
+      "classTraitIds": [
+        "hitmaker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "truedamage",
+        "hitmaker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19swain",
+      "apiName": "DA_19_Swain",
+      "name": "Swain",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 70,
+      "manaMax": 120,
+      "ability": {
+        "name": "A Cruel Devil's Thesis",
+        "description": "Enter Demon Form, gaining max Health and dealing magic damage to adjacent enemies every second. Subsequent casts heal and increase the damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2fbfeb2452b6c148.avif",
+      "originTraitIds": [
+        "rock"
+      ],
+      "classTraitIds": [
+        "arcanist",
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rock",
+        "arcanist",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19syndra",
+      "apiName": "DA_19_Syndra",
+      "name": "Syndra",
+      "cost": 3,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Serve's Up",
+        "description": "Spike a volleyball at the target, dealing magic damage. It bounces to the enemy behind them with the fewest items, dealing magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/39d52df5ea31d3b8.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "choreographer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "choreographer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19tibbers",
+      "apiName": "DA_19_Tibbers",
+      "name": "Tibbers",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Girl's Best Friend",
+        "description": "Passive: At low health or when your strongest Annie dies, become enraged, gaining max Health, Attack Damage, and Attack Speed that decays over time. Active: Gain a shield for a fixed duration. If enraged, refresh the decaying Attack Speed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2bd666c8da6cdcaf.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "bodyguard"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "bodyguard"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19viego",
+      "apiName": "DA_19_Viego",
+      "name": "Viego",
+      "cost": 3,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Singled Out",
+        "description": "Summon swords around the target, then impale them after a brief delay, dealing physical damage per sword. Gain a permanent sword every set number of takedowns."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/0fe2534d6162af0c.avif",
+      "originTraitIds": [
+        "pentakill"
+      ],
+      "classTraitIds": [
+        "choreographer",
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill",
+        "choreographer",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19ahri",
+      "apiName": "DA_19_Ahri",
+      "name": "Ahri",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Burn it Down",
+        "description": "Passive: Start combat with fox-fires and gain more after casting, up to a limit. Then enter a flow state, moving faster and empowering subsequent casts. Active: Launch all fox-fires at the target, each dealing magic damage. While in the flow state, launch a heart at the target that deals magic damage and split the fox-fires among enemies near the target."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/9a9d760f1dac96d9.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "choreographer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "choreographer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19alistar",
+      "apiName": "DA_19_Alistar",
+      "name": "Alistar",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 55,
+      "manaMax": 155,
+      "ability": {
+        "name": "Blue Cow Crying in the Rain",
+        "description": "Heal, with the amount increased based on missing Health. Then slam the target, knocking up nearby enemies and dealing magic damage to all enemies hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/b3a5d5bd817db258.avif",
+      "originTraitIds": [
+        "country"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "country"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19alune",
+      "apiName": "DA_19_Alune",
+      "name": "Alune",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 20,
+      "manaMax": 65,
+      "ability": {
+        "name": "Spotlight",
+        "description": "Call down a spotlight on the target, dealing magic damage. Nearby enemies split magic damage. If the target dies, excess damage is split among the nearest enemies. Heartsteel Upgrade: Fire blasts at the target that deal magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/29ab20ef5f17daf3.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [
+        "manager",
+        "prodigy"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel",
+        "manager",
+        "prodigy"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19aurora",
+      "apiName": "DA_19_Aurora",
+      "name": "Aurora",
+      "cost": 4,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Between Worlds Apart",
+        "description": "Blink away and fire a blast through the best line, dealing magic damage to the two highest-Health enemies and less magic damage to the rest. Then blink back."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/fc59210923669823.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "renegade"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "renegade"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19garen",
+      "apiName": "DA_19_Garen",
+      "name": "Garen",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 100,
+      "ability": {
+        "name": "Sword of Truth",
+        "description": "Heal, then fire a wave toward the current target, dealing physical damage to enemies hit and weakening them, reducing their damage dealt."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/58dc4737b365b32b.avif",
+      "originTraitIds": [
+        "synthwave"
+      ],
+      "classTraitIds": [
+        "choreographer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "synthwave",
+        "choreographer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19graves",
+      "apiName": "DA_19_Graves",
+      "name": "Graves",
+      "cost": 4,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Left Hand Free",
+        "description": "For the next attacks, gain Attack Speed, dash to targets, and fire a cone of bullets that each deal physical damage. On a kill, empower an additional attack."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/58a3b9d8fec06747.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "renegade"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "renegade"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19jhin",
+      "apiName": "DA_19_Jhin",
+      "name": "Jhin",
+      "cost": 4,
+      "range": 5,
+      "manaStart": 4,
+      "manaMax": 4,
+      "ability": {
+        "name": "String Quartet",
+        "description": "Passive: Convert bonus Attack Speed into Attack Damage. Attacks summon violins that strike in unison, dealing physical damage and captivating the target. Every fourth attack deals empowered physical damage and resets the violins. From the fourth sequence onward, all violins remain out, Jhin gains infinite range, and his attacks pierce targets, dealing reduced damage with each target hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2262af644ed110b9.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "encore"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "encore"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19jinx",
+      "apiName": "DA_19_Jinx",
+      "name": "Jinx",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 30,
+      "manaMax": 90,
+      "ability": {
+        "name": "Boom Boom POW POW",
+        "description": "Rapidly fire missiles at nearby enemies, each dealing physical damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/7dfc3200c42b8fad.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "hitmaker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "hitmaker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19kayle",
+      "apiName": "DA_19_Kayle",
+      "name": "Kayle",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Stairway to Hell",
+        "description": "Passive: Attacks deal bonus magic damage. Active: Gain Attack Speed and infinite range for a duration, summoning a sword with each attack. Afterwards, rain swords on the target, dealing magic damage to nearby enemies and additional magic damage to the target for each sword."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/e3b5278f9e4cee87.avif",
+      "originTraitIds": [
+        "pentakill"
+      ],
+      "classTraitIds": [
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19leona",
+      "apiName": "DA_19_Leona",
+      "name": "Leona",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Coordinated Light Show",
+        "description": "Gain a shield for a duration. Call down beams of light on nearby enemies; each deals magic damage and reduces its target’s Magic Resist."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/2fdfb4a3c8a2dcc2.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [
+        "bodyguard",
+        "manager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda",
+        "bodyguard",
+        "manager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19locke",
+      "apiName": "DA_19_Locke",
+      "name": "Locke",
+      "cost": 4,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Pursue Sin (The Soul Nail Song)",
+        "description": "Passive: Attacks deal bonus magic damage. All damage Locke deals to an enemy increases for each mark he has applied to them. Active: Hurl 3 Soul Nails at the furthest enemy within range, dealing magic damage to and marking all enemies hit. Then teleport to that enemy and deal magic damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/54bd8831b64c15fe.avif",
+      "originTraitIds": [
+        "rock"
+      ],
+      "classTraitIds": [
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rock",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19mel",
+      "apiName": "DA_19_Mel",
+      "name": "Mel",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Chain of Blues",
+        "description": "Fire missiles split between the closest enemies, dealing magic damage and applying a stack of Blues to each. For every required stack threshold of Blues, enemies take increased damage from this ability."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/60645f4017363154.avif",
+      "originTraitIds": [
+        "rb"
+      ],
+      "classTraitIds": [
+        "arcanist"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rb",
+        "arcanist"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19shyvana",
+      "apiName": "DA_19_Shyvana",
+      "name": "Shyvana",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 100,
+      "ability": {
+        "name": "Dragon Force",
+        "description": "Passive: At a health threshold, transform into Dragon Form. While transformed, gain max Health and Attack Speed, and every third attack deals bonus magic damage in a 1-hex area. Active: Gain a Shield for a duration."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/4fa847373be8e0ce.avif",
+      "originTraitIds": [
+        "ionicspark"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19thresh",
+      "apiName": "DA_19_Thresh",
+      "name": "Thresh",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "Dark Passage (Reprise)",
+        "description": "Passive: Periodically Captivate the farthest enemy who isn’t already Captivated. Active: Heal, then drain max Health from nearby enemies over time. While draining, gain Durability. Captivated enemies grant bonuses to Classical champions."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/7fc5e451999486ef.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19vayne",
+      "apiName": "DA_19_Vayne",
+      "name": "Vayne",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Darkest Hour",
+        "description": "Passive: On cast or when hit, tumble and gain Durability for a duration (cooldown applies). Active: Gain demonic power, enhancing the next attacks to deal physical damage based on Attack Damage and the target’s max Health."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/6b5dee240847fad0.avif",
+      "originTraitIds": [
+        "rock"
+      ],
+      "classTraitIds": [
+        "trickshot"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rock",
+        "trickshot"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19wukong",
+      "apiName": "DA_19_Wukong",
+      "name": "Wukong",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 40,
+      "manaMax": 100,
+      "ability": {
+        "name": "The Tricks of the Many Mythical Tricksters",
+        "description": "Heals Wukong and sends out clones in a 2-Hex circle that quickly return. Clones steal Armor and Magic Resist from enemies they pass through and deal physical damage. When they return, Wukong gains the stolen defenses."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/139d2cb4747ab6a0.avif",
+      "originTraitIds": [
+        "gufeng"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "gufeng"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19xayah",
+      "apiName": "DA_19_Xayah",
+      "name": "Xayah",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Feathers Flying Like Leaves on the Wind",
+        "description": "Summon feathers that strike the target, each dealing physical damage and reducing its Armor."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/bea6c028d6da283d.avif",
+      "originTraitIds": [
+        "gufeng"
+      ],
+      "classTraitIds": [
+        "hitmaker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "gufeng",
+        "hitmaker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19yasuo",
+      "apiName": "DA_19_Yasuo",
+      "name": "Yasuo",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Last Breath",
+        "description": "Dash and thrust forward, dealing physical damage to enemies in a line. Every third cast, knock up the target and deal physical damage, then slam them down, dealing physical damage to nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/5c64b067d3af278e.avif",
+      "originTraitIds": [
+        "truedamage"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "truedamage",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19yone",
+      "apiName": "DA_19_Yone",
+      "name": "Yone",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Two Sides",
+        "description": "Passive: This ability scales with whichever is higher, Attack Damage or Ability Power. Attacks deal physical damage. Active: Rapidly strike the target and nearby enemies multiple times, dealing physical damage with each strike, then unleash a massive slash that deals physical damage to the target. Heartsteel Upgrade: Strike additional times and ignore some of the target’s Armor."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/951c017618bbfa87.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19yorick",
+      "apiName": "DA_19_Yorick",
+      "name": "Yorick",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 50,
+      "manaMax": 100,
+      "ability": {
+        "name": "Danse Macabre",
+        "description": "Play an epic solo to restore Health and create a Hex zone that deals magic damage each second to enemies within. The final note deals magic damage to enemies in the zone and Slows them for a duration, reducing their Attack Speed."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/e440e1f956521190.avif",
+      "originTraitIds": [
+        "pentakill"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19yuumi",
+      "apiName": "DA_19_Yuumi",
+      "name": "Yuumi",
+      "cost": 4,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 20,
+      "ability": {
+        "name": "Girl, Put Your Records On (Your Head)",
+        "description": "Throws a spinning disc that deals magic damage and stacks on the target, reducing their Magic Resist every second. When the stack reaches its required number of discs, it topples, dealing a portion of the stacked discs’ total damage to the target and splitting additional damage among nearby enemies. If an enemy dies with a disc, it passes to another enemy."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/f90907ca6888d880.avif",
+      "originTraitIds": [
+        "illbeats"
+      ],
+      "classTraitIds": [
+        "encore"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "illbeats",
+        "encore"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19zac",
+      "apiName": "DA_19_Zac",
+      "name": "Zac",
+      "cost": 4,
+      "range": 1,
+      "manaStart": 60,
+      "manaMax": 120,
+      "ability": {
+        "name": "Cannonball!",
+        "description": "Charge up, gaining Durability and healing. Then leap and crash onto the target, dealing magic damage to adjacent enemies and briefly knocking them up."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/040c157aa034029b.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19akalikda",
+      "apiName": "DA_19_Akali_Kda",
+      "name": "Akali",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 45,
+      "ability": {
+        "name": "Sk8er Gurl",
+        "description": "Skateboard through the longest line of unpainted enemies, dealing physical damage to enemies hit and painting them and the hexes along the path. Painted enemies and enemies standing in painted hexes are Vulnerable, increasing damage taken. After every 3rd cast, ignite the paint to deal physical damage to all painted enemies and enemies standing in painted hexes."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/f6467f069017afa0.avif",
+      "originTraitIds": [
+        "kda"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "kda"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools",
+        "exclusiveSelectionGroupId": "local Set 19 rule"
+      },
+      "variantLabel": "K/DA",
+      "exclusiveSelectionGroupId": "set19-akali"
+    },
+    {
+      "id": "da19akalitruedamage",
+      "apiName": "DA_19_Akali_TrueDamage",
+      "name": "Akali",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Killin' like Domino",
+        "description": "B-Side Passive: After every set number of takedowns, gain Player Health. Active: Rapidly slash through the current target, dealing magic damage, increased against Tanks. While casting, gain Durability and become untargetable by attacks. Then blink over the target and throw a bomb that deals magic damage split among nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/d5d5ce8f88c0e4f4.avif",
+      "originTraitIds": [
+        "truedamage",
+        "freestyle"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "truedamage",
+        "freestyle"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools",
+        "exclusiveSelectionGroupId": "local Set 19 rule"
+      },
+      "variantLabel": "True Damage",
+      "exclusiveSelectionGroupId": "set19-akali"
+    },
+    {
+      "id": "da19aphelios",
+      "apiName": "DA_19_Aphelios",
+      "name": "Aphelios",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 40,
+      "manaMax": 180,
+      "ability": {
+        "name": "BANG BANG BANGERS",
+        "description": "Passive: Gain a Chakram every set number of attacks, up to a maximum. Attacks deal bonus physical damage for each equipped Chakram. After reaching the maximum, gain bonus Attack Damage and infinite range. Active: Fire bolts at the nearest enemies, dealing physical damage, then split into bolts that damage enemies they pass through. Gain Attack Speed for a duration. Heartsteel Upgrade: Start combat with Chakrams equipped."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/cbb5cba5ee117313.avif",
+      "originTraitIds": [
+        "heartsteel"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "heartsteel"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19drmundo",
+      "apiName": "DA_19_DrMundo",
+      "name": "Dr. Mundo",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 20,
+      "manaMax": 80,
+      "ability": {
+        "name": "Big Business",
+        "description": "Passive: While Dr. Mundo has the required amount of max Health, he becomes Pumped Up, gaining max Health and causing attacks to deal bonus magic damage. Active: Restore Health over time and deal magic damage each second to all nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/c73a3267ef3d0fa4.avif",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "recordmogul",
+        "manager"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "recordmogul",
+        "manager"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19gwen",
+      "apiName": "DA_19_Gwen",
+      "name": "Gwen",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 100,
+      "ability": {
+        "name": "Glimmer in the Night",
+        "description": "Passive: Attacks deal bonus magic damage to the target and other enemies in a cone. Dash to new targets. Active: After a short delay, summon a massive pair of scissors to snip a horizontal line on the target, dealing magic damage to all enemies hit, plus damage split between them. If only a limited number of enemies are hit, refund Mana."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/98d389e320146438.avif",
+      "originTraitIds": [
+        "ionicspark",
+        "melodicheart"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "ionicspark",
+        "melodicheart"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19janna",
+      "apiName": "DA_19_Janna",
+      "name": "Janna",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 45,
+      "ability": {
+        "name": "Hymn of the Heaven's Gale",
+        "description": "Fire celestial dragons at nearby enemies, dealing magic damage. After several casts, envelop the arena in Heaven’s Gale, dealing magic damage to every enemy over time."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/6284147055145f4f.avif",
+      "originTraitIds": [
+        "gufeng"
+      ],
+      "classTraitIds": [
+        "windblessed",
+        "prodigy"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "gufeng",
+        "windblessed",
+        "prodigy"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19leesin",
+      "apiName": "DA_19_LeeSin",
+      "name": "Lee Sin",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Celestial Combo To Impress The Heavens",
+        "description": "Unleash a combo attack beginning with Dragon Slam; subsequent casts add moves to the sequence. Dragon Slam deals physical damage to the target and reduced physical damage to nearby enemies. Tempest Spin deals physical damage to the target, knocks them up, and deals reduced physical damage to nearby enemies. Celestial Punch deals physical damage and marks the target; if they are already marked, it strikes their core for bonus true damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/d336b967dd66de41.avif",
+      "originTraitIds": [
+        "gufeng"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "gufeng"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19missfortune",
+      "apiName": "DA_19_MissFortune",
+      "name": "Miss Fortune",
+      "cost": 5,
+      "range": 5,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Pinball Wizard",
+        "description": "Fire a pinball toward the target, dealing physical damage. It bounces after hitting an enemy, damaging nearby enemies with reduced damage on each hit until it expires. Damage cannot fall below a minimum."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/07a090dd51da527a.avif",
+      "originTraitIds": [
+        "8bit"
+      ],
+      "classTraitIds": [
+        "hitmaker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "8bit",
+        "hitmaker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19mordekaiser",
+      "apiName": "DA_19_Mordekaiser",
+      "name": "Mordekaiser",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 60,
+      "ability": {
+        "name": "Hand of Doom",
+        "description": "Briefly gain Durability and summon a claw that deals magic damage in a massive line. The closest enemies take more damage and are pulled toward Mordekaiser. For the rest of combat, gain Omnivamp and Attack Range, and replace attacks with a slam that deals magic damage to the target and nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/a17fb53d9c1491f3.avif",
+      "originTraitIds": [
+        "pentakill"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "pentakill"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19nidalee",
+      "apiName": "DA_19_Nidalee",
+      "name": "Nidalee",
+      "cost": 5,
+      "range": 2,
+      "manaStart": 20,
+      "manaMax": 45,
+      "ability": {
+        "name": "Pounce Party|Dance of Life",
+        "description": "In Cougar Form, Pounce Party pounces on enemies, dealing magic damage that increases with each pounce. In Human Form, Dance of Life heals, then hurls a javelin at the target for magic damage and scatters flowers around them; after a brief delay, the flowers deal magic damage to enemies nearby."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/1d5dfb6302c400a5.avif",
+      "originTraitIds": [
+        "mariachi"
+      ],
+      "classTraitIds": [
+        "choreographer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "mariachi",
+        "choreographer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19nunu",
+      "apiName": "DA_19_Nunu",
+      "name": "Nunu & Willump",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 20,
+      "manaMax": 75,
+      "ability": {
+        "name": "It's the Time to Disco!",
+        "description": "Passive: Gain Mana Regen. Slowly roll a Disco Ball, dealing magic damage to all enemies it passes through. Active: For the rest of combat, move faster and increase the Disco Ball’s size and damage."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/4febd35144a8869a.avif",
+      "originTraitIds": [
+        "disco"
+      ],
+      "classTraitIds": [
+        "frontman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "disco",
+        "frontman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19pyke",
+      "apiName": "DA_19_Pyke",
+      "name": "Pyke",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 30,
+      "ability": {
+        "name": "Execute Gon' Give it to Ya",
+        "description": "Passive: When an enemy drops below the health threshold, instantly cast on them, then dash back to the current target. Active: Deal physical damage to the target and to other enemies in an X shape. Execute enemies below the health threshold."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/11713b6a029dfc28.avif",
+      "originTraitIds": [
+        "rock"
+      ],
+      "classTraitIds": [
+        "renegade"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rock",
+        "renegade"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19rell",
+      "apiName": "DA_19_Rell",
+      "name": "Rell",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 30,
+      "manaMax": 100,
+      "ability": {
+        "name": "Rhythm Blaster | Metal Pony Club",
+        "description": "While unmounted, Rhythm Blaster grants a shield and summons 3 speakers for a duration. Each second, they blast a wave that deals magic damage to enemies hit. While mounted, Metal Pony Club slams into a crowd, dealing magic damage to the center enemy and damage split among enemies within 2 hexes."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/cfab4a03492ff7c6.avif",
+      "originTraitIds": [
+        "rb",
+        "beatmaster"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "rb",
+        "beatmaster"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19taliyah",
+      "apiName": "DA_19_Taliyah",
+      "name": "Taliyah",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "Crowd Surfing",
+        "description": "Throws rocks at the target, each dealing magic damage. Every few casts, quickly repositions and surfs in a line, dealing magic damage based on enemies’ max Health and briefly knocking up enemies hit."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/0bbf25cadfd5773b.avif",
+      "originTraitIds": [
+        "beachpop"
+      ],
+      "classTraitIds": [
+        "encore"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "beachpop",
+        "encore"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19teemo",
+      "apiName": "DA_19_Teemo",
+      "name": "Teemo",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 100,
+      "ability": {
+        "name": "Going Viral",
+        "description": "Passive: Attacks apply Viral, dealing magic damage over time. Infected enemies become zombies on death, seeking unaffected enemies and exploding to damage adjacent enemies and apply Viral. Active: Launch a mushroom that applies Viral to enemies within 3 hexes and deals magic damage, reduced for each hex from the center."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/be4a54d6261da447.avif",
+      "originTraitIds": [
+        "hyperpop"
+      ],
+      "classTraitIds": [
+        "hypeman"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "hyperpop",
+        "hypeman"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19twistedfate",
+      "apiName": "DA_19_TwistedFate",
+      "name": "Twisted Fate",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Wildcard Cortado",
+        "description": "Passive: At combat start, draw a card for each champion in the shop. If the shop has refreshed this round, gain loot based on the cards drawn: 1 or 2 of a kind grants gold, 3 of a kind grants a random champion, 4 of a kind grants an item component, and 5 of a kind grants a mystery box. Active: The next 5 attacks gain Attack Speed and are replaced with cards that deal magic damage to the target and 2 nearby enemies."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/79427847bd6ed925.avif",
+      "originTraitIds": [
+        "tango"
+      ],
+      "classTraitIds": [
+        "trickshot"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "tango",
+        "trickshot"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19vi",
+      "apiName": "DA_19_Vi",
+      "name": "Vi",
+      "cost": 5,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 50,
+      "ability": {
+        "name": "Drop the Beatdown",
+        "description": "Summon giant hologram fists, gain a shield for a duration, and shield nearby allies. Slam the target repeatedly, dealing physical damage to them and damage to other enemies within 2 hexes. EDM Upgrade: Slam one additional time and heal for a portion of the damage dealt by this ability."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/dba6f61128e610b0.avif",
+      "originTraitIds": [
+        "edm"
+      ],
+      "classTraitIds": [
+        "juggernaut"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "edm",
+        "juggernaut"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19vladimir",
+      "apiName": "DA_19_Vladimir",
+      "name": "Vladimir",
+      "cost": 5,
+      "range": 2,
+      "manaStart": 0,
+      "manaMax": 40,
+      "ability": {
+        "name": "The Opera Phantom",
+        "description": "Passive: Gain Omnivamp. Debuffed enemies are Captivated. Active: Deal magic damage to the nearest enemies and Captivate them for a duration. Every few casts, drop a chandelier that deals magic damage to all enemies, reduced for each hex they are from the epicenter. Debuffs include Burn, Wound, Shred, Sunder, Mana Reave, Weaken, Slow, and Vulnerable."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/4731bb192d795778.avif",
+      "originTraitIds": [
+        "classical"
+      ],
+      "classTraitIds": [
+        "arcanist"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "classical",
+        "arcanist"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19zeri",
+      "apiName": "DA_19_Zeri",
+      "name": "Zeri",
+      "cost": 5,
+      "range": 4,
+      "manaStart": 0,
+      "manaMax": 150,
+      "ability": {
+        "name": "Lasers After Midnight",
+        "description": "Quickly dashes around the arena, firing lasers in rapid succession at the current target. Each laser deals physical damage to enemies hit and ignores a portion of their Armor."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/5bed0e8322ae3c85.avif",
+      "originTraitIds": [
+        "goth"
+      ],
+      "classTraitIds": [
+        "swiftstriker"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "goth",
+        "swiftstriker"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19baronnashor",
+      "apiName": "DA_19_BaronNashor",
+      "name": "Baron Nashor",
+      "cost": 7,
+      "range": 1,
+      "manaStart": 80,
+      "manaMax": 120,
+      "ability": {
+        "name": "Assemble the Ensemble",
+        "description": "Summon an 8-member orchestra and a Riff Herald, knocking up all enemies. Deal physical and magic damage split among all enemies. Each minion attacks multiple times, dealing physical damage with each attack."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/adbeacf61d9c2141.avif",
+      "originTraitIds": [
+        "onemonsterband"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "onemonsterband"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19rakan",
+      "apiName": "DA_19_Rakan",
+      "name": "Rakan",
+      "cost": 7,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 55,
+      "ability": {
+        "name": "Fly like a Peacock",
+        "description": "Dash to a nearby group of enemies, then fling feathers split among enemies within 1 hex, dealing magic damage. Rakan hits enemies within 2 hexes and briefly knocks them up."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/6e5b6d67eb31c16b.avif",
+      "originTraitIds": [
+        "boyband"
+      ],
+      "classTraitIds": [],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "boyband"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19smeech",
+      "apiName": "DA_19_Smeech",
+      "name": "Smeech",
+      "cost": 7,
+      "range": 1,
+      "manaStart": 0,
+      "manaMax": 4,
+      "ability": {
+        "name": "Upswing",
+        "description": "Passive: Gain Beats per attack and cast periodically. Active: Gain a shield and deal physical damage to all enemies within 2 hexes, then strike the current target multiple times, dealing physical damage plus additional damage per Beat. After unleashing a set number of Beats, gain an emblem for a trait you don’t have active; the number of Beats required increases."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/5e80477eb77da934.avif",
+      "originTraitIds": [
+        "jazz"
+      ],
+      "classTraitIds": [
+        "slayer"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "jazz",
+        "slayer"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    },
+    {
+      "id": "da19sona",
+      "apiName": "DA_19_Sona",
+      "name": "Sona",
+      "cost": 7,
+      "range": 0,
+      "manaStart": 0,
+      "manaMax": 190,
+      "ability": {
+        "name": "feat. Sona",
+        "description": "Passive: Cannot attack. Every few seconds, gains Mana, deals magic damage to nearby enemies, and grants allies a Shield for a duration. Active: Sends a sonic wave across the battlefield, dealing magic damage split among all enemies and Stunning them for a duration. Allies gain a Shield split among them for a duration."
+      },
+      "iconUrl": "/data/assets/pbe-preview-set19/500a166a0760176c.avif",
+      "originTraitIds": [],
+      "classTraitIds": [
+        "producer",
+        "collab"
+      ],
+      "unknownTraitIds": [],
+      "allTraitIds": [
+        "producer",
+        "collab"
+      ],
+      "preview": true,
+      "fieldSources": {
+        "roster": "tactics.tools",
+        "cost": "tactics.tools",
+        "traits": "tactics.tools",
+        "range": "tactics.tools",
+        "mana": "tactics.tools",
+        "ability": "tactics.tools",
+        "icon": "tactics.tools"
+      }
+    }
+  ]
+}

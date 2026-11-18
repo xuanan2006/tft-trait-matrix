@@ -5,12 +5,22 @@ import { fileURLToPath } from 'node:url';
 const communityDragonRoot = 'https://raw.communitydragon.org';
 const defaultVersion = 'latest';
 const pbeVersion = 'pbe';
+const set19PreviewSetId = 'preview:set19';
 const set18PreviewSetId = 'preview:set18';
+const set19AkaliExclusiveGroupId = 'set19-akali';
 const set18LuxSelectionGroupId = 'set18-lux';
 const set18LuxVariantPattern =
   /^TFT18_Lux_?(Blackthorn|Blossom|Coven|Elderwood|Eldritch|Fae|Inferno|Lunar|Primal|Solar)$/i;
 const rootDir = fileURLToPath(new URL('../', import.meta.url));
 const dataPath = path.join(rootDir, 'public', 'data', 'tft-current.json');
+
+const set19PreviewSources = {
+  tacticsTools: 'https://tactics.tools/tc/info/set-update',
+  riotOverview:
+    'https://teamfighttactics.leagueoflegends.com/en-gb/news/media/tft-set-19-prismatic-tour-overview/',
+  tftNinja: 'https://tft.ninja/sets/19/units',
+  lolchess: 'https://lolchess.gg/tft/19?hl=en'
+};
 
 const set18PreviewSources = {
   tacticsTools: 'https://tactics.tools/tc/info/set-update',
@@ -33,7 +43,18 @@ const set18PreviewOption = {
   preview: true
 };
 
+const set19PreviewOption = {
+  id: set19PreviewSetId,
+  name: 'Set 19 Preview',
+  number: 19,
+  championCount: 94,
+  traitCount: 47,
+  isDefault: true,
+  preview: true
+};
+
 const originTraitNames = new Set([
+  '8bit',
   'academy',
   'anima',
   'animasquad',
@@ -41,12 +62,18 @@ const originTraitNames = new Set([
   'arbiter',
   'astral',
   'bilgewater',
+  'beachpop',
+  'beatmaster',
   'blackrose',
   'blackthorn',
   'blossom',
+  'boyband',
   'bulwark',
   'celestial',
   'commander',
+  'classical',
+  'composer',
+  'country',
   'coven',
   'darklady',
   'darkstar',
@@ -55,42 +82,58 @@ const originTraitNames = new Set([
   'doomer',
   'dragon',
   'elderwood',
+  'edm',
   'eldritch',
   'emissary',
+  'emo',
   'experiment',
   'fae',
   'faerie',
   'florafatalis',
   'forgotten',
+  'freestyle',
   'freljord',
   'galaxyhunter',
   'gungoddess',
+  'goth',
+  'gufeng',
+  'heartsteel',
   'hextech',
   'highnoon',
   'honeymancy',
+  'hyperpop',
+  'illbeats',
+  'indie',
   'inferno',
+  'ionicspark',
   'ionia',
   'ixtal',
   'jazz',
   'kda',
   'lunar',
+  'mariachi',
+  'melodicheart',
   'mecha',
   'meeple',
   'mightymech',
   'mixmaster',
   'mountain',
+  'onemonsterband',
   'nova',
   'noxus',
   'partyanimal',
   'phantom',
+  'pentakill',
   'primal',
   'primordian',
   'psionic',
   'punk',
+  'rb',
   'redeemer',
   'rebel',
   'riftbeast',
   'rival',
+  'rock',
   'scrap',
   'sentinel',
   'shadowisles',
@@ -103,8 +146,11 @@ const originTraitNames = new Set([
   'steel',
   'storyweaver',
   'superfan',
+  'synthwave',
   'syndicate',
+  'tango',
   'timebreaker',
+  'truedamage',
   'void',
   'zaun'
 ]);
@@ -113,44 +159,57 @@ const classTraitNames = new Set([
   'adaptor',
   'ambusher',
   'artillerist',
+  'arcanist',
   'assassin',
   'bastion',
   'behemoth',
   'bigshot',
   'blademaster',
   'blaster',
+  'bodyguard',
   'brawler',
   'bruiser',
   'challenger',
   'channeler',
+  'choreographer',
+  'collab',
   'conduit',
   'defender',
   'duelist',
   'empath',
   'enforcer',
+  'encore',
   'eradicator',
   'executioner',
   'factorynew',
   'fateweaver',
   'fighter',
   'formswapper',
+  'frontman',
   'guardian',
   'heavyweight',
   'hunter',
+  'hitmaker',
+  'hypeman',
   'incantor',
   'invoker',
   'juggernaut',
   'mage',
   'marauder',
   'marksman',
+  'manager',
   'multistriker',
   'mystic',
   'preserver',
+  'prodigy',
+  'producer',
   'protector',
   'quickstriker',
   'rapidfire',
   'ravager',
   'reaper',
+  'recordmogul',
+  'renegade',
   'replicator',
   'rogue',
   'scholar',
@@ -162,13 +221,17 @@ const classTraitNames = new Set([
   'sorcerer',
   'spellweaver',
   'strategist',
+  'superstar',
+  'swiftstriker',
   'summoner',
   'trickshot',
   'vanguard',
   'visionary',
   'voyager',
   'warden',
-  'warrior'
+  'warrior',
+  'windblessed',
+  'risingstar'
 ]);
 
 export async function getAvailableVersions() {
@@ -206,14 +269,18 @@ export async function getAvailableSets(version = defaultVersion) {
       isDefault: setId === defaultSetId
     }));
 
-    if (supportsSet18Preview(normalizedVersion) && !hasCompleteSet18(playableSets)) {
+    if (supportsPreviewSets(normalizedVersion) && !hasCompleteSet19(playableSets)) {
+      sets.unshift(set19PreviewOption);
+    }
+
+    if (supportsPreviewSets(normalizedVersion) && !hasCompleteSet18(playableSets)) {
       sets.push(set18PreviewOption);
     }
 
     return sets;
   } catch (error) {
-    if (supportsSet18Preview(normalizedVersion)) {
-      return [set18PreviewOption];
+    if (supportsPreviewSets(normalizedVersion)) {
+      return [set19PreviewOption, set18PreviewOption];
     }
     throw error;
   }
@@ -230,6 +297,9 @@ export async function updateTftData(options = {}) {
 export async function buildTftData(options = {}) {
   const version = normalizeVersion(options.version);
   const requestedSetId = safeText(options.setId);
+  if (requestedSetId === set19PreviewSetId) {
+    return normalizeSet19PreviewOrCommunityDragon(version);
+  }
   return requestedSetId === set18PreviewSetId
     ? normalizeSet18PreviewOrCommunityDragon(version)
     : normalizeCommunityDragonSnapshot(version, requestedSetId);
@@ -240,6 +310,34 @@ async function normalizeCommunityDragonSnapshot(version, requestedSetId) {
   return normalizeTftData(raw, {
     version,
     setId: requestedSetId
+  });
+}
+
+async function normalizeSet19PreviewOrCommunityDragon(version) {
+  const warnings = [];
+
+  try {
+    const raw = await fetchTftData(version);
+    const selectedSet = findCompleteSet19(raw.sets ?? {});
+    if (selectedSet) {
+      const normalized = normalizeTftData(raw, {
+        version,
+        setId: selectedSet.setId
+      });
+      normalized.meta.warnings = warnings;
+      return normalized;
+    }
+
+    warnings.push(
+      `CommunityDragon ${version} does not expose a complete Set 19 object yet; using preview sources.`
+    );
+  } catch (error) {
+    warnings.push(`CommunityDragon ${version} could not be checked: ${readError(error)}`);
+  }
+
+  return buildSet19PreviewSnapshot({
+    version,
+    inheritedWarnings: warnings
   });
 }
 
@@ -285,9 +383,97 @@ async function fetchTftData(version) {
   return response.json();
 }
 
+async function buildSet19PreviewSnapshot({ version, inheritedWarnings }) {
+  const warnings = [...inheritedWarnings];
+  const sourceRecords = createSet19PreviewSourceRecords();
+
+  const tacticsHtml = await fetchSourceText({
+    id: 'tactics.tools',
+    url: set19PreviewSources.tacticsTools,
+    sourceRecords,
+    warnings,
+    required: true
+  });
+  const tacticsChampions = parseTacticsToolsChampions(tacticsHtml, warnings, {
+    setNumber: 19,
+    label: 'Set 19'
+  });
+
+  if (tacticsChampions.length < 90) {
+    throw new Error(
+      `tactics.tools Set 19 preview parse produced only ${tacticsChampions.length} units.`
+    );
+  }
+
+  const traitEnrichment = parseTacticsToolsTraits(tacticsHtml, warnings, {
+    setNumber: 19,
+    label: 'Set 19'
+  });
+  if (traitEnrichment.size < 45) {
+    throw new Error(
+      `tactics.tools Set 19 preview parse produced only ${traitEnrichment.size} traits.`
+    );
+  }
+
+  const riotOverviewHtml = await fetchSourceText({
+    id: 'riotOverview',
+    url: set19PreviewSources.riotOverview,
+    sourceRecords,
+    warnings
+  });
+  const tftNinjaHtml = await fetchSourceText({
+    id: 'tft.ninja',
+    url: set19PreviewSources.tftNinja,
+    sourceRecords,
+    warnings
+  });
+  const lolchessHtml = await fetchSourceText({
+    id: 'lolchess',
+    url: set19PreviewSources.lolchess,
+    sourceRecords,
+    warnings
+  });
+
+  validateChampionSource({
+    html: riotOverviewHtml,
+    label: 'Riot Set 19 overview',
+    champions: tacticsChampions,
+    warnings
+  });
+  validateChampionSource({
+    html: tftNinjaHtml,
+    label: 'TFT Ninja Set 19 page',
+    champions: tacticsChampions,
+    warnings
+  });
+  validateChampionSource({
+    html: lolchessHtml,
+    label: 'LoLChess Set 19 page',
+    champions: tacticsChampions,
+    warnings
+  });
+
+  return normalizePreviewData({
+    version,
+    tacticsChampions,
+    championEnrichment: new Map(),
+    traitEnrichment,
+    sourceRecords,
+    warnings,
+    config: {
+      setId: set19PreviewSetId,
+      setName: 'Set 19 Preview: Prismatic Tour',
+      sourceUrl: set19PreviewSources.tacticsTools,
+      rosterIdentity: (apiName) => makeId(apiName),
+      applyUnitRules: applySet19UnitRules,
+      tierRuleLabel: 'local Set 19 tier rule'
+    }
+  });
+}
+
 async function buildSet18PreviewSnapshot({ version, inheritedWarnings }) {
   const warnings = [...inheritedWarnings];
-  const sourceRecords = createPreviewSourceRecords();
+  const sourceRecords = createSet18PreviewSourceRecords();
 
   const tacticsHtml = await fetchSourceText({
     id: 'tactics.tools',
@@ -296,7 +482,10 @@ async function buildSet18PreviewSnapshot({ version, inheritedWarnings }) {
     warnings,
     required: true
   });
-  const tacticsChampions = parseTacticsToolsChampions(tacticsHtml, warnings);
+  const tacticsChampions = parseTacticsToolsChampions(tacticsHtml, warnings, {
+    setNumber: 18,
+    label: 'Set 18'
+  });
 
   if (tacticsChampions.length < 40) {
     throw new Error(
@@ -334,7 +523,7 @@ async function buildSet18PreviewSnapshot({ version, inheritedWarnings }) {
     parseMobalyticsChampions(mobalyticsHtml, warnings)
   );
   const traitEnrichment = mergeTraitEnrichment(
-    parseTacticsToolsTraits(tacticsHtml, warnings),
+    parseTacticsToolsTraits(tacticsHtml, warnings, { setNumber: 18, label: 'Set 18' }),
     parseOutOfGamesTraits(outOfGamesTraitsHtml, warnings)
   );
 
@@ -357,7 +546,18 @@ async function buildSet18PreviewSnapshot({ version, inheritedWarnings }) {
     championEnrichment,
     traitEnrichment,
     sourceRecords,
-    warnings
+    warnings,
+    config: {
+      setId: set18PreviewSetId,
+      setName: 'Set 18 Preview: Enchanted Wilds',
+      sourceUrl: set18PreviewSources.tacticsTools,
+      rosterIdentity: set18RosterIdentity,
+      applyUnitRules: applySet18UnitRules,
+      getChampionEnrichment: (champion, enrichment) =>
+        enrichment.get(makeId(champion.apiName)) ??
+        (getSet18LuxVariantLabel(champion.apiName) ? enrichment.get('lux') : undefined),
+      tierRuleLabel: 'local Set 18 tier rule'
+    }
   });
 }
 
@@ -417,7 +617,7 @@ function normalizeTftData(raw, options) {
   const units = rawChampions
     .map((champion) => normalizeChampion(champion, traitLookup, traitsById, options.version))
     .filter(Boolean)
-    .map((unit) => applySet18UnitRules(unit))
+    .map((unit) => applyKnownSetUnitRules(unit))
     .sort((a, b) => a.cost - b.cost || a.name.localeCompare(b.name));
 
   const traitUsageCounts = countTraitRosterUsage(units);
@@ -464,7 +664,8 @@ function normalizePreviewData({
   championEnrichment,
   traitEnrichment,
   sourceRecords,
-  warnings
+  warnings,
+  config
 }) {
   const fetchedAt = new Date().toISOString();
   const traitLookup = new Map();
@@ -475,7 +676,7 @@ function normalizePreviewData({
     for (const traitApiName of champion.traits) {
       const traitId = makeId(traitApiName);
       const rosterMembers = traitRosterMembers.get(traitId) ?? new Set();
-      rosterMembers.add(set18RosterIdentity(champion.apiName));
+      rosterMembers.add(config.rosterIdentity(champion.apiName));
       traitRosterMembers.set(traitId, rosterMembers);
       const iconUrl = champion.traitIconUrls?.[traitApiName];
       if (iconUrl) {
@@ -514,7 +715,7 @@ function normalizePreviewData({
           description: enrichment?.description ? enrichment.source : null,
           effects: enrichment?.effects?.length
             ? usesLocalPrismaticRule
-              ? `${enrichment.source} + local Set 18 tier rule`
+              ? `${enrichment.source} + ${config.tierRuleLabel}`
               : enrichment.source
             : null,
           icon: 'tactics.tools'
@@ -532,9 +733,9 @@ function normalizePreviewData({
   const units = tacticsChampions
     .map((champion) => {
       const championId = makeId(champion.apiName);
-      const enrichment =
-        championEnrichment.get(championId) ??
-        (getSet18LuxVariantLabel(champion.apiName) ? championEnrichment.get('lux') : undefined);
+      const enrichment = config.getChampionEnrichment
+        ? config.getChampionEnrichment(champion, championEnrichment)
+        : championEnrichment.get(championId);
       const allTraitIds = champion.traits.map((traitApiName) => makeId(traitApiName));
 
       comparePreviewChampion(champion, enrichment, warnings);
@@ -544,10 +745,10 @@ function normalizePreviewData({
       const manaStart = enrichment?.manaStart ?? champion.manaStart ?? null;
       const manaMax = enrichment?.manaMax ?? champion.manaMax ?? null;
 
-      return applySet18UnitRules({
+      return config.applyUnitRules({
         id: championId,
         apiName: champion.apiName,
-        name: enrichment?.name ?? titleFromApi(champion.apiName),
+        name: enrichment?.name ?? champion.name ?? titleFromApi(champion.apiName),
         cost: champion.cost,
         range: champion.range,
         manaStart,
@@ -569,8 +770,18 @@ function normalizePreviewData({
           cost: 'tactics.tools',
           traits: 'tactics.tools',
           range: champion.range == null ? null : 'tactics.tools',
-          mana: manaStart == null && manaMax == null ? null : enrichment?.manaMax ? 'outof.games' : 'tactics.tools',
-          ability: abilityName || abilityDescription ? 'outof.games' : null,
+          mana:
+            manaStart == null && manaMax == null
+              ? null
+              : enrichment?.manaStart != null || enrichment?.manaMax != null
+                ? 'outof.games'
+                : 'tactics.tools',
+          ability:
+            abilityName || abilityDescription
+              ? enrichment?.ability?.name || enrichment?.ability?.description
+                ? 'outof.games'
+                : 'tactics.tools'
+              : null,
           icon: 'tactics.tools'
         }
       });
@@ -581,12 +792,12 @@ function normalizePreviewData({
 
   return {
     meta: {
-      sourceUrl: set18PreviewSources.tacticsTools,
+      sourceUrl: config.sourceUrl,
       fetchedAt,
       sourceVersion: version,
       version,
-      setId: set18PreviewSetId,
-      setName: 'Set 18 Preview: Enchanted Wilds',
+      setId: config.setId,
+      setName: config.setName,
       preview: true,
       sourceMode: 'hybrid-preview',
       canonicalSource: 'tactics.tools',
@@ -683,6 +894,34 @@ function applySet18UnitRules(unit) {
   return unit;
 }
 
+function applySet19UnitRules(unit) {
+  const apiName = safeText(unit.apiName);
+  const variantLabel = /Akali_Kda$/i.test(apiName)
+    ? 'K/DA'
+    : /Akali_TrueDamage$/i.test(apiName)
+      ? 'True Damage'
+      : null;
+
+  if (!variantLabel) {
+    return unit;
+  }
+
+  return {
+    ...unit,
+    name: 'Akali',
+    variantLabel,
+    exclusiveSelectionGroupId: set19AkaliExclusiveGroupId,
+    fieldSources: {
+      ...unit.fieldSources,
+      exclusiveSelectionGroupId: 'local Set 19 rule'
+    }
+  };
+}
+
+function applyKnownSetUnitRules(unit) {
+  return applySet19UnitRules(applySet18UnitRules(unit));
+}
+
 function getSet18LuxVariantLabel(apiName) {
   const match = safeText(apiName).match(set18LuxVariantPattern);
   return match ? titleFromApi(match[1]) : null;
@@ -708,7 +947,7 @@ function countTraitRosterUsage(units) {
   );
 }
 
-function parseTacticsToolsChampions(html, warnings) {
+function parseTacticsToolsChampions(html, warnings, { setNumber, label }) {
   const champions = [];
   const cardBlocks = safeText(html)
     .split('<div class=" rounded text-white1 w-[291px] flex flex-col bg-bg">')
@@ -716,7 +955,7 @@ function parseTacticsToolsChampions(html, warnings) {
 
   for (const block of cardBlocks) {
     const legacyHeader = block.match(
-      />(TFT18_[A-Za-z0-9]+)<div class="flex items-end text-\[16px\]">(\d+)/
+      />([A-Za-z0-9_]+)<div class="flex items-end text-\[16px\]">(\d+)/
     );
     const currentHeader = block.match(
       /font-semibold[^>]*>([^<]+)<div class="flex items-end text-\[16px\]">(\d+)/
@@ -726,23 +965,37 @@ function parseTacticsToolsChampions(html, warnings) {
     }
 
     const displayName = normalizePreviewText(currentHeader?.[1]);
-    const apiName = legacyHeader?.[1] ?? set18ApiNameFromDisplayName(displayName);
+    const cardIconUrl = decodeHtmlEntities(
+      matchFirst(block, /src="([^"]*\/face_full_ultrawide\/[^"?]+\.jpg[^"]*)"/) ||
+        matchFirst(block, /src="([^"]*\/face\/[^"?]+\.jpg[^"]*)"/)
+    );
+    const iconApiName = decodeURIComponent(
+      matchFirst(cardIconUrl, /\/(?:face|face_full_ultrawide)\/([^/?]+)\.jpg/i)
+    );
+    const apiName = isSetApiName(iconApiName, setNumber)
+      ? iconApiName
+      : isSetApiName(legacyHeader?.[1], setNumber)
+        ? legacyHeader[1]
+        : previewApiNameFromDisplayName(displayName, setNumber);
     const cost = Number(legacyHeader?.[2] ?? currentHeader?.[2]);
+    if (!isSetApiName(apiName, setNumber)) {
+      continue;
+    }
     const traitRegionEnd = block.indexOf('<div class="p-3 flex flex-col text-sm">');
     const traitRegion = traitRegionEnd >= 0 ? block.slice(0, traitRegionEnd) : block;
     const traitIconUrls = {};
     const currentTraits = Array.from(
       traitRegion.matchAll(/alt="([^"]+) 0"[^>]*src="([^"]*\/trait-icons\/[^"?]+_w\.svg[^"]*)"/g),
       (match) => {
-        const traitApiName = set18TraitApiNameFromDisplayName(match[1]);
+        const traitApiName = previewTraitApiNameFromDisplayName(match[1], setNumber);
         traitIconUrls[traitApiName] = decodeHtmlEntities(match[2]);
         return traitApiName;
       }
     );
     const legacyTraits = Array.from(
-      traitRegion.matchAll(/alt="(TFT18_[A-Za-z0-9]+) 0"/g),
+      traitRegion.matchAll(/alt="([A-Za-z0-9_]+) 0"/g),
       (match) => match[1]
-    );
+    ).filter((traitApiName) => isSetApiName(traitApiName, setNumber));
     const traitApiNames = Array.from(new Set([...currentTraits, ...legacyTraits])).filter(
       (traitApiName) => traitApiName !== apiName
     );
@@ -759,13 +1012,11 @@ function parseTacticsToolsChampions(html, warnings) {
       normalizePreviewText(
         matchFirst(block, /<div class="leading-tight "><span class=""><span>([\s\S]*?)<\/span><\/span><\/div>/)
       );
-    const iconUrl = decodeHtmlEntities(
-      matchFirst(block, /src="([^"]*\/face\/[^"?]+\.jpg[^"]*)"/) ||
-        matchFirst(block, /src="([^"]*\/face_full_ultrawide\/[^"?]+\.jpg[^"]*)"/)
-    );
+    const iconUrl = tacticsSquareChampionIconUrl(cardIconUrl, apiName, setNumber);
 
     champions.push({
       apiName,
+      name: displayName ?? titleFromApi(apiName),
       cost,
       traits: traitApiNames,
       range,
@@ -775,7 +1026,7 @@ function parseTacticsToolsChampions(html, warnings) {
         name: abilityName,
         description: abilityDescription
       },
-      iconUrl: iconUrl || tacticsChampionIconUrl(apiName),
+      iconUrl,
       traitIconUrls
     });
   }
@@ -784,29 +1035,54 @@ function parseTacticsToolsChampions(html, warnings) {
     new Map(champions.map((champion) => [champion.apiName, champion])).values()
   );
   if (uniqueChampions.length !== champions.length) {
-    warnings.push('Duplicate tactics.tools Set 18 champion cards were collapsed by champion id.');
+    warnings.push(`Duplicate tactics.tools ${label} champion cards were collapsed by champion id.`);
   }
   return uniqueChampions;
 }
 
-function set18ApiNameFromDisplayName(name) {
+function previewApiNameFromDisplayName(name, setNumber) {
   const normalizedName = safeText(name);
-  const luxMatch = normalizedName.match(/^Lux\s*\(([^)]+)\)$/i);
-  if (luxMatch) {
-    return `TFT18_Lux_${luxMatch[1].replace(/[^A-Za-z0-9]/g, '')}`;
+  if (setNumber === 18) {
+    const luxMatch = normalizedName.match(/^Lux\s*\(([^)]+)\)$/i);
+    if (luxMatch) {
+      return `TFT18_Lux_${luxMatch[1].replace(/[^A-Za-z0-9]/g, '')}`;
+    }
   }
-  return `TFT18_${normalizedName.replace(/[^A-Za-z0-9]/g, '')}`;
+  return `TFT${setNumber}_${normalizedName.replace(/[^A-Za-z0-9]/g, '')}`;
 }
 
-function set18TraitApiNameFromDisplayName(name) {
-  return `TFT18_${safeText(name).replace(/[^A-Za-z0-9]/g, '')}`;
+function isSetApiName(apiName, setNumber) {
+  const value = safeText(apiName);
+  return setNumber === 19
+    ? /^(?:DA_19_|99DA_19_|TFT19_)/i.test(value)
+    : new RegExp(`^(?:TFT${setNumber}_|DA_${setNumber}_|99DA_${setNumber}_)`, 'i').test(value);
 }
 
-function parseTacticsToolsTraits(html, warnings) {
+function tacticsSquareChampionIconUrl(cardIconUrl, apiName, setNumber) {
+  const sourceUrl = safeText(cardIconUrl);
+  if (!sourceUrl) {
+    return tacticsChampionIconUrl(apiName, setNumber);
+  }
+
+  try {
+    const portraitUrl = new URL(sourceUrl);
+    portraitUrl.pathname = portraitUrl.pathname.replace('/face_full_ultrawide/', '/face/');
+    portraitUrl.searchParams.set('w', '116');
+    return portraitUrl.toString();
+  } catch {
+    return tacticsChampionIconUrl(apiName, setNumber);
+  }
+}
+
+function previewTraitApiNameFromDisplayName(name, setNumber) {
+  return `TFT${setNumber}_${decodeHtmlEntities(name).replace(/[^A-Za-z0-9]/g, '')}`;
+}
+
+function parseTacticsToolsTraits(html, warnings, { setNumber, label }) {
   const records = new Map();
   const sectionStart = safeText(html).indexOf('id="set-update-traits"');
   if (sectionStart < 0) {
-    warnings.push('tactics.tools Set 18 trait section was not found.');
+    warnings.push(`tactics.tools ${label} trait section was not found.`);
     return records;
   }
 
@@ -828,7 +1104,7 @@ function parseTacticsToolsTraits(html, warnings) {
       /<div class="py-3 text-sm leading-tight">([\s\S]*?)<div class="flex pt-2 gap-\[10px\] flex-wrap">/
     );
     const bodyText = stripHtml(body);
-    const breakpointMatches = Array.from(bodyText.matchAll(/\((\d+)\)\s*/g));
+    const breakpointMatches = Array.from(bodyText.matchAll(/\((\d+)\s*\)\s*/g));
     const rawEffects = breakpointMatches.map((match, index) => {
       const next = breakpointMatches[index + 1];
       return {
@@ -849,10 +1125,12 @@ function parseTacticsToolsTraits(html, warnings) {
     const groupedEffects = Array.from(effectsByThreshold.values());
     const effects = groupedEffects.map((effect, index) => ({
       ...effect,
-      style: previewBreakpointStyle(index, groupedEffects.length)
+      style: /prismatic/i.test(effect.label ?? '')
+        ? 6
+        : previewBreakpointStyle(index, groupedEffects.length)
     }));
     const firstBreakpoint = breakpointMatches[0]?.index ?? bodyText.length;
-    const id = makeId(set18TraitApiNameFromDisplayName(name));
+    const id = makeId(previewTraitApiNameFromDisplayName(name, setNumber));
     records.set(id, {
       name,
       category: classifyTrait({ name }),
@@ -863,7 +1141,7 @@ function parseTacticsToolsTraits(html, warnings) {
   }
 
   if (records.size === 0) {
-    warnings.push('tactics.tools Set 18 trait section was fetched but no trait records were parsed.');
+    warnings.push(`tactics.tools ${label} trait section was fetched but no trait records were parsed.`);
   }
   return records;
 }
@@ -1069,7 +1347,7 @@ function validateChampionSource({ html, label, champions, warnings }) {
   const text = stripHtml(html).toLowerCase();
   const sample = champions.slice(0, 20);
   const missing = sample
-    .map((champion) => titleFromApi(champion.apiName))
+    .map((champion) => champion.name ?? titleFromApi(champion.apiName))
     .filter((name) => !text.includes(name.toLowerCase()));
 
   if (missing.length > sample.length / 2) {
@@ -1110,7 +1388,47 @@ async function fetchSourceText({ id, url, sourceRecords, warnings, required = fa
   }
 }
 
-function createPreviewSourceRecords() {
+function createSet19PreviewSourceRecords() {
+  return [
+    {
+      id: 'communityDragon',
+      label: 'CommunityDragon PBE/latest',
+      role: 'future canonical json',
+      url: `${communityDragonRoot}/${pbeVersion}/cdragon/tft/en_us.json`,
+      status: 'checked'
+    },
+    {
+      id: 'tactics.tools',
+      label: 'tactics.tools Set 19 Info',
+      role: 'canonical preview roster and mechanics',
+      url: set19PreviewSources.tacticsTools,
+      status: 'pending'
+    },
+    {
+      id: 'riotOverview',
+      label: 'Riot Set 19 overview',
+      role: 'official preview validation',
+      url: set19PreviewSources.riotOverview,
+      status: 'pending'
+    },
+    {
+      id: 'tft.ninja',
+      label: 'TFT Ninja Set 19',
+      role: 'roster validation',
+      url: set19PreviewSources.tftNinja,
+      status: 'pending'
+    },
+    {
+      id: 'lolchess',
+      label: 'LoLChess Set 19',
+      role: 'roster validation',
+      url: set19PreviewSources.lolchess,
+      status: 'pending'
+    }
+  ];
+}
+
+function createSet18PreviewSourceRecords() {
   return [
     {
       id: 'communityDragon',
@@ -1190,6 +1508,31 @@ function selectPlayableSet(sets, requestedSetId) {
   }
 
   return selectedSet;
+}
+
+function findCompleteSet19(sets) {
+  return listPlayableSets(sets).find((entry) => entry.numericId === 19 && isCompleteSet19(entry.set));
+}
+
+function hasCompleteSet19(playableSets) {
+  return playableSets.some((entry) => entry.numericId === 19 && isCompleteSet19(entry.set));
+}
+
+function isCompleteSet19(set) {
+  const champions = Array.isArray(set.champions) ? set.champions : [];
+  const traits = Array.isArray(set.traits) ? set.traits : [];
+  const hasSet19Champions = champions.some((champion) =>
+    /^(?:DA_19_|99DA_19_|TFT19_)/i.test(
+      safeText(champion.apiName ?? champion.characterName ?? champion.name)
+    )
+  );
+  const hasSet19Traits = traits.some((trait) =>
+    /^(?:DA_19_|99DA_19_|TFT19_)/i.test(
+      safeText(trait.apiName ?? trait.name ?? trait.displayName)
+    )
+  );
+
+  return champions.length >= 90 && traits.length >= 45 && hasSet19Champions && hasSet19Traits;
 }
 
 function findCompleteSet18(sets) {
@@ -1309,8 +1652,9 @@ function toCdragonAssetUrl(assetPath, version = defaultVersion) {
   return `${communityDragonRoot}/${normalizeVersion(version)}/plugins/rcp-be-lol-game-data/global/default/${withoutPrefix}`;
 }
 
-function tacticsChampionIconUrl(apiName) {
-  return `https://ap.tft.tools/img/gg17/face/${safeText(apiName).toLowerCase()}.jpg?w=76`;
+function tacticsChampionIconUrl(apiName, setNumber = 19) {
+  const assetSet = setNumber === 19 ? 's99' : 'gg17';
+  return `https://ap.tft.tools/img/${assetSet}/face/${safeText(apiName).toLowerCase()}.jpg?w=116`;
 }
 
 function tacticsTraitIconUrl(apiName) {
@@ -1321,7 +1665,7 @@ function buildSourceUrl(version) {
   return `${communityDragonRoot}/${normalizeVersion(version)}/cdragon/tft/en_us.json`;
 }
 
-function supportsSet18Preview(version) {
+function supportsPreviewSets(version) {
   return normalizeVersion(version) === defaultVersion || normalizeVersion(version) === pbeVersion;
 }
 

@@ -13,7 +13,7 @@ Vite serves the app at the local URL shown in the terminal. Development and prod
 
 ## Publish TFT Data
 
-The datasets available to visitors are declared in `config/publish-manifest.json`. To regenerate all declared snapshots:
+The datasets available to visitors are declared in `config/publish-manifest.json`. Set 19 PBE is the current default, while the verified Set 18 snapshot is frozen so the shared tactics.tools preview page cannot overwrite it with newer-set data. To regenerate the active datasets and rebuild the catalog:
 
 ```bash
 npm run data:publish
@@ -57,4 +57,4 @@ becomes available without stale paths.
 
 TFT Trait Matrix was created under Riot Games' "Legal Jibber Jabber" policy using assets owned by Riot Games. Riot Games does not endorse or sponsor this project.
 
-Set 18 preview data is provisional and includes source attribution and warnings in the application. The project is free, has no advertisements, and collects no user data.
+Set 19 preview data is provisional and includes source attribution and warnings in the application. Set 18 and Set 17 remain selectable from the published catalog. The project is free, has no advertisements, and collects no user data.

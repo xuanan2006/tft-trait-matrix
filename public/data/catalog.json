@@ -1,15 +1,24 @@
 {
-  "generatedAt": "2026-08-12T09:01:14.898Z",
-  "defaultSnapshotId": "pbe-preview-set18",
+  "generatedAt": "2026-11-18T09:01:47.027Z",
+  "defaultSnapshotId": "pbe-preview-set19",
   "snapshots": [
+    {
+      "id": "pbe-preview-set19",
+      "version": "pbe",
+      "setId": "preview:set19",
+      "setName": "Set 19 Preview: Prismatic Tour",
+      "preview": true,
+      "path": "/data/snapshots/pbe-preview-set19-161869cfef48.json",
+      "updatedAt": "2026-11-18T09:01:29.220Z"
+    },
     {
       "id": "pbe-preview-set18",
       "version": "pbe",
       "setId": "preview:set18",
       "setName": "Set 18 Preview: Enchanted Wilds",
       "preview": true,
-      "path": "/data/snapshots/pbe-preview-set18-eff5083904a3.json",
-      "updatedAt": "2026-08-12T09:01:09.380Z"
+      "path": "/data/snapshots/pbe-preview-set18-4134e1643dec.json",
+      "updatedAt": "2026-08-12T09:32:07.044Z"
     },
     {
       "id": "latest-set17",
@@ -17,8 +26,8 @@
       "setId": "17",
       "setName": "Set17",
       "preview": false,
-      "path": "/data/snapshots/latest-set17-6204d8dc7251.json",
-      "updatedAt": "2026-08-12T09:01:10.282Z"
+      "path": "/data/snapshots/latest-set17-355d970bd756.json",
+      "updatedAt": "2026-11-18T09:01:34.495Z"
     }
   ]
 }

@@ -1,10 +1,14 @@
 {
-  "defaultSnapshotId": "pbe-preview-set18",
+  "defaultSnapshotId": "pbe-preview-set19",
   "datasets": [
     {
-      "id": "pbe-preview-set18",
+      "id": "pbe-preview-set19",
       "version": "pbe",
-      "setId": "preview:set18"
+      "setId": "preview:set19"
+    },
+    {
+      "id": "pbe-preview-set18",
+      "frozenPath": "/data/snapshots/pbe-preview-set18-4134e1643dec.json"
     },
     {
       "id": "latest-set17",

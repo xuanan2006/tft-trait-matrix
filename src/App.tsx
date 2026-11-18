@@ -84,6 +84,7 @@ type Unit = {
   allTraitIds: string[];
   traitContributions?: Record<string, number>;
   selectionGroupId?: string;
+  exclusiveSelectionGroupId?: string;
   variantLabel?: string;
   preview?: boolean;
   fieldSources?: Record<string, string | null>;
@@ -741,10 +742,14 @@ function App() {
     if (next.has(unitId)) {
       next.delete(unitId);
     } else {
-      const selectionGroupId = unitsById.get(unitId)?.selectionGroupId;
-      if (selectionGroupId) {
+      const unit = unitsById.get(unitId);
+      const exclusiveGroupId = unit?.exclusiveSelectionGroupId ?? unit?.selectionGroupId;
+      if (exclusiveGroupId) {
         for (const selectedId of next) {
-          if (unitsById.get(selectedId)?.selectionGroupId === selectionGroupId) {
+          const selectedUnit = unitsById.get(selectedId);
+          const selectedGroupId =
+            selectedUnit?.exclusiveSelectionGroupId ?? selectedUnit?.selectionGroupId;
+          if (selectedGroupId === exclusiveGroupId) {
             next.delete(selectedId);
           }
         }
@@ -943,7 +948,7 @@ function App() {
       {data?.meta.preview && (
         <section className="preview-disclosure">
           <div className="preview-warning">
-            {text.previewWarning}
+            {interpolate(text.previewWarning, { name: data.meta.setName })}
           </div>
           <details className="preview-details">
             <summary>{text.previewDetails}</summary>
